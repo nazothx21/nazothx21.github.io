@@ -1,0 +1,305 @@
+   
+        /* VARIABEL WARNA VALORANT */
+        :root {
+            --primary: #ff4655;
+            --dark: #0f1923;
+            --light: #ece8e1;
+            --secondary: #111111;
+            --gradient-start: #1a1a1a;
+            --gradient-end: #4a0000;
+        }
+
+        /* DARK MODE VARIABLES (jika diperlukan) */
+.dark-mode {
+    --light: #dcddde;   /* Warna teks lebih gelap */
+    --dark: #36393f;
+    --gradient-start: #18191c;
+    --gradient-end: #2f3136;
+}
+
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* HEADER STYLES */
+        .header {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .openbtn, .settings-btn, .info-btn {
+            background: rgba(255, 70, 85, 0.2);
+            border: 2px solid var(--primary);
+            color: var(--light);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .openbtn:hover, .settings-btn:hover, .info-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        /* SIDEBAR STYLES */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1001;
+            top: 0;
+            left: 0;
+            background-color: rgba(15, 25, 35, 0.95);
+            backdrop-filter: blur(10px);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: var(--light);
+            display: block;
+            transition: 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar a:hover {
+            color: var(--primary);
+            border-left: 3px solid var(--primary);
+            background: rgba(255, 70, 85, 0.1);
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            border: none;
+            background: none;
+        }
+
+        .sidebar-profile {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 70, 85, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .sidebar-profile h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar-profile p {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .profile h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 70, 85, 0.7);
+        }
+
+        .profile p {
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        /* LINK BUTTONS */
+        .links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(15, 25, 35, 0.7);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--light);
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-button i {
+            font-size: 24px;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .link-button:hover {
+            transform: scale(1.05);
+            background: rgba(255, 70, 85, 0.2);
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 60px;
+            }
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            .link-button {
+                font-size: 16px;
+                padding: 12px 15px;
+            }
+        }
+/* style.css */
+/* style.css */
+            #donate-btn {
+                color: #ff5e5e !important; /* Warna merah muda */
+                font-weight: bold;
+            }
+
+            #donate-btn:hover {
+                background: rgba(255, 94, 94, 0.1) !important;
+                border-left: 3px solid #ff5e5e !important;
+            }
+
+            /* Animasi ikon hati */
+            .fa-heart {
+                animation: pulse 1.5s infinite;
+            }
+
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.2); }
+                100% { transform: scale(1); }
+            }
+            /* style.css */
+/* Tombol Donasi Spesial */
+            .donate-button {
+                background: linear-gradient(135deg, #ff5e5e, #ff0101) !important;
+                border: 2px solid #fff !important;
+                animation: pulse 2s infinite;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .donate-button i {
+                color: #fff !important;
+                font-size: 28px !important;
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+            }
+
+            .donate-button::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(
+                    to bottom right,
+                    rgba(255,255,255,0.3) 0%,
+                    rgba(255,255,255,0) 60%
+                );
+                transform: rotate(30deg);
+                animation: shine 3s infinite;
+            }
+
+            /* Animasi */
+            @keyframes pulse {
+                0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 94, 94, 0.7); }
+                70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 94, 94, 0); }
+                100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 94, 94, 0); }
+            }
+
+            @keyframes shine {
+                0% { left: -50%; top: -50%; }
+                100% { left: 150%; top: 150%; }
+            }
