@@ -83,3 +83,6 @@ document.querySelector('.donate-button').addEventListener('click', function() {
                     // Bisa tambahkan efek confetti di sini
                 }, 200);
             });
+
+
+

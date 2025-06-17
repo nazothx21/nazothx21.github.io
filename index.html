@@ -18,7 +18,7 @@
             <p>Makasih Yang Udah Mampirr ^_^</p>
         </div>
         <div class="sidebar-links">
-            <a href="https://link-donasi-anda" target="_blank" id="donate-btn"><i class="fas fa-heart"></i> Donasi</a>
+            <a href="https://sociabuzz.com/nazothx/tribe" target="_blank" id="donate-btn"><i class="fas fa-heart"></i> Donasi</a>
             <a href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</a>
             <a href="mailto:grateoalfandoatmojo@gmail.com"><i class="fas fa-envelope"></i> Email</a>
         </div>
@@ -88,7 +88,37 @@
             </a>
         </div>
     </div>
+                <!-- Letakkan audio dan kontrol musik SEBELUM penutup </body> -->
+            <audio id="bgMusic" loop>
+                <source src="tt.mp3" type="audio/mpeg">
+            </audio>
+            <div id="musicControl" title="Toggle Music">
+                <i class="fas fa-music"></i>
+            </div>
 <script src="script.js"></script>
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+
+<script>
+// Ganti audio system dengan Howler
+const sound = new Howl({
+    src: ['tt.mp3'],
+    loop: true,
+    volume: 0.5,
+    autoplay: true,
+    onplayerror: function() {
+        sound.once('unlock', function() {
+            sound.play();
+        });
+    }
+});
+
+document.getElementById('musicControl').addEventListener('click', () => {
+    if (sound.playing()) {
+        sound.pause();
+    } else {
+        sound.play();
+    }
+});
+</script>
 </body>
 </html>
