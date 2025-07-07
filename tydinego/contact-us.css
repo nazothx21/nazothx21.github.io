@@ -1,0 +1,225 @@
+
+body, h1, h2, h3, p, ul, li, input, button, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Arial, sans-serif; 
+    box-sizing: border-box; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+:root {
+    --header-bg-color: #F5C79A;
+    --search-bar-bg: #FFFFFF;
+    --search-btn-bg: #C0824E;
+    --icon-color-light: #FFFFFF;
+    --icon-color-dark: #362C2A;
+    --text-placeholder: #888;
+    --main-bg-light-cream: #F8E9D2;
+    --main-bg-dark-cream: #EEDDBB;
+    --section-title-color: #A0522D;
+    --founder-text-color: #FFFFFF; 
+    --history-text-color: #333;
+    --card-border-color: #FFFFFF;
+    --card-shadow-color: rgba(0,0,0,0.1);
+    --footer-bg-color: #362C2A;
+    --footer-text-color: #fff;
+}
+
+body {
+    background: linear-gradient(to bottom left, var(--main-bg-light-cream), var(--main-bg-dark-cream));
+    min-height: 100vh; 
+    color: var(--history-text-color);
+    display: flex;
+    flex-direction: column; 
+}
+
+.main-header {
+    background-color: var(--header-bg-color);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 150px; 
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.search-bar-container {
+    display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 999px;
+  overflow: hidden;
+  width: 300px;
+  height: 40px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-bar-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  height: 100%;
+  font-size: 14px;
+  border-radius: 999px 0 0 999px;
+  background: transparent;
+  color: #333;
+}
+
+.search-bar-container input::placeholder {
+    color: var(--text-placeholder);
+}
+
+.search-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #A56B3D; /* coklat tua */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-button{
+  color: white;
+  font-size: 16px;
+}
+
+.search-button:hover {
+    background-color: #A06935; 
+}
+
+.hamburger-menu {
+    font-size: 28px;
+    color: var(--icon-color-dark);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+  .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 20px;
+    }
+
+    .contact-card {
+      text-align: center;
+      max-width: 280px;
+    }
+
+    .contact-card img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .contact-info {
+      max-width: 320px;
+      font-size: 17px;      
+      color: #5b3926;
+    }
+
+    .contact-info h3 {
+      font-size: 20px;      
+      margin-bottom: 12px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;        
+      font-size: 16px;      
+    }
+
+    .contact-info i {
+      font-size: 16px;      
+      margin-right: 10px;
+    }
+
+.main-footer {
+    background-color: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    min-height: 50px;
+    margin-top: auto; 
+    flex-wrap: wrap;
+}
+
+.footer-left img {
+    height: 110px; 
+    filter: brightness(0) invert(1); 
+}
+
+.footer-center {
+  text-align: center;
+  margin: 10px 0; 
+}
+
+.footer-center p:first-child{
+    margin-bottom: 10px;
+}
+
+.thin-text{
+    text-align: center;
+    font-family: 'roboto' sans-serif;
+}
+
+.footer-right {
+    width: 30px; 
+}
+
+.contact-us-button-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact-us-button {
+  background-color: #F4B984; /* peach/orange muda */
+  color: white;
+  padding: 15px 40px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* efek timbul pada tulisan */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.contact-us-button:hover {
+  background-color: #e6a96e; /* warna saat hover */
+  transform: translateY(-2px);
+}
+
+

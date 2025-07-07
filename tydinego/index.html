@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TyDineGo Pet Shop - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #FDF8E8, #F7EBDD);
+            color: #4B3621;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header img {
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .login-container {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .login-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #4B3621;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 5px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #4B3621;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .login-form input[type="text"]::placeholder,
+        .login-form input[type="password"]::placeholder {
+            color: #888;
+        }
+
+        .login-button {
+            background-color: #F1D3B5;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .login-button:hover {
+            background-color: #E0C0A0;
+        }
+
+        .forgot-links {
+            margin-top: 25px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .forgot-links a {
+            color: #4B3621;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        .forgot-links a:hover {
+            text-decoration: underline;
+        }
+
+        .message-box-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+            backdrop-filter: blur(2px);
+        }
+
+        .message-box-content {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 350px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message-text {
+            font-size: 1.1em;
+            color: #4B3621;
+            margin-bottom: 0;
+        }
+
+        .message-box-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .message-box-primary-btn,
+        .message-box-secondary-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .message-box-primary-btn {
+            background-color: #F1D3B5;
+            color: white;
+        }
+
+        .message-box-primary-btn:hover {
+            background-color: #E0C0A0;
+        }
+
+        .message-box-secondary-btn {
+            background-color: transparent;
+            color: #4B3621;
+            border: 1px solid #ccc;
+        }
+
+        .message-box-secondary-btn:hover {
+            background-color: #F8F8F8;
+            border-color: #A0A0A0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="header">
+            <img src="logo.png" alt="TyDineGo Pet Shop Logo">
+        </header>
+
+        <main class="login-container">
+            <h2 class="login-title">Log-In</h2>
+            <form class="login-form">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Username">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="login-button">ENTER</button>
+            </form>
+            <div class="forgot-links">
+                <a href="lupapassword.html" class="forgot-link">Lupa password?</a>
+                <span>/</span>
+                <a href="lupapassword.html" class="forgot-link">Lupa username?</a>
+            </div>
+        </main>
+    </div>
+
+    <div id="customMessageBox" class="message-box-overlay">
+        <div class="message-box-content">
+            <p id="messageBoxText" class="message-text"></p>
+            <div class="message-box-buttons">
+                <button id="closeMessageBox" class="message-box-secondary-btn">Try Again!</button>
+                <button id="forgotPasswordBtn" class="message-box-primary-btn">Lupa password?</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.querySelector('.login-form');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const messageBox = document.getElementById('customMessageBox');
+        const messageBoxText = document.getElementById('messageBoxText');
+        const closeMessageBoxBtn = document.getElementById('closeMessageBox');
+        const forgotPasswordBtn = document.getElementById('forgotPasswordBtn');
+
+        const correctUsername = 'dino';
+        const correctPassword = 'admin';
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const enteredUsername = usernameInput.value.trim();
+            const enteredPassword = passwordInput.value.trim();
+
+            if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+                alert('Login Sukses! Selamat datang ' + enteredUsername + '!');
+                window.location.href = 'beranda.html';
+            } else {
+                messageBoxText.textContent = 'Password Or Username Yang anda Masukan Salah!\n@tydinego';
+                messageBox.style.display = 'flex';
+            }
+        });
+
+        closeMessageBoxBtn.addEventListener('click', function() {
+            messageBox.style.display = 'none';
+        });
+
+        forgotPasswordBtn.addEventListener('click', function() {
+            alert('Anda akan diarahkan ke halaman pemulihan password.');
+            messageBox.style.display = 'none';
+            window.location.href = 'lupapassword.html';
+        });
+
+        messageBox.addEventListener('click', function(event) {
+            if (event.target === messageBox) {
+                messageBox.style.display = 'none';
+            }
+
+            
+        });
+    </script>
+</body>
+</html>

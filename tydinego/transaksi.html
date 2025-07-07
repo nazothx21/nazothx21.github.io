@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TyDineGo Pet Shop - Transaksi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya Global dan Background - Konsisten */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #FDF8E8, #F7EBDD);
+            color: #4B3621;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px; /* Lebar maksimal halaman transaksi */
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-grow: 1; /* Agar konten bisa mengisi ruang di tengah */
+        }
+
+        /* --- Header --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .header .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .header .search-area {
+            display: flex;
+            align-items: center;
+            background-color: #FFFFFF;
+            border-radius: 25px;
+            padding: 8px 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            width: 300px;
+        }
+
+        .header .search-area input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            padding: 5px;
+            font-size: 1em;
+            color: #4B3621;
+        }
+
+        .header .search-area .search-icon {
+            color: #888;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .header .nav-icon {
+            font-size: 1.8em;
+            color: #4B3621;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* --- Main Content Layout --- */
+        .main-content {
+            display: flex;
+            gap: 25px; /* Jarak antara kolom kiri dan kanan */
+            flex-wrap: wrap; /* Untuk responsivitas */
+        }
+
+        .left-column {
+            flex: 2; /* Kolom kiri lebih lebar */
+            min-width: 300px; /* Lebar minimum agar tidak terlalu sempit */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .right-column {
+            flex: 1; /* Kolom kanan */
+            min-width: 250px; /* Lebar minimum */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4B3621;
+        }
+
+        /* --- Bagian Produk --- */
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .product-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-details {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .product-details h4 {
+            margin: 0 0 5px 0;
+            font-size: 1em;
+            font-weight: 600;
+            color: #4B3621;
+        }
+
+        .product-details p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .product-quantity {
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            color: #4B3621;
+        }
+
+        .product-quantity button {
+            background: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 8px;
+            cursor: pointer;
+            font-size: 1em;
+            color: #4B3621;
+            margin: 0 5px;
+            transition: background-color 0.2s ease;
+        }
+
+        .product-quantity button:hover {
+            background-color: #eee;
+        }
+
+        /* --- Alamat, Voucher, Metode Pembayaran, Pengiriman --- */
+        .info-section {
+            background-color: #F1D3B5; /* Warna latar belakang oranye muda */
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px; /* Jarak antar section */
+            cursor: pointer; /* Menandakan bisa diklik */
+            transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        .info-section:hover {
+            background-color: #E0C0A0; /* Warna lebih gelap saat hover */
+        }
+
+        .info-section .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #4B3621;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .info-section .section-header .arrow-icon {
+            font-size: 1.2em;
+        }
+
+        .info-content {
+            margin-top: 10px;
+            font-size: 0.95em;
+            color: #4B3621;
+        }
+
+        /* Khusus untuk Note */
+        .note-section {
+            background-color: #F1D3B5;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .note-section .note-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #4B3621;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .note-section textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            min-height: 80px;
+            resize: vertical;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95em;
+            color: #4B3621;
+            background-color: rgba(255, 255, 255, 0.7); /* Agak transparan */
+            outline: none;
+        }
+
+        /* --- Total Pembayaran --- */
+        .payment-summary {
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-summary .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1em;
+            color: #4B3621;
+        }
+
+        .payment-summary .summary-item.total {
+            font-weight: 700;
+            font-size: 1.2em;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+
+        .payment-summary .buy-button {
+            background-color: #F1D3B5;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        .payment-summary .buy-button:hover {
+            background-color: #E0C0A0;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+            background-color: #F7EBDD; /* Background lebih gelap dari body */
+            color: #4B3621;
+            font-size: 0.9em;
+            border-top: 1px solid #E0C0A0;
+        }
+
+        .footer .logo img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        /* --- Gaya Message Box Kustom (Modal) - Konsisten --- */
+        .message-box-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none; /* Sembunyikan secara default */
+            backdrop-filter: blur(2px);
+        }
+
+        .message-box-content {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 350px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message-text {
+            font-size: 1.1em;
+            color: #4B3621;
+            margin-bottom: 0;
+        }
+
+        .message-box-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .message-box-primary-btn,
+        .message-box-secondary-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .message-box-primary-btn {
+            background-color: #F1D3B5;
+            color: white;
+        }
+
+        .message-box-primary-btn:hover {
+            background-color: #E0C0A0;
+        }
+
+        .message-box-secondary-btn {
+            background-color: transparent;
+            color: #4B3621;
+            border: 1px solid #ccc;
+        }
+
+        .message-box-secondary-btn:hover {
+            background-color: #F8F8F8;
+            border-color: #A0A0A0;
+        }
+
+        /* Gaya untuk centang hijau */
+        .success-checkmark {
+            color: #4CAF50; /* Hijau */
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        /* Gaya Khusus untuk Message Box Voucher */
+        .voucher-option {
+            background-color: #FDF8E8; /* Lebih terang dari card */
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: left;
+            border: 1px solid #E0C0A0;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+        .voucher-option:hover {
+            background-color: #F7EBDD;
+            border-color: #F1D3B5;
+        }
+        .voucher-option p {
+            margin: 0;
+            font-weight: 600;
+            color: #4B3621;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .header .search-area {
+                width: auto;
+                flex-grow: 1;
+            }
+            .header {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .header .logo, .header .nav-icon {
+                flex-basis: 100%;
+                text-align: center;
+                margin: 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="logo.png" alt="TyDineGo Pet Shop Logo">
+            </div>
+            <div class="search-area">
+                <input type="text" placeholder="Search">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <i class="fas fa-arrow-left nav-icon" onclick="history.back()"></i>
+        </header>
+
+        <div class="main-content">
+            <div class="left-column">
+                <div class="card">
+                    <h3 class="card-title">PRODUK</h3>
+                    <div class="product-item">
+                        <img src="whiskas.png" alt="Whiskas Box Wetfood Kucing"> <div class="product-details">
+                            <h4>Whiskas Box Wetfood Kucing</h4>
+                            <p>Rp 100.000,00</p>
+                        </div>
+                        <div class="product-quantity">
+                            <button class="quantity-btn" data-action="minus">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="quantity-btn" data-action="plus">+</button>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="info-section" id="paymentMethodSection">
+                    <div class="section-header">
+                        <span>METODE PEMBAYARAN</span>
+                        <span class="arrow-icon">></span>
+                    </div>
+                    <div class="info-content" id="selectedPaymentMethod">PILIH</div>
+                </div>
+
+                <div class="info-section" id="shippingMethodSection">
+                    <div class="section-header">
+                        <span>PENGIRIMAN</span>
+                        <span class="arrow-icon">></span>
+                    </div>
+                    <div class="info-content" id="selectedShippingMethod">PILIH</div>
+                </div>
+
+                <div class="note-section">
+                    <h3 class="note-title">NOTE</h3>
+                    <textarea placeholder="Tulis Pesan..."></textarea>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="info-section" id="addressSection">
+                    <div class="section-header">
+                        <span>ALAMAT PEMBAYARAN</span>
+                        <span class="arrow-icon">></span>
+                    </div>
+                    <div class="info-content">
+                        Jl. Kenangan, Gg Rasa Sakit, No.2 Salatiga, Jawa Tengah, Indonesia
+                    </div>
+                </div>
+
+                <div class="info-section" id="voucherSection">
+                    <div class="section-header">
+                        <span>VOUCHER</span>
+                        <span class="arrow-icon">></span>
+                    </div>
+                    <div class="info-content" id="selectedVoucher"></div> </div>
+
+                <div class="payment-summary">
+                    <h3 class="card-title">TOTAL PEMBAYARAN</h3>
+                    <div class="summary-item">
+                        <span>PRODUK</span>
+                        <span id="productTotal">Rp 100.000,00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>ONGKOS KIRIM</span>
+                        <span id="shippingCost">Rp 10.000,00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>DISKON</span>
+                        <span id="discountAmount">Rp 0,00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>JUMLAH TOTAL</span>
+                        <span id="grandTotal">Rp 110.000,00</span>
+                    </div>
+                    <button class="buy-button" id="buyButton">BELI</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="logo">
+                <img src="logo.png" alt="TyDineGo Pet Shop Logo">
+            </div>
+            <p>Thank you for visiting our website</p>
+            <p>Email: TyDineGo@gmail.com</p>
+        </footer>
+    </div>
+
+    <div id="successTransactionMessageBox" class="message-box-overlay">
+        <div class="message-box-content">
+            <p class="message-text">Terimakasih Telah Membeli Barang kami</p>
+            <img src="whiskas.png" alt="Whiskas Box Wetfood Kucing" style="max-width: 120px; margin: 15px auto; border-radius: 8px;">
+            <p class="message-text" style="font-weight: 600;">Whiskas box wet food kucing</p>
+            <div class="message-box-buttons">
+                <button id="doneButton" class="message-box-primary-btn">DONE</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="voucherSelectionMessageBox" class="message-box-overlay">
+        <div class="message-box-content">
+            <h3 class="card-title" style="margin-bottom: 10px;">VOUCHER</h3>
+            <div class="voucher-options-container" style="max-height: 250px; overflow-y: auto; padding-right: 10px;">
+                <div class="voucher-option" data-discount="0.10" data-name="VOUCHER POTONGAN 10%">
+                    <p>VOUCHER POTONGAN 10%</p>
+                </div>
+                <div class="voucher-option" data-discount="0.05" data-name="VOUCHER POTONGAN 5%">
+                    <p>VOUCHER POTONGAN 5%</p>
+                </div>
+                <div class="voucher-option" data-discount="0.20" data-name="VOUCHER POTONGAN 20%">
+                    <p>VOUCHER POTONGAN 20%</p>
+                </div>
+                 <div class="voucher-option" data-discount="0.0" data-name="Tanpa Voucher">
+                    <p>Tidak Menggunakan Voucher</p>
+                </div>
+            </div>
+            <button id="closeVoucherSelection" class="message-box-primary-btn" style="margin-top: 20px;">OK</button>
+        </div>
+    </div>
+
+    <div id="paymentMethodSelectionMessageBox" class="message-box-overlay">
+        <div class="message-box-content">
+            <h3 class="card-title" style="margin-bottom: 10px;">PILIH METODE PEMBAYARAN</h3>
+            <div class="payment-options-container" style="max-height: 250px; overflow-y: auto; padding-right: 10px;">
+                <div class="voucher-option" data-method="Bank Transfer">
+                    <p>Bank Transfer</p>
+                </div>
+                <div class="voucher-option" data-method="E-Wallet">
+                    <p>E-Wallet</p>
+                </div>
+                <div class="voucher-option" data-method="COD (Cash Or Duel)">
+                    <p>COD (Cash or Duel)</p>
+                </div>
+            </div>
+            <button id="closePaymentMethodSelection" class="message-box-primary-btn" style="margin-top: 20px;">PILIH</button>
+        </div>
+    </div>
+
+    <div id="shippingMethodSelectionMessageBox" class="message-box-overlay">
+        <div class="message-box-content">
+            <h3 class="card-title" style="margin-bottom: 10px;">PILIH METODE PENGIRIMAN</h3>
+            <div class="shipping-options-container" style="max-height: 250px; overflow-y: auto; padding-right: 10px;">
+                <div class="voucher-option" data-shipping-method="Standar" data-shipping-cost="10000">
+                    <p>Pengiriman Standar (Rp 10.000)</p>
+                </div>
+                <div class="voucher-option" data-shipping-method="Express" data-shipping-cost="25000">
+                    <p>Pengiriman Express (Rp 25.000)</p>
+                </div>
+            </div>
+            <button id="closeShippingMethodSelection" class="message-box-primary-btn" style="margin-top: 20px;">PILIH</button>
+        </div>
+    </div>
+
+
+    <script>
+        // --- Variabel Elemen DOM ---
+        const buyButton = document.getElementById('buyButton');
+        const doneButton = document.getElementById('doneButton');
+        const successTransactionMessageBox = document.getElementById('successTransactionMessageBox');
+
+        const voucherSection = document.getElementById('voucherSection');
+        const voucherSelectionMessageBox = document.getElementById('voucherSelectionMessageBox');
+        const closeVoucherSelectionBtn = document.getElementById('closeVoucherSelection');
+        const selectedVoucherDisplay = document.getElementById('selectedVoucher');
+
+        const paymentMethodSection = document.getElementById('paymentMethodSection');
+        const paymentMethodSelectionMessageBox = document.getElementById('paymentMethodSelectionMessageBox');
+        const closePaymentMethodSelectionBtn = document.getElementById('closePaymentMethodSelection');
+        const selectedPaymentMethodDisplay = document.getElementById('selectedPaymentMethod');
+
+        const shippingMethodSection = document.getElementById('shippingMethodSection');
+        const shippingMethodSelectionMessageBox = document.getElementById('shippingMethodSelectionMessageBox');
+        const closeShippingMethodSelectionBtn = document.getElementById('closeShippingMethodSelection');
+        const selectedShippingMethodDisplay = document.getElementById('selectedShippingMethod');
+
+        const productTotalDisplay = document.getElementById('productTotal');
+        const shippingCostDisplay = document.getElementById('shippingCost');
+        const discountAmountDisplay = document.getElementById('discountAmount');
+        const grandTotalDisplay = document.getElementById('grandTotal');
+
+        const quantityButtons = document.querySelectorAll('.quantity-btn');
+        const quantityValue = document.querySelector('.quantity-value');
+
+        // --- Data Produk dan Harga (Simulasi) ---
+        let productPrice = 100000;
+        let currentQuantity = 1;
+        let selectedDiscount = 0; // dalam desimal, misal 0.10 untuk 10%
+        let selectedShippingCost = 10000; // default shipping cost
+        let selectedVoucherName = '';
+        let selectedPaymentMethodName = 'PILIH';
+        let selectedShippingMethodName = 'PILIH';
+
+        // --- Fungsi Format Rupiah ---
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(number);
+        }
+
+        // --- Fungsi Update Total Pembayaran ---
+        function updateSummary() {
+            const currentProductTotal = productPrice * currentQuantity;
+            productTotalDisplay.textContent = formatRupiah(currentProductTotal);
+
+            const discountValue = currentProductTotal * selectedDiscount;
+            discountAmountDisplay.textContent = formatRupiah(discountValue);
+
+            const totalAfterDiscount = currentProductTotal - discountValue;
+            const finalGrandTotal = totalAfterDiscount + selectedShippingCost;
+            grandTotalDisplay.textContent = formatRupiah(finalGrandTotal);
+        }
+
+        // --- Event Listener Tombol Quantity ---
+        quantityButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const action = this.dataset.action;
+                if (action === 'plus') {
+                    currentQuantity++;
+                } else if (action === 'minus' && currentQuantity > 1) {
+                    currentQuantity--;
+                }
+                quantityValue.textContent = currentQuantity;
+                updateSummary();
+            });
+        });
+
+        // --- Logika Voucher ---
+        voucherSection.addEventListener('click', function() {
+            voucherSelectionMessageBox.style.display = 'flex';
+        });
+
+        closeVoucherSelectionBtn.addEventListener('click', function() {
+            voucherSelectionMessageBox.style.display = 'none';
+        });
+
+        document.querySelectorAll('.voucher-option').forEach(option => {
+            option.addEventListener('click', function() {
+                selectedDiscount = parseFloat(this.dataset.discount);
+                selectedVoucherName = this.dataset.name; // Simpan nama voucher
+                selectedVoucherDisplay.textContent = selectedVoucherName; // Tampilkan nama voucher
+                updateSummary();
+                voucherSelectionMessageBox.style.display = 'none'; // Langsung tutup setelah memilih
+            });
+        });
+
+        // --- Logika Metode Pembayaran ---
+        paymentMethodSection.addEventListener('click', function() {
+            paymentMethodSelectionMessageBox.style.display = 'flex';
+        });
+
+        closePaymentMethodSelectionBtn.addEventListener('click', function() {
+            paymentMethodSelectionMessageBox.style.display = 'none';
+        });
+
+        document.querySelectorAll('.payment-options-container .voucher-option').forEach(option => {
+            option.addEventListener('click', function() {
+                selectedPaymentMethodName = this.dataset.method;
+                selectedPaymentMethodDisplay.textContent = selectedPaymentMethodName;
+                paymentMethodSelectionMessageBox.style.display = 'none'; // Langsung tutup setelah memilih
+            });
+        });
+
+        // --- Logika Metode Pengiriman ---
+        shippingMethodSection.addEventListener('click', function() {
+            shippingMethodSelectionMessageBox.style.display = 'flex';
+        });
+
+        closeShippingMethodSelectionBtn.addEventListener('click', function() {
+            shippingMethodSelectionMessageBox.style.display = 'none';
+        });
+
+        document.querySelectorAll('.shipping-options-container .voucher-option').forEach(option => {
+            option.addEventListener('click', function() {
+                selectedShippingMethodName = this.dataset.shippingMethod;
+                selectedShippingCost = parseFloat(this.dataset.shippingCost);
+                shippingCostDisplay.textContent = formatRupiah(selectedShippingCost); // Update tampilan ongkir
+                selectedShippingMethodDisplay.textContent = `${selectedShippingMethodName} (${formatRupiah(selectedShippingCost)})`;
+                updateSummary();
+                shippingMethodSelectionMessageBox.style.display = 'none'; // Langsung tutup setelah memilih
+            });
+        });
+
+
+        // --- Logika Tombol BELI ---
+        buyButton.addEventListener('click', function() {
+            // Dalam aplikasi nyata, di sini akan ada validasi final dan pengiriman data ke server.
+            // Setelah transaksi berhasil di server, baru tampilkan message box sukses.
+            successTransactionMessageBox.style.display = 'flex';
+        });
+
+        // --- Logika Tombol DONE pada Message Box Sukses Transaksi ---
+        doneButton.addEventListener('click', function() {
+            successTransactionMessageBox.style.display = 'none';
+            // Arahkan kembali ke halaman utama atau halaman riwayat transaksi
+            // Untuk sementara, kita bisa arahkan ke halaman utama/login
+            // window.location.href = 'index.html'; // atau 'main_menu.html'
+            alert('Transaksi selesai! Anda akan kembali ke menu utama/beranda.');
+            window.location.href = 'beranda.html';
+        });
+
+        // --- Inisialisasi Tampilan Saat Halaman Dimuat ---
+        document.addEventListener('DOMContentLoaded', () => {
+            shippingCostDisplay.textContent = formatRupiah(selectedShippingCost); // Set default ongkir
+            updateSummary(); // Hitung total awal
+        });
+
+    </script>
+</body>
+</html>

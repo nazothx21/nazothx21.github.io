@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TyDineGo</title>
+</head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to left , #f2d3af, #ffffff);
+    }
+
+    .accordion-button {
+      background: linear-gradient(to left , #f4dfc6, #fffbf3);
+      padding: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    }
+
+    .accordion-item {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 0px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+.wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+.header{
+      display: flex;
+      align-items: center;
+      background-color: #f9c78d;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .main-content {
+      flex: 1;
+      padding-bottom: 50px;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 150px;
+    }
+    .logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-text h1 {
+      font-size: 20px;
+      color: #7a4a00;
+    }
+
+    .logo-text p {
+      font-size: 10px;
+      color: #7a4a00;
+      letter-spacing: 2px;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-left: auto;
+    }
+
+    .search-container input {
+      border: none;
+      padding: 8px 12px;
+      outline: none;
+    }
+
+    .search-container button {
+      background-color: transparent;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      color: #7a4a00;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      color: #000;
+      margin-left: 20px;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 50px;
+      right: -250px;
+      width: 220px;
+      height: auto;
+      background-color: #ff7b1e;
+      color: white;
+      transition: right 0.3s ease-in-out;
+      padding: 20px 10px;
+      z-index: 999;
+    }
+
+    .side-menu.open {
+      right: 0;
+      position: absolute;
+    }
+
+    .side-menu a {
+     color: white;
+     text-decoration: none;
+        }
+
+    .side-menu .menu-header {
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .side-menu ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-menu li {
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #5a3c3c;
+      color: #ffffff;
+      padding: 20px 50px;
+      font-size: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+      height: 150px;
+      
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    .footer-right p {
+      margin-bottom: 5px;
+    }
+
+    /* @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .search-container {
+        margin: 10px 0 0 auto;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .footer-right {
+        text-align: center;
+      }
+
+      .footer-logo {
+        align-items: center;
+      }
+    } */
+  </style>
+
+<body>
+<div class="wrapper">
+    <div class="main-content">
+    <header class="header">
+  <div class="logo">
+    <img src="ChatGPT Image 20 Jun 2025, 20.19.25.png" alt="TyDineGo Logo" />
+    <div class="logo-text">
+      <h1>TyDineGo</h1>
+      <p>PET SHOP</p>
+    </div>
+  </div>
+
+  <div class="search-container">
+    <input type="text" placeholder="SEARCH" />
+    <button><span class="search-icon">&#128269;</span></button>
+  </div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+</header>
+
+<!-- accordion -->
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Apa saja jenis hewan yang bisa dilayani di TyDineGo Pet Shop?
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+        Kami melayani berbagai jenis hewan peliharaan seperti kucing, anjing, kelinci, hamster, dan burung. Untuk hewan eksotik, silakan hubungi kami terlebih dahulu.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+       Apakah tersedia layanan grooming di tempat?
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        Ya, kami menyediakan layanan grooming lengkap seperti mandi, potong kuku, perawatan telinga, dan styling bulu. Semua layanan dilakukan oleh groomer berpengalaman.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+        Apakah makanan hewan yang dijual di sini aman dan berkualitas?
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        Tentu. Semua produk makanan hewan kami telah terdaftar resmi dan memiliki standar gizi yang sesuai dengan kebutuhan hewan peliharaan.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+        Apakah TyDineGo menyediakan layanan konsultasi kesehatan hewan?
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        Kami bekerja sama dengan dokter hewan profesional yang bisa memberikan konsultasi langsung di toko atau secara online melalui jadwal yang telah ditentukan.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+       Apakah bisa pesan produk secara online dan dikirim ke rumah?
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+      <div class="accordion-body">
+        Ya, kami melayani pemesanan online melalui website dan media sosial, serta menyediakan layanan pengiriman ke seluruh wilayah kota dengan biaya kirim terjangkau.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+       Apakah ada layanan pelatihan atau edukasi untuk hewan peliharaan?
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+      <div class="accordion-body">
+       Tidak, untuk saat ini kami belum menyediakan kelas pelatihan dasar untuk anjing dan edukasi perawatan hewan bagi pemilik baru.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<footer>
+  <div class="footer-logo">
+    <img src="footer.png" alt="">
+  </div>
+
+  <div class="footer-center">
+    <p>&copy; 2025 TyDineGo. All rights reserved.</p>
+  </div>
+
+  <div class="footer-right">
+    <p>Thank You For Visiting Our Website</p>
+    <p>Email: TyDineGo@gmail.com</p>
+  </div>
+</footer>
+
+<nav class="side-menu" id="sideMenu">
+    <div class="menu-header" onclick="toggleMenu()">← Back</div>
+    <ul>
+      <li><a href="faq.html"> <span>📄</span> FAQ </a></li>
+      <li><a href="aboutus.html"> <span>ℹ️</span> About Us</a></li>
+      <li><a href="logout.html"><span>↩️</span> Log Out</a> </li>
+    </ul>
+  </nav>
+
+<script>
+    function toggleMenu() {
+      document.getElementById("sideMenu").classList.toggle("open");
+    }
+  </script>
+
+</div>
+</body>
+</html>

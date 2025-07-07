@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TyDineGo Pet Shop - Verifikasi OTP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya Global dan Background - Konsisten */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #FDF8E8, #F7EBDD);
+            color: #4B3621;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Gaya Header (Logo TyDineGo Pet Shop) - Konsisten */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header img {
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Gaya Kontainer Form OTP - Konsisten dengan form sebelumnya */
+        .otp-container {
+            background-color: #FFFFFF;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .otp-title {
+            font-size: 1.2em; /* Ukuran font disesuaikan untuk pesan email */
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #4B3621;
+        }
+
+        .otp-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 5px;
+        }
+
+        .otp-form input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #4B3621;
+            outline: none;
+            box-sizing: border-box;
+            text-align: center; /* OTP biasanya terpusat */
+            letter-spacing: 2px; /* Spasi antar karakter untuk OTP */
+        }
+
+        .otp-form input[type="text"]::placeholder {
+            color: #888;
+        }
+
+        /* Tombol Confirm - Konsisten */
+        .confirm-button {
+            background-color: #F1D3B5;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .confirm-button:hover {
+            background-color: #E0C0A0;
+        }
+
+        .resend-otp-link {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .resend-otp-link a {
+            color: #4B3621;
+            text-decoration: none;
+        }
+
+        .resend-otp-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Gaya Message Box Kustom (Modal) - Konsisten --- */
+        .message-box-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none; /* Sembunyikan secara default */
+            backdrop-filter: blur(2px);
+        }
+
+        .message-box-content {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 350px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message-text {
+            font-size: 1.1em;
+            color: #4B3621;
+            margin-bottom: 0;
+        }
+
+        .message-box-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .message-box-primary-btn,
+        .message-box-secondary-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .message-box-primary-btn {
+            background-color: #F1D3B5;
+            color: white;
+        }
+
+        .message-box-primary-btn:hover {
+            background-color: #E0C0A0;
+        }
+
+        .message-box-secondary-btn {
+            background-color: transparent;
+            color: #4B3621;
+            border: 1px solid #ccc;
+        }
+
+        .message-box-secondary-btn:hover {
+            background-color: #F8F8F8;
+            border-color: #A0A0A0;
+        }
+
+        /* Gaya untuk centang hijau */
+        .success-checkmark {
+            color: #4CAF50; /* Hijau */
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="header">
+            <img src="logo.png" alt="TyDineGo Pet Shop Logo">
+        </header>
+
+        <main class="otp-container">
+            <h2 class="otp-title">Masukkan Kode OTP Yang telah dikirim ke g**********ij@gmail.com</h2>
+            <form class="otp-form" id="otpForm">
+                <div class="input-group">
+                    <input type="text" id="otpCode" name="otpCode" placeholder="ENTER OTP HERE" maxlength="6">
+                </div>
+                <button type="submit" class="confirm-button">CONFIRM</button>
+            </form>
+            <div class="resend-otp-link">
+                <a href="#">Tidak Menerima OTP?</a>
+            </div>
+        </main>
+    </div>
+
+    <div id="successOtpMessageBox" class="message-box-overlay">
+        <div class="message-box-content">
+            <p class="success-checkmark">&#10003;</p> <p id="successOtpMessageBoxText" class="message-text">OTP Benar!! Silahkan Buat Kata Sandi Baru!</p>
+            <div class="message-box-buttons">
+                <button id="createPasswordBtn" class="message-box-primary-btn">Buat Kata Sandi Baru</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="errorOtpMessageBox" class="message-box-overlay">
+        <div class="message-box-content">
+            <p class="message-text">OTP salah! Silakan coba lagi.</p>
+            <div class="message-box-buttons">
+                <button id="closeErrorOtpMessageBox" class="message-box-primary-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const otpForm = document.getElementById('otpForm');
+        const otpCodeInput = document.getElementById('otpCode');
+        const successOtpMessageBox = document.getElementById('successOtpMessageBox');
+        const errorOtpMessageBox = document.getElementById('errorOtpMessageBox');
+        const createPasswordBtn = document.getElementById('createPasswordBtn');
+        const closeErrorOtpMessageBox = document.getElementById('closeErrorOtpMessageBox');
+
+        // Contoh OTP yang benar (dalam aplikasi nyata akan divalidasi di server)
+        const correctOtp = '123456'; 
+
+        otpForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const enteredOtp = otpCodeInput.value.trim();
+
+            if (enteredOtp === correctOtp) {
+                successOtpMessageBox.style.display = 'flex'; // Tampilkan message box sukses
+            } else {
+                errorOtpMessageBox.style.display = 'flex'; // Tampilkan message box error
+            }
+        });
+
+        createPasswordBtn.addEventListener('click', function() {
+            successOtpMessageBox.style.display = 'none'; // Sembunyikan message box sukses
+            window.location.href = 'new_password.html'; // Arahkan ke halaman buat kata sandi baru
+        });
+
+        closeErrorOtpMessageBox.addEventListener('click', function() {
+            errorOtpMessageBox.style.display = 'none'; // Sembunyikan message box error
+        });
+
+        // Optional: Tutup message box jika klik di luar konten
+        successOtpMessageBox.addEventListener('click', function(event) {
+            if (event.target === successOtpMessageBox) {
+                successOtpMessageBox.style.display = 'none';
+            }
+        });
+
+        errorOtpMessageBox.addEventListener('click', function(event) {
+            if (event.target === errorOtpMessageBox) {
+                errorOtpMessageBox.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

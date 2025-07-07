@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TyDineGo Pet Shop - Konfirmasi Logout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Gaya Global dan Background - Konsisten dengan halaman lain */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #FDF8E8, #F7EBDD);
+            color: #4B3621;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        /* Container utama untuk memusatkan seluruh konten */
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 450px; /* Sedikit lebih kecil karena hanya konfirmasi */
+            background-color: #FFFFFF;
+            padding: 40px 30px;
+            border-radius: 20px; /* Sudut lebih membulat */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas */
+            text-align: center;
+        }
+
+        .header-logo {
+            margin-bottom: 25px;
+        }
+
+        .header-logo img {
+            width: 80px; /* Ukuran logo di halaman ini */
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .header-logo h1 {
+            font-size: 2em;
+            color: #7a4a00;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .header-logo p {
+            font-size: 0.8em;
+            color: #7a4a00;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+        .confirmation-message {
+            font-size: 1.2em;
+            color: #4B3621;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Tombol vertikal di mobile */
+            gap: 15px; /* Jarak antar tombol */
+            width: 100%;
+        }
+
+        .logout-button,
+        .cancel-button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px; /* Sudut tombol membulat */
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%; /* Lebar penuh */
+        }
+
+        .logout-button {
+            background-color: #FF4B4B; /* Merah */
+            color: white;
+        }
+
+        .logout-button:hover {
+            background-color: #E03F3F; /* Merah lebih gelap saat hover */
+            transform: translateY(-2px); /* Efek sedikit naik */
+        }
+
+        .cancel-button {
+            background-color: #5cb85c; /* Hijau */
+            color: white;
+        }
+
+        .cancel-button:hover {
+            background-color: #4CAF50; /* Hijau lebih gelap saat hover */
+            transform: translateY(-2px); /* Efek sedikit naik */
+        }
+
+        /* Responsivitas untuk desktop: tombol berdampingan */
+        @media (min-width: 600px) {
+            .button-container {
+                flex-direction: row; /* Tombol horizontal di desktop */
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .logout-button,
+            .cancel-button {
+                width: auto; /* Lebar otomatis, tidak 100% */
+                min-width: 150px; /* Lebar minimum agar tidak terlalu kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="header-logo">
+            <img src="logo.png" alt="TyDineGo Logo">
+            <h1>Yakali LogOut boss?</h1>
+            <p>Dipikir ulang atuh teh!</p>
+        </div>
+        <p class="confirmation-message">Apakah Anda yakin ingin keluar dari akun ini?</p>
+        <div class="button-container">
+            <button id="logoutButton" class="logout-button">Logout</button>
+            <button id="cancelButton" class="cancel-button">Tidak</button>
+        </div>
+    </div>
+
+    <script>
+        const logoutButton = document.getElementById('logoutButton');
+        const cancelButton = document.getElementById('cancelButton');
+
+        logoutButton.addEventListener('click', function() {
+            // Di sini Anda akan menambahkan logika untuk benar-benar meng-logout pengguna.
+            // Misalnya:
+            // - Menghapus token autentikasi dari localStorage/sessionStorage
+            // - Mengirim request ke server untuk mengakhiri sesi
+
+            // Untuk simulasi, kita akan mengarahkan kembali ke halaman login (index.html)
+            alert('Anda telah berhasil keluar dari akun Anda.'); // Pesan konfirmasi
+            window.location.href = 'index.html'; // Arahkan ke halaman login
+        });
+
+        cancelButton.addEventListener('click', function() {
+            window.location.href = 'beranda.html'
+
+        });
+    </script>
+</body>
+</html>
