@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Cinta Sejati</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="background-music" src="assets/sounds/backsound.mp3" loop></audio>
+    <div class="shooting-stars-container"></div>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heartbeat"></i> Kalkulator Cintaa...</h1>
+            <p>Temukan Seberapa Besar Kecocokan-Mu Dengan Doi</p>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+                <span class="theme-text">Mode Gelap</span>
+            </div>
+        </header>
+
+        <main>
+            <section id="input-section">
+                <div class="form-group">
+                    <label for="male-name"><i class="fas fa-male"></i> Nama Pria:</label>
+                    <input type="text" id="male-name" placeholder="Contoh: Grateo Alfando Atmojo">
+                    <span class="error-message" id="male-name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="male-dob"><i class="fas fa-calendar-alt"></i> Tanggal Lahir Pria:</label>
+                    <input type="date" id="male-dob">
+                    <span class="error-message" id="male-dob-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="female-name"><i class="fas fa-female"></i> Nama Wanita:</label>
+                    <input type="text" id="female-name" placeholder="Contoh: Fifi Pasha Loviana">
+                    <span class="error-message" id="female-name-error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="female-dob"><i class="fas fa-calendar-alt"></i> Tanggal Lahir Wanita:</label>
+                    <input type="date" id="female-dob">
+                    <span class="error-message" id="female-dob-error"></span>
+                </div>
+
+                <button id="calculate-btn" class="btn">
+                    <i class="fas fa-calculator"></i> Mulai Perhitungan Cinta
+                </button>
+            </section>
+
+            <section id="loading-section" class="hidden">
+                <div class="spinner"></div>
+                <p>Menganalisis getaran cinta...</p>
+            </section>
+
+            <section id="result-section" class="hidden">
+                <h2>Hasil Kecocokan:</h2>
+                <div class="result-display">
+                    <p class="percentage" id="love-percentage">0%</p>
+                    <canvas id="love-chart"></canvas>
+                </div>
+                <p class="description" id="result-description"></p>
+                <div class="share-buttons">
+                    <button id="share-whatsapp" class="btn share-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                    <button id="share-facebook" class="btn share-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                </div>
+                <button id="reset-btn" class="btn secondary-btn">Hitung Ulang</button>
+            </section>
+
+            <section id="history-section">
+                <h3><i class="fas fa-history"></i> Riwayat Perhitungan Cinta Yang Lalu</h3>
+                <ul id="history-list">
+                    </ul>
+                <button id="clear-history-btn" class="btn danger-btn hidden">Bersihkan Riwayat</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Kalkulator Cinta. Dibuat dengan <i class="fas fa-heart"></i> oleh
+                <a href="#" id="open-about-overlay-link">Grateo Alfando Atmojo ^_^</a> </p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/zodiac.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/main.js"></script>
+    <button id="music-toggle-btn" class="music-toggle-btn" aria-label="Toggle Background Music">
+        <i class="fas fa-music"></i> </button>
+    <div id="about-overlay" class="about-overlay hidden">
+        <div class="container about-overlay-content">
+            <header>
+                <button id="close-about-overlay-btn" class="back-btn"></i> Back</button>
+                <h1><i class="fas fa-code"></i> Tentang Developer</h1>
+            </header>
+
+            <main class="developer-info">
+                <img src="assets/images/tyo-profile.jpg" alt="Foto Grateo Alfando Atmojo" class="profile-pic">
+                <h2>Grateo Alfando Atmojo (Mas Tyo)</h2>
+                <p class="bio">
+                    Halo! Saya Grateo Alfando Atmojo, seorang mahasiswa S1 Teknik Informatika di UKSW. Saya adalah anak tertua dari lima bersaudara dan asli Jawa, meskipun besar di Lampung. Saya seorang editor video *full-stack* (dubbing, scripting, dan editing) dan memiliki hobi bermain musik (piano, gitar, bass) dengan kesukaan pada genre pop punk dan ska.
+                </p>
+                <p class="bio">
+                    Saya selalu ingin fokus dalam setiap pekerjaan, serta pekerja keras. Saya suka mencari pengetahuan baru di luar bidang saya, dan selalu belajar bagaimana menjadi pribadi yang pintar, rajin, dan sehat, termasuk dengan *workout* secara konsisten.
+                </p>
+                <p class="bio">
+                    Aplikasi ini adalah salah satu proyek pribadi saya yang dibuat dengan semangat eksplorasi teknologi
+                    dan dedikasi untuk menciptakan sesuatu yang interaktif dan menyenangkan.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://github.com/Alfando345" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.instagram.com/grteo_alfndd21/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.linkedin.com/in/grateo-alfando-atmojo-8671b4239/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                </div>
+
+                <button id="contact-btn" class="btn contact-btn"><i class="fas fa-envelope"></i> Kontak Saya</button>
+            </main>
+
+            <footer>
+                <p>&copy; 2025 Kalkulator Cinta. Dibuat dengan <i class="fas fa-heart"></i> oleh Grateo Alfando Atmojo</p>
+            </footer>
+        </div>
+    </div>
+
+    </body>
+</html>    
+</body>
+</html>

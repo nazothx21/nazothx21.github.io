@@ -1,0 +1,44 @@
+/* assets/css/animations.css */
+
+/* --- Keyframes for subtle shake effect on input error --- */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); } /* Start and end at original position */
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); } /* Move left */
+    20%, 40%, 60%, 80% { transform: translateX(5px); } /* Move right */
+}
+
+/* --- Class to apply the shake animation --- */
+/* This class can be added/removed by JavaScript when an input error occurs */
+.shake-animation {
+    animation: shake 0.5s ease-in-out; /* Apply shake animation for 0.5 seconds */
+}
+
+/* --- Basic Fade In/Out (useful for general elements) --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards; /* 'forwards' keeps the end state (opacity: 1) */
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* --- Optional: Subtle pulse effect for buttons or important elements --- */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 1.5s infinite ease-in-out; /* Repeats infinitely */
+}
