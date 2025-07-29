@@ -4,125 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@NazoTHX Info</title>
+    <link rel="icon" href="nazothx.jpg" type="image/x-icon">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    <!-- Sidebar (Menu Container) -->
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
-        <div class="sidebar-profile">
-            <img src="nazothx.jpg" alt="NazoTHX Logo">
-            <h3>NazoTHX</h3>
-            <p>Makasih Yang Udah Mampirr ^_^</p>
+
+    <button id="openBtn" class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#mySidebar" aria-controls="mySidebar">
+        ☰
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mySidebar" aria-labelledby="mySidebarLabel">
+        <div class="offcanvas-header">
+            <div class="sidebar-profile">
+                <img src="nazothx.png" alt="NazoTHX Logo">
+                <h5 class="offcanvas-title" id="mySidebarLabel">NazoTHX</h5>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="sidebar-links">
-            <a href="https://sociabuzz.com/nazothx/tribe" target="_blank" id="donate-btn"><i class="fas fa-heart"></i> Donasi</a>
-            <a href="#" id="dark-mode-toggle"><i class="fas fa-moon"></i> Dark Mode</a>
-            <a href="mailto:grateoalfandoatmojo@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <div class="offcanvas-body">
+            <p class="sidebar-greeting">Makasih Yang Udah Mampirr ^_^</p>
+            <div class="sidebar-links">
+                <a href="https://sociabuzz.com/nazothx/tribe" target="_blank"><i class="fas fa-heart"></i> Donasi</a>
+                <a href="#" id="darkModeToggleSidebarLink"><i class="fas fa-moon"></i> 
+                    <span>Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggleSidebar">
+                        <span class="slider round"></span>
+                    </label>
+                </a>
+                <a href="mailto:grateoalfandoatmojo@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
         </div>
     </div>
-
-    <!-- Header dengan 3 tombol menu -->
+    
     <div class="header">
-        <button class="openbtn" id="openBtn">&#9776;</button>
-        <!-- <button class="settings-btn" id="settings-btn"><i class="fas fa-cog"></i></button> -->
-        <button class="info-btn"><i class="fas fa-info-circle"></i></button>
+        <button class="info-btn" data-bs-toggle="modal" data-bs-target="#infoModal"><i class="fas fa-info-circle"></i></button>
     </div>
 
-    <!-- Konten Utama -->
-    <div class="container">
+
+    <div class="container" id="mainContent">
         <div class="profile fade-in">
-            <img src="nazothx.jpg" alt="NazoTHX Logo" class="profile-img">
+            <img src="nazothx.png" alt="NazoTHX Logo" class="profile-img">
             <h1>NazoTHX</h1>
             <p>No.1 MLBB Content Creator</p>
         </div>
 
-        <!-- Tombol-tombol Link -->
         <div class="links">
-            <!-- Contoh 10 tombol -->
-            <a href="https://sociabuzz.com/nazothx/tribe" class="link-button donate-button" target="_blank">
-                <i class="fas fa-hand-holding-heart"></i> <!-- Ikon alternatif -->
+            <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-btn donate-button pulse" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>Group NazoTHX Kedua</span>
+            </a>
+
+            <a href="https://sociabuzz.com/nazothx/tribe" class="link-btn donate-button pulse" target="_blank">
+                <i class="fas fa-hand-holding-heart"></i>
                 <span>Buat Beli Kopi (Mabar VIP)</span>
-             </a>
-            <a href="https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" class="link-button">
+            </a>
+            <a href="https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" class="link-btn" target="_blank">
                 <i class="fab fa-instagram"></i>
                 <span>Instagram</span>
             </a>
-            <a href="https://youtube.com/@nazo_thx?si=QpCAbDNNPc_wpB46" class="link-button">
+            <a href="https://youtube.com/@nazo_thx?si=QpCAbDNNPc_wpB46" class="link-btn" target="_blank">
                 <i class="fab fa-youtube"></i>
                 <span>YouTube</span>
             </a>
-            <a href="https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1" class="link-button">
+            <a href="https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1" class="link-btn" target="_blank">
                 <i class="fab fa-tiktok"></i>
                 <span>TikTok</span>
             </a>
-            <a href="https://www.facebook.com/share/19woivSQTB/" class="link-button">
+            <a href="https://www.facebook.com/share/19woivSQTB/" class="link-btn" target="_blank">
                 <i class="fab fa-facebook"></i>
                 <span>Facebook</span>
             </a>
-            <a href="https://chat.whatsapp.com/IEXLKlOQcN4BQ0PFOx4qzh" class="link-button">
+            <a href="https://chat.whatsapp.com/IEXLKlOQcN4BQ0PFOx4qzh" class="link-btn" target="_blank">
                 <i class="fab fa-discord"></i>
                 <span>Nazothx Community</span>
             </a>
-            <!-- <a href="https://chat.whatsapp.com/IEXLKlOQcN4BQ0PFOx4qzh" class="link-button">
-                <i class="fab fa-twitter"></i>
-                <span>Twitter</span> 
-            </a> -->
-            <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-button">
+            <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i>
                 <span>Group Mabar NazoTHX</span>
             </a>
-           <!-- <a href="#" class="link-button">
-                <i class="fas fa-users"></i>
-                <span>Grup Mabar 1</span>
-            </a>
-            <a href="#" class="link-button">
-                <i class="fas fa-gamepad"></i>
-                <span>Grup Mabar 2</span>
-            </a> -->
-            <a href="https://wa.me/6285764175824?text=Endorse%20NazoTHX" class="link-button">
+            <a href="https://wa.me/6285764175824?text=Endorse%20NazoTHX" class="link-btn" target="_blank">
                 <i class="fas fa-store"></i>
                 <span>Endorse And Bussines</span>
             </a>
-            <a href="https://github.com/nazothx21/" class="link-button" target="_blank">
+            <a href="https://github.com/nazothx21/" class="link-btn" target="_blank">
                 <i class="fab fa-github"></i>
                 <span>GitHub</span>
             </a>
         </div>
     </div>
-                <!-- Letakkan audio dan kontrol musik SEBELUM penutup </body> -->
-            <audio id="bgMusic" loop>
-                <source src="tt.mp3" type="audio/mpeg">
-            </audio>
-            <div id="musicControl" title="Toggle Music">
-                <i class="fas fa-music"></i>
+
+    <div id="musicControl" title="Toggle Music">
+        <i class="fas fa-music"></i>
+    </div>
+
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Informasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <b>NazoTHX</b> adalah konten kreator MLBB yang sangat keren dan over power! Dengan gameplay yang epic, tips bermanfaat, serta konten hiburan yang seru, NazoTHX selalu menginspirasi dan menghibur para penggemar Mobile Legends. Jangan lupa follow semua sosial media NazoTHX untuk update terbaru dan mabar bareng!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
             </div>
-<script src="script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 
-<script>
-// Ganti audio system dengan Howler
-const sound = new Howl({
-    src: ['tt.mp3'],
-    loop: true,
-    volume: 0.5,
-    autoplay: true,
-    onplayerror: function() {
-        sound.once('unlock', function() {
-            sound.play();
-        });
-    }
-});
-
-document.getElementById('musicControl').addEventListener('click', () => {
-    if (sound.playing()) {
-        sound.pause();
-    } else {
-        sound.play();
-    }
-});
-</script>
 </body>
 </html>

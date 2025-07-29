@@ -1,88 +1,128 @@
-        // SIDEBAR MENU
-        const sidebar = document.getElementById("mySidebar");
-        const openBtn = document.getElementById("openBtn");
-        const closeBtn = document.getElementById("closeBtn");
+document.addEventListener('DOMContentLoaded', function() {
 
-        // Buka sidebar saat tombol open diklik
-        openBtn.addEventListener("click", () => {
-            sidebar.style.width = "250px";
-        });
+    // --- Inisialisasi Tooltip Bootstrap ---
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 
-        // Tutup sidebar saat tombol close diklik
-        closeBtn.addEventListener("click", () => {
-            sidebar.style.width = "0";
-        });
+    // --- Logika Dark Mode ---
+    const darkModeToggleSidebar = document.getElementById('darkModeToggleSidebar');
+    const body = document.body;
 
-        // BUTTON EFFECTS
-        const buttons = document.querySelectorAll(".link-button");
-
-        buttons.forEach(button => {
-            // Efek saat hover
-            button.addEventListener("mouseenter", () => {
-                button.style.transform = "scale(1.05)";
-                button.style.boxShadow = "0 0 20px var(--primary)";
-            });
-
-            button.addEventListener("mouseleave", () => {
-                button.style.transform = "scale(1)";
-                button.style.boxShadow = "0 5px 15px rgba(0, 0, 0, 0.3)";
-            });
-
-            // Efek saat diklik
-            button.addEventListener("mousedown", () => {
-                button.style.transform = "scale(0.95)";
-            });
-
-            button.addEventListener("mouseup", () => {
-                button.style.transform = "scale(1.05)";
-            });
-        });
-
-        // DARK MODE TOGGLE
-        const darkModeToggle = document.getElementById("dark-mode-toggle");
-        const body = document.body;
-
-        darkModeToggle.addEventListener("click", () => {
-            body.classList.toggle("dark-mode");
-            // Simpan preferensi dark mode di localStorage
-            const isDarkMode = body.classList.contains("dark-mode");
-            localStorage.setItem("darkMode", isDarkMode);
-            // Update teks tombol
-            darkModeToggle.querySelector('i').className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
-            darkModeToggle.innerHTML = `<i class="${isDarkMode ? 'fas fa-sun' : 'fas fa-moon'}"></i> ${isDarkMode ? 'Light Mode' : 'Dark Mode'}`;
-        });
-
-        // Cek localStorage untuk mode gelap
-        const savedDarkMode = localStorage.getItem("darkMode");
-        if (savedDarkMode === "true") {
-            body.classList.add("dark-mode");
-            // Update ikon tombol
-            darkModeToggle.innerHTML = `<i class="fas fa-sun"></i> Light Mode`;
+    // Fungsi untuk menerapkan tema
+    const applyTheme = (isDark) => {
+        if (isDark) {
+            body.classList.add('dark');
+            darkModeToggleSidebar.checked = true;
+        } else {
+            body.classList.remove('dark');
+            darkModeToggleSidebar.checked = false;
         }
+    };
 
-        // SETTINGS BUTTON
-        document.getElementById("settings-btn").addEventListener("click", () => {
-            alert("Pengaturan tambahan akan dikembangkan lebih lanjut!");
-        });
+    // Cek tema yang tersimpan di localStorage saat halaman dimuat
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        applyTheme(true);
+    } else {
+        applyTheme(false);
+    }
 
-        // INFO BUTTON
-        document.querySelector('.info-btn').addEventListener('click', () => {
-            alert('NazoTHX 2025!\nJangan Lupa Follow Semua Media Sosial NazoTHX yaa ^_^');
-        });
+    // Event listener untuk toggle di sidebar
+    darkModeToggleSidebar.addEventListener('change', () => {
+        if (darkModeToggleSidebar.checked) {
+            localStorage.setItem('theme', 'dark');
+            applyTheme(true);
+        } else {
+            localStorage.setItem('theme', 'light');
+            applyTheme(false);
+        }
+    });
 
-        // Animasi saat halaman dimuat
-        window.addEventListener('load', () => {
-            document.querySelector('.profile').classList.add('fade-in');
-        });
-        // script.js
-// Efek khusus saat tombol donasi diklik
-document.querySelector('.donate-button').addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                    // Bisa tambahkan efek confetti di sini
-                }, 200);
+    // --- Logika Audio Howler.js ---
+    const sound = new Howl({
+        src: ['xiaoxiao.mp3'], // Pastikan path file benar
+        loop: true,
+        volume: 0.3,
+        autoplay: false,
+        html5: true, // Penting untuk interaksi di browser modern
+        onplayerror: function() {
+            // Tampilkan UI untuk meminta user memulai audio
+            sound.once('unlock', function() {
+                sound.play();
             });
+        }
+    });
 
+    const musicControl = document.getElementById('musicControl');
+    const musicIcon = musicControl.querySelector('i');
+    const musicTooltip = bootstrap.Tooltip.getInstance(musicControl);
+
+    musicControl.addEventListener('click', () => {
+        if (sound.playing()) {
+            sound.pause();
+            musicIcon.className = 'fas fa-play';
+            musicControl.setAttribute('data-bs-original-title', 'Play Music');
+        } else {
+            sound.play();
+            musicIcon.className = 'fas fa-music';
+            musicControl.setAttribute('data-bs-original-title', 'Pause Music');
+        }
+        // Update tooltip setelah mengubah title
+        musicTooltip.hide();
+        musicTooltip.show();
+    });
+    
+    // Inisialisasi state ikon saat halaman pertama kali load
+    if (sound.playing()) {
+        musicIcon.className = 'fas fa-music';
+        musicControl.setAttribute('data-bs-original-title', 'Pause Music');
+        musicTooltip.update();
+    }
+
+
+    // --- Efek Tombol (tetap sama) ---
+    const buttons = document.querySelectorAll('.link-btn');
+    buttons.forEach(button => {
+        button.addEventListener('mousemove', e => {
+            const rect = button.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+
+            button.style.transform = `perspective(1000px) rotateX(${(y - 0.5) * 15}deg) rotateY(${(x - 0.5) * -15}deg) translateY(-2px)`;
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'none';
+        });
+    });
+    
+    // --- Blur efek saat sidebar (offcanvas) dibuka ---
+    const mainContent = document.getElementById('mainContent');
+    const sidebar = document.getElementById('mySidebar');
+    const infoModal = document.getElementById('infoModal');
+
+    sidebar.addEventListener('show.bs.offcanvas', function () {
+        mainContent.classList.add('blurred');
+    });
+    sidebar.addEventListener('hide.bs.offcanvas', function () {
+        mainContent.classList.remove('blurred');
+    });
+
+    // --- Blur efek saat modal info dibuka ---
+    infoModal.addEventListener('show.bs.modal', function () {
+        mainContent.classList.add('blurred');
+    });
+    infoModal.addEventListener('hide.bs.modal', function () {
+        mainContent.classList.remove('blurred');
+    });
+
+    // --- Kontrol Volume Musik ---
+    const volumeControl = document.getElementById('volumeControl');
+    volumeControl.addEventListener('input', function() {
+        sound.volume(parseFloat(this.value));
+    });
+});
 
 
