@@ -72,6 +72,8 @@ body.dark .btn-close {
     width: 100%;
     text-align: center;
     transition: box-shadow 0.3s, transform 0.2s;
+    z-index: 1; /* Tambahkan ini */
+    position: relative; /* Tambahkan ini */
 }
 
 .container:hover {
@@ -300,3 +302,99 @@ input:checked + .slider:before {
     z-index: 100;
     pointer-events: none;
 }
+
+/* Sidebar lebih ramping dan rounded */
+#mySidebar.offcanvas {
+    width: 270px;
+    max-width: 90vw;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    overflow: hidden;
+    box-shadow: 2px 0 24px rgba(24,119,242,0.10);
+    transition: width 0.3s, border-radius 0.3s;
+}
+
+/* Responsive: sidebar lebih kecil di mobile */
+@media (max-width: 500px) {
+    #mySidebar.offcanvas {
+        width: 85vw;
+        min-width: 0;
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+    }
+}
+
+/* Gradient Background Aesthetic */
+.animated-bg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(-45deg, #1877f2, #00c3ff, #e100ff, #242526);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease-in-out infinite;
+    transition: background 0.5s;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Dark mode: warna lebih gelap dan deep */
+body.dark .animated-bg {
+    background: linear-gradient(-45deg, #2d88ff, #0a0a23, #1e003a, #18191a);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease-in-out infinite;
+    transition: background 0.5s;
+}
+
+/* Widget Jam Aesthetic */
+.sidebar-clock-widget {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.05));
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.clock-display {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(24,119,242,0.3);
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.date-display {
+    font-size: 0.9em;
+    color: var(--secondary-text);
+    opacity: 0.8;
+}
+
+/* Animasi smooth untuk perubahan waktu */
+@keyframes timeUpdate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.time-updated {
+    animation: timeUpdate 0.3s ease-out;
+}
+
+/* kenapa semua ini terasa begitu menyedihkan?? aku mau bunuh diri saja */

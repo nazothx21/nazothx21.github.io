@@ -123,6 +123,44 @@ document.addEventListener('DOMContentLoaded', function() {
     volumeControl.addEventListener('input', function() {
         sound.volume(parseFloat(this.value));
     });
+
+    // --- Widget: Aesthetic Clock ---
+    function updateClock() {
+        const clockDisplay = document.getElementById('clockDisplay');
+        const dateDisplay = document.getElementById('dateDisplay');
+        
+        if (clockDisplay && dateDisplay) {
+            const now = new Date();
+            
+            // Format waktu
+            const time = now.toLocaleTimeString('id-ID', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+            
+            // Format tanggal
+            const date = now.toLocaleDateString('id-ID', {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long'
+            });
+
+            // Update displays dengan animasi
+            if (clockDisplay.textContent !== time) {
+                clockDisplay.classList.add('time-updated');
+                setTimeout(() => clockDisplay.classList.remove('time-updated'), 300);
+            }
+            
+            clockDisplay.textContent = time;
+            dateDisplay.textContent = date;
+        }
+    }
+
+    // Update setiap detik
+    setInterval(updateClock, 1000);
+    updateClock(); // Initial update
 });
 
 
