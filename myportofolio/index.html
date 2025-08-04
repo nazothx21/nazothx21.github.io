@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Grateo Alfando Atmojo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dark-mode">
+
+    <div id="background-video-container">
+        <!-- Video akan dipindahkan ke sini secara visual oleh CSS -->
+    </div>
+
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+        <p>Sedang Memuat Data Portofolio AlfandoXeon</p>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-brand">AlfandoXeon   <span id="current-date"></span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#my-projects">Projects</a></li>
+                <li><a href="#social-media">Contact</a></li>
+            </ul>
+            <div class="nav-search">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Chat With AlfandoXeon AI...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="nav-menu">
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="profile-video-container">
+                <!-- Elemen video untuk menggantikan foto profil -->
+                <div class="profile-video-wrapper">
+                    <video id="profileVideo" alt="Video Profil Mas Tyo" class="profile-pic" autoplay loop muted playsinline></video>
+                    <img id="profileImage" src="asset/oline.jpeg" alt="Foto Profil Mas Tyo" class="profile-pic" style="display: none;">
+                    <div id="profile-video-loader" class="profile-video-loader">
+                        <div class="loader-spinner"></div>
+                        <p><span id="profile-download-percentage">0%</span></p>
+                    </div>
+                </div>
+                <button id="volume-toggle" class="volume-button"><i class="fas fa-volume-mute"></i></button>
+            </div>
+            <h1>Grateo Alfando Atmojo</h1>
+            <p>Full-stack Video Editor & Mahasiswa Teknik Informatika</p>
+            <h2 class="portfolio-title">Portofolio</h2>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="container">
+            <h2><i class="fas fa-user"></i> Sedikit Info About Me</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Profil Pribadi</h3>
+                    <ul>
+                        <li><strong>Nama Lengkap:</strong> Grateo Alfando Atmojo</li>
+                        <li><strong>Panggilan:</strong> Grateo - Mas Tyo - Teo - Alfando</li>
+                        <li><strong>Pendidikan:</strong> S1 Teknik Informatika, UKSW</li>
+                        <li><strong>Latar Belakang:</strong> Nolep</li>
+                        <li><strong>Ulang Tahun:</strong> 07 Mei</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Latar Belakang</h3>
+                    <ul>
+                        <li><strong>Agama:</strong> Kristen Protestan</li>
+                        <li><strong>Keluarga:</strong> Anak tertua dari lima bersaudara.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="scroll-container">
+            <section id="my-video" class="container scroll-item">
+                <h2><i class="fas fa-video"></i> My Video</h2>
+                <div class="video-container">
+                    <!-- Video src akan diatur oleh JavaScript -->
+                    <video id="myVideoPlayer" loop playsinline controls></video>
+                    <div id="video-download-progress" style="text-align: center; margin-top: 10px; color: var(--secondary-color);">
+                        <p>Mengunduh video... <span id="download-percentage">0%</span></p>
+                        <p style="font-size: 0.9em; color: #ffcc00;">Pastikan Internet Anda Stabil!</p>
+                    </div>
+                </div>
+                <div class="portfolio-button-container">
+                    <a href="https://nazothx21.github.io" target="_blank" class="portfolio-button">My Editor Portofolio</a>
+                </div>
+            </section>
+<section id="my-program" class="container scroll-item">
+    <h2><i class="fas fa-code"></i> My Program</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Hai Dunia</h3>
+            <pre>
+#include <stdio.h>
+
+int main () {
+    printf("Hello, World!");
+    return 0;
+}
+            </pre>
+        </div>
+
+        <div class="card">
+            <h3>Selamat Datang To World</h3>
+            <pre>
+print("Welcome, World!")
+            </pre>
+        </div>
+    </div>
+</section>
+
+<section id="my-projects" class="container scroll-item">
+    <h2><i class="fas fa-project-diagram"></i> My Projects</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Jam Digital</h3>
+            <p>A simple digital clock created with HTML, CSS, and JavaScript.</p>
+            <a href="https://alfando345.github.io/jamdigital" target="_blank" class="portfolio-button">View Project</a>
+        </div>
+        <div class="card">
+            <h3>Kalkulator</h3>
+            <p>A calculator with basic arithmetic functions.</p>
+            <a href="https://alfando345.github.io/kalktulator/" target="_blank" class="portfolio-button">View Project</a>
+        </div>
+    </div>
+</section>
+        </div>
+
+        <section id="skills" class="container">
+            <h2><i class="fas fa-cogs"></i> Keahlian Profesional</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Editor Video Full-Stack</h3>
+                    <ul>
+                        <li><i class="fas fa-microphone-alt"></i> <strong>Dubbing:</strong> Kemampuan mengisi suara dan narasi profesional.</li>
+                        <li><i class="fas fa-file-alt"></i> <strong>Scripting:</strong> Keahlian menulis naskah dan alur cerita yang menarik.</li>
+                        <li><i class="fas fa-video"></i> <strong>Editing:</strong> Penguasaan teknik penyuntingan video untuk hasil yang memukau.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Keahlian Tambahan</h3>
+                    <p>Di era digital ini, perpaduan antara seni dan teknologi menjadi sangat penting. Sebagai seorang editor video yang juga mahasiswa Teknik Informatika, saya memiliki perspektif ganda: mata seorang kreator dan pemahaman seorang teknisi. Keahlian ini membuat saya mampu menggarap proyek video, terutama yang berkaitan dengan teknologi dan inovasi, dengan kualitas visual yang memukau serta akurasi yang terjamin. Ini adalah nilai tambah unik yang saya tawarkan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="character" class="container">
+            <h2><i class="fas fa-heart"></i> Karakter & Hobi</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Etos Kerja & Karakter</h3>
+                    <ul>
+                        <li><strong>Fokus:</strong> Kemampuan untuk berkonsentrasi penuh dalam setiap pekerjaan.</li>
+                        <li><strong>Motivasi Diri:</strong> Selalu antusias belajar hal baru, bahkan di luar bidang utama.</li>
+                        <li><strong>Karakter Kuat:</strong> Konsisten, pekerja keras, dan berambisi untuk terus menjadi lebih baik.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Hobi & Kreativitas</h3>
+                    <p>Musik adalah cara saya mengekspresikan diri dan menemukan inspirasi. Dengan menguasai piano, gitar, dan bass, saya membangun fondasi artistik yang kuat. Genre pop punk dan ska bukan hanya sekadar hobi, melainkan sumber energi dan kreativitas yang membentuk cara pandang saya dalam menyusun narasi visual dan memadukan audio dengan gambar. Kepekaan musikal ini menjadi nilai tambah yang unik dalam setiap proyek editing video yang saya tangani.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="social-media" class="container">
+            <h2><i class="fas fa-share-alt"></i> Find Me On</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/grteo_alfndd21" target="_blank" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Follow IG Saya</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AlfandoXeon. Mantannya Lovi <i class="fas fa-heart"></i>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
