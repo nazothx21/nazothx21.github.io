@@ -1,23 +1,19 @@
-
-        document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         var loader = document.querySelector(".loader-wrapper");
         loader.style.opacity = "0";
         setTimeout(function() {
             loader.style.display = "none";
-            // Panggil fungsi untuk memuat video setelah loader hilang
             loadVideoWithProgress();
-        }, 500); // Match this with the transition duration in CSS
-    }, 2000); // 2 seconds
+        }, 500);
+    }, 2000);
 });
 
 const video = document.getElementById('profileVideo');
 const profileImage = document.getElementById('profileImage');
 const profileVideoContainer = document.querySelector('.profile-video-container');
-const backgroundVideoContainer = document.getElementById('background-video-container');
 const volumeButton = document.getElementById('volume-toggle');
 const volumeIcon = volumeButton.querySelector('i');
-const body = document.body;
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 
@@ -25,14 +21,12 @@ let isVideoBackground = false;
 
 profileVideoContainer.addEventListener('click', () => {
     if (isVideoBackground) {
-        // Move video back to profile
         video.classList.remove('background-video');
         video.classList.add('profile-pic');
         profileImage.style.display = 'none';
         volumeButton.style.display = 'flex';
         isVideoBackground = false;
     } else {
-        // Move video to background
         video.classList.remove('profile-pic');
         video.classList.add('background-video');
         profileImage.style.display = 'block';
@@ -43,10 +37,8 @@ profileVideoContainer.addEventListener('click', () => {
 
 volumeButton.addEventListener('click', (e) => {
     e.stopPropagation();
-    // Mengganti status muted pada video
     video.muted = !video.muted;
 
-    // Mengganti ikon berdasarkan status muted
     if (video.muted) {
         volumeIcon.classList.remove('fa-volume-up');
         volumeIcon.classList.add('fa-volume-mute');
@@ -55,8 +47,6 @@ volumeButton.addEventListener('click', (e) => {
         volumeIcon.classList.add('fa-volume-up');
     }
 });
-
-
 
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -67,24 +57,6 @@ searchForm.addEventListener('submit', (e) => {
     }
 });
 
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-
-    // Ganti ikon hamburger dengan ikon close (X)
-    const icon = navToggle.querySelector('i');
-    if (navLinks.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-});
-
-// Logic for video download progress for "My Video"
 const myVideoPlayer = document.getElementById('myVideoPlayer');
 const videoDownloadProgress = document.getElementById('video-download-progress');
 const downloadPercentage = document.getElementById('download-percentage');
@@ -116,41 +88,71 @@ async function loadVideoWithProgress() {
                     controller.enqueue(value);
                 }
                 controller.close();
-                videoDownloadProgress.style.display = 'none'; // Hide progress after download
+                videoDownloadProgress.style.display = 'none';
             }
         });
 
         const blob = await new Response(stream).blob();
         myVideoPlayer.src = URL.createObjectURL(blob);
-        myVideoPlayer.load(); // Start loading the video data into the player
-        // myVideoPlayer.play(); // Uncomment if you want it to play automatically after download
+        myVideoPlayer.load();
     } catch (error) {
         console.error('Error loading video:', error);
         videoDownloadProgress.innerHTML = '<p style="color: red;">Gagal memuat video. Coba refresh halaman.</p>';
     }
 }
 
-// Logic for video download progress for "Profile Video"
-const profileVideoUrl = 'https://files.catbox.moe/yu891i.mp4'; // URL video profil Anda
+const profileVideoUrl = 'https://files.catbox.moe/yu891i.mp4';
 video.src = profileVideoUrl;
 
-// Clock function
 function updateClock() {
     const now = new Date();
     const day = String(now.getDate()).padStart(2, '0');
-    const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-    const year = String(now.getFullYear()).slice(-2); // Get last two digits of year
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = String(now.getFullYear()).slice(-2);
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
 
     const dateTimeString = `${hours}:${minutes}:${seconds}`;
     document.getElementById('current-date').textContent = dateTimeString;
+
+    // Greeting logic
+    const greetingElement = document.getElementById('greeting');
+    const currentHour = now.getHours();
+
+    if (currentHour >= 5 && currentHour < 12) {
+        greetingElement.textContent = 'Selamat Pagi';
+    } else if (currentHour >= 12 && currentHour < 15) {
+        greetingElement.textContent = 'Selamat Siang';
+    } else if (currentHour >= 15 && currentHour < 18) {
+        greetingElement.textContent = 'Selamat Sore';
+    } else {
+        greetingElement.textContent = 'Selamat Malam';
+    }
 }
 
-// Update clock every second
 setInterval(updateClock, 1000);
 
-// Initial call to display clock immediately
 updateClock();
-    
+
+// Calculator Logic
+const display = document.getElementById('display');
+const buttons = document.querySelectorAll('#calculator .btn');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const value = button.textContent;
+
+        if (value === 'C') {
+            display.value = '';
+        } else if (value === '=') {
+            try {
+                display.value = eval(display.value.replace(/[^0-9+\-*/.]/g, ''));
+            } catch (error) {
+                display.value = 'Error';
+            }
+        } else {
+            display.value += value;
+        }
+    });
+});
