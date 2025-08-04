@@ -7,7 +7,6 @@
             loader.style.display = "none";
             // Panggil fungsi untuk memuat video setelah loader hilang
             loadVideoWithProgress();
-            loadProfileVideoWithProgress(); // Panggil fungsi untuk video profil
         }, 500); // Match this with the transition duration in CSS
     }, 2000); // 2 seconds
 });
@@ -132,50 +131,8 @@ async function loadVideoWithProgress() {
 }
 
 // Logic for video download progress for "Profile Video"
-const profileVideoLoader = document.getElementById('profile-video-loader');
-const profileDownloadPercentage = document.getElementById('profile-download-percentage');
 const profileVideoUrl = 'https://files.catbox.moe/yu891i.mp4'; // URL video profil Anda
-
-async function loadProfileVideoWithProgress() {
-    try {
-        profileVideoLoader.style.display = 'flex'; // Show loader
-        const response = await fetch(profileVideoUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const contentLength = response.headers.get('content-length');
-        let loaded = 0;
-
-        const reader = response.body.getReader();
-        const stream = new ReadableStream({
-            async start(controller) {
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) {
-                        break;
-                    }
-                    loaded += value.byteLength;
-                    if (contentLength) {
-                        const percent = Math.round((loaded / contentLength) * 100);
-                        profileDownloadPercentage.textContent = `${percent}%`;
-                    }
-                    controller.enqueue(value);
-                }
-                controller.close();
-                profileVideoLoader.style.display = 'none'; // Hide loader after download
-            }
-        });
-
-        const blob = await new Response(stream).blob();
-        video.src = URL.createObjectURL(blob);
-        video.load(); // Start loading the video data into the player
-        // video.play(); // It has autoplay attribute, so it should play automatically
-    } catch (error) {
-        console.error('Error loading profile video:', error);
-        profileVideoLoader.innerHTML = '<p style="color: red;">Gagal memuat video profil.</p>';
-    }
-}
+video.src = profileVideoUrl;
 
 // Clock function
 function updateClock() {
