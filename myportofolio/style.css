@@ -160,7 +160,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     line-height: 1.6;
-    animation: pan-background 40s linear infinite;
+    
     transition: background-color 0.5s, color 0.5s;
 }
 
@@ -233,7 +233,7 @@ body {
     border: 5px solid var(--accent-color);
     object-fit: cover;
     box-shadow: 0 4px 15px var(--shadow-color);
-    transition: transform 0.3s ease, width 0.5s ease, height 0.5s ease, border-radius 0.5s ease;
+    
 }
 
 .loader-wrapper {
@@ -289,7 +289,10 @@ body {
     z-index: 1000;
     transition: background 0.3s, color 0.3s, transform 0.3s;
 }
-
+    .profile-video-wrapper {
+        width: 150px;
+        height: 150px;
+    }
 .portfolio-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -427,7 +430,7 @@ old_string:
     border: 5px solid var(--accent-color);
     object-fit: cover;
     box-shadow: 0 4px 15px var(--shadow-color);
-    transition: transform 0.3s ease;
+    
 }
 
 .profile-pic:hover {
@@ -613,6 +616,11 @@ footer .fa-heart {
     }
 
     .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-video-wrapper {
         width: 150px;
         height: 150px;
     }
