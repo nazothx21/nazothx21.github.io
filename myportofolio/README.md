@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="[MASUKKAN_URL_LOGO_ATAU_SCREENSHOT_TERBAIK_ANDA_DI_SINI]" alt="Project Banner" width="800"/>
+  <img src="asset/oline.jpeg" alt="Project Banner" width="800"/>
   <br/>
   <br/>
   
