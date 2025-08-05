@@ -101,9 +101,6 @@ async function loadVideoWithProgress() {
     }
 }
 
-const profileVideoUrl = 'https://files.catbox.moe/yu891i.mp4';
-video.src = profileVideoUrl;
-
 function updateClock() {
     const now = new Date();
     const day = String(now.getDate()).padStart(2, '0');

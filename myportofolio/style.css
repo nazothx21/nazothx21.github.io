@@ -113,7 +113,9 @@ body {
 }
 
 .hero {
-    height: 100vh;
+    height: 50vh;
+    margin-top: 15vh;
+    
 }
 
 .profile-video-container {
