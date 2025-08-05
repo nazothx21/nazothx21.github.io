@@ -1,135 +1,161 @@
-<div id="top"></div>
-<!-- PROJECT SHIELDS -->
-<p align="center">
+<div align="center">
+  <img src="[MASUKKAN_URL_LOGO_ATAU_SCREENSHOT_TERBAIK_ANDA_DI_SINI]" alt="Project Banner" width="800"/>
+  <br/>
+  <br/>
+  
+  <h1><b>Portofolio Interaktif Grateo Alfando Atmojo</b></h1>
+  
+  <p>
+    Sebuah portofolio web imersif yang dirancang dengan estetika modern dan fokus pada performa. Menampilkan perjalanan saya sebagai seorang Mahasiswa Teknik Informatika dan Editor Video Full-Stack.
+  </p>
+
+  <p>
     <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
     <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
     <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
-</p>
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <h1 align="center">Portofolio Grateo Alfando Atmojo</h1>
-
-  <p align="center">
-    Sebuah portofolio web interaktif yang menampilkan proyek, keahlian, dan profil pribadi.
-    <br />
-    <!-- Ganti URL ini dengan URL GitHub Pages Anda jika sudah di-deploy -->
-    <a href="https://alfando345.github.io/GrateoPortofolio/"><strong>Lihat Live Demo »</strong></a>
-    <br />
-    <br />
-    <!-- Ganti URL ini dengan URL repo Anda -->
-    <a href="https://github.com/alfando345/GrateoPortofolio/issues">Laporkan Bug</a>
-    ·
-    <a href="https://github.com/alfando345/GrateoPortofolio/issues">Minta Fitur Baru</a>
+    <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT">
   </p>
+  
+  <h4>
+    <a href="https://alfando345.github.io/GrateoPortofolio/"><strong>🚀 Lihat Live Demo</strong></a>
+    ·
+    <a href="https://github.com/alfando345/GrateoPortofolio/issues"><strong>🐛 Laporkan Bug</strong></a>
+    ·
+    <a href="https://github.com/alfando345/GrateoPortofolio/issues"><strong>✨ Minta Fitur Baru</strong></a>
+  </h4>
+
 </div>
 
-<!-- TABLE OF CONTENTS -->
+---
+
 <details>
-  <summary>Daftar Isi</summary>
+  <summary><strong>📖 Daftar Isi</strong></summary>
   <ol>
-    <li>
-      <a href="#tentang-proyek">Tentang Proyek</a>
-      <ul>
-        <li><a href="#dibuat-dengan">Dibuat Dengan</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#memulai">Memulai</a>
-      <ul>
-        <li><a href="#instalasi">Instalasi</a></li>
-      </ul>
-    </li>
-    <li><a href="#penggunaan">Penggunaan</a></li>
-    <li><a href="#lisensi">Lisensi</a></li>
-    <li><a href="#kontak">Kontak</a></li>
-    <li><a href="#ucapan-terima-kasih">Ucapan Terima Kasih</a></li>
+    <li><a href="#-tentang-proyek">Tentang Proyek</a></li>
+    <li><a href="#-fitur-unggulan">Fitur Unggulan</a></li>
+    <li><a href="#-optimasi-performa">Optimasi Performa</a></li>
+    <li><a href="#-teknologi-yang-digunakan">Teknologi yang Digunakan</a></li>
+    <li><a href="#-galeri-tangkapan-layar">Galeri Tangkapan Layar</a></li>
+    <li><a href="#-memulai">Memulai</a></li>
+    <li><a href="#-berkontribusi">Berkontribusi</a></li>
+    <li><a href="#-lisensi">Lisensi</a></li>
+    <li><a href="#-kontak">Kontak</a></li>
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-## Tentang Proyek
+---
 
-[![Tangkapan Layar Proyek][product-screenshot]](https://alfando345.github.io/GrateoPortofolio/)
+## 📌 Tentang Proyek
 
-Ini adalah proyek portofolio pribadi yang saya, Grateo Alfando Atmojo, buat untuk menampilkan keahlian, proyek, dan informasi tentang diri saya. Didesain untuk menjadi interaktif dan menarik secara visual, portofolio ini mencerminkan perpaduan keahlian saya di bidang video editing dan pengembangan web.
+Proyek ini adalah representasi digital dari identitas profesional saya, **Grateo Alfando Atmojo**. Dibuat dari nol menggunakan HTML, CSS, dan JavaScript, portofolio ini berfungsi sebagai kanvas untuk menampilkan keahlian teknis saya dalam pengembangan web dan kreativitas saya sebagai editor video.
 
-### Fitur Utama
+Tujuan utamanya adalah menciptakan pengalaman pengguna yang tidak hanya informatif tetapi juga menarik secara visual dan terasa responsif, dengan penekanan kuat pada **kode yang bersih dan performa yang optimal**.
 
-*   ✨ **Mode Gelap & Terang:** Beralih tema untuk kenyamanan visual.
-*   🎬 **Video Latar Belakang Interaktif:** Video profil yang dapat diperbesar menjadi latar belakang halaman.
-*   🧮 **Kalkulator Bawaan:** Kalkulator sederhana yang dapat diakses melalui modal.
-*   📂 **Galeri Proyek:** Menampilkan beberapa proyek yang telah saya kerjakan.
-*   👤 **Profil Lengkap:** Bagian "Tentang Saya" yang informatif.
-*   📱 **Desain Responsif:** Dibangun dengan Bootstrap untuk tampilan optimal di semua perangkat.
+<br>
 
-<p align="right">(<a href="#top">kembali ke atas</a>)</p>
+## ✨ Fitur Unggulan
 
-### Dibuat Dengan
+Portofolio ini dilengkapi dengan berbagai fitur interaktif untuk memberikan pengalaman yang unik:
 
-Berikut adalah teknologi utama yang digunakan dalam proyek ini.
+* **🎬 Latar Belakang Video Dinamis**: Video profil dapat bertransisi menjadi video latar belakang layar penuh dengan satu klik.
+* **🌓 Tema Ganda (Dark/Light Mode)**: Tombol untuk mengubah tema secara instan demi kenyamanan visual pengguna. *(Catatan: Fitur ini bisa Mas Tyo tambahkan di kemudian hari, saya siapkan tempatnya di sini)*.
+* **🕰️ Jam & Sapaan Real-time**: Menampilkan waktu saat ini dan memberikan sapaan hangat (Pagi, Siang, Sore, Malam) sesuai waktu lokal pengguna.
+* **🧩 Komponen Fungsional**: Termasuk kalkulator interaktif yang dapat diakses melalui modal Bootstrap.
+* **📱 Desain Responsif Penuh**: Dibangun di atas Bootstrap 5, memastikan tampilan sempurna di semua ukuran perangkat, dari desktop hingga mobile.
+* **⬇️ Pemuatan Video Progresif**: Menampilkan progress bar saat video utama diunduh, memberikan feedback visual kepada pengguna.
 
-*   HTML5
-*   CSS3
-*   JavaScript
-*   Bootstrap 5
-*   Font Awesome
-*   Google Fonts
+<br>
 
-<p align="right">(<a href="#top">kembali ke atas</a>)</p>
+## 🚀 Optimasi Performa
 
-<!-- GETTING STARTED -->
-## Memulai
+Performa adalah kunci. Situs ini telah melalui serangkaian optimasi untuk memastikan waktu muat yang cepat dan penggunaan CPU yang efisien, bahkan pada perangkat dengan spesifikasi lebih rendah.
 
-Untuk mendapatkan salinan lokal dan menjalankannya, ikuti langkah-langkah sederhana ini.
+* **⚡️ Optimasi Animasi CSS**: Animasi `text-shadow` yang berat telah diganti dengan efek statis untuk mencegah beban CPU yang konstan.
+* **💡 Efisiensi JavaScript**: Loop `setInterval` yang berjalan setiap detik telah dioptimalkan untuk mengurangi manipulasi DOM yang tidak perlu, sehingga CPU dapat beristirahat.
+* **✨ Rendering yang Ringan**: Penggunaan `backdrop-filter: blur()` yang intensif telah dikurangi secara signifikan untuk membebaskan GPU dan mempercepat proses rendering.
+* **📹 Pemuatan Aset Cerdas (Lazy Loading)**: Aset berat seperti video sekunder direncanakan untuk dimuat hanya saat pengguna berinteraksi, bukan saat halaman pertama kali dibuka.
 
-### Instalasi
+<br>
 
-1.  Clone repositori ini ke mesin lokal Anda.
+## 🛠️ Teknologi yang Digunakan
+
+Proyek ini dibangun dengan cinta dan teknologi berikut:
+
+| Teknologi | Deskripsi |
+| :--- | :--- |
+| **HTML5** | Struktur dan konten semantik dari halaman web. |
+| **CSS3** | Styling, tata letak, dan animasi untuk estetika visual. |
+| **JavaScript (ES6+)** | Interaktivitas, manipulasi DOM, dan logika fungsional. |
+| **Bootstrap 5** | Framework CSS untuk desain responsif dan komponen UI yang cepat. |
+| **Font Awesome** | Library ikon untuk memperkaya antarmuka pengguna. |
+| **Google Fonts** | Tipografi kustom untuk keterbacaan dan gaya. |
+
+<br>
+
+## 📸 Galeri Tangkapan Layar
+
+<details>
+<summary>Klik untuk melihat tangkapan layar</summary>
+<br>
+<div align="center">
+  <img src="[MASUKKAN_URL_SCREENSHOT_TAMPILAN_UTAMA_DISINI]" alt="Tampilan Utama" width="48%">
+  <img src="[MASUKKAN_URL_SCREENSHOT_BAGIAN_PROYEK_DISINI]" alt="Bagian Proyek" width="48%">
+  <br>
+  <em>Tampilan Utama & Bagian Proyek</em>
+</div>
+</details>
+
+<br>
+
+## 🟢 Memulai
+
+Ingin menjalankan proyek ini di mesin lokal Anda? Ikuti langkah-langkah berikut.
+
+1.  **Prasyarat**
+    * Pastikan Anda memiliki Git terinstal di sistem Anda.
+    * Browser web modern (Chrome, Firefox, Safari, dll.).
+
+2.  **Instalasi**
     ```sh
-    git clone https://github.com/alfando345/GrateoPortofolio.git
+    # 1. Clone repositori ini
+    git clone [https://github.com/alfando345/GrateoPortofolio.git](https://github.com/alfando345/GrateoPortofolio.git)
+
+    # 2. Masuk ke direktori proyek
+    cd GrateoPortofolio
+
+    # 3. Buka file index.html di browser favorit Anda
+    # (Klik kanan -> Open with -> Google Chrome)
     ```
-2.  Buka file `index.html` di browser Anda.
+<br>
 
-<p align="right">(<a href="#top">kembali ke atas</a>)</p>
+## 🤝 Berkontribusi
 
-<!-- USAGE EXAMPLES -->
-## Penggunaan
+Kontribusi, isu, dan permintaan fitur sangat saya hargai! Jangan ragu untuk memeriksa halaman [isu](https://github.com/alfando345/GrateoPortofolio/issues).
 
-Portofolio ini dirancang untuk menjadi intuitif. Gunakan navigasi untuk melompat ke bagian yang berbeda, klik video profil untuk menjadikannya latar belakang, dan gunakan kalkulator yang tersedia di navigasi.
+1.  *Fork* Proyek ini
+2.  Buat *Feature Branch* Anda (`git checkout -b feature/FiturBaruKeren`)
+3.  *Commit* Perubahan Anda (`git commit -m 'Menambahkan FiturBaruKeren'`)
+4.  *Push* ke *Branch* (`git push origin feature/FiturBaruKeren`)
+5.  Buka sebuah *Pull Request*
 
-<p align="right">(<a href="#top">kembali ke atas</a>)</p>
+<br>
 
-<!-- LICENSE -->
-## Lisensi
+## 📜 Lisensi
 
-Didistribusikan di bawah Lisensi MIT.
+Proyek ini dilisensikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk detail lebih lanjut.
 
-<p align="right">(<a href="#top">kembali ke atas</a>)</p>
+<br>
 
-<!-- CONTACT -->
-## Kontak
+## 📫 Kontak
 
-Grateo Alfando Atmojo - @grteo_alfndd21
+Grateo Alfando Atmojo - [@grteo_alfndd21](https://www.instagram.com/grteo_alfndd21/)
 
-Tautan Proyek: https://github.com/alfando345/GrateoPortofolio
+Email: [MASUKKAN_ALAMAT_EMAIL_ANDA_DISINI]
 
-<p align="right">(<a href="#top">kembali ke atas</a>)</p>
+Tautan Proyek: [https://github.com/alfando345/GrateoPortofolio](https://github.com/alfando345/GrateoPortofolio)
 
-<!-- ACKNOWLEDGMENTS -->
-## Ucapan Terima Kasih
-
-*   othneildrew/Best-README-Template
-*   shields.io
-
-<p align="right">(<a href="#top">kembali ke atas</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- 
-    Untuk menampilkan screenshot, ambil tangkapan layar dari website portofolio Anda,
-    simpan dengan nama `screenshot.png` di dalam folder `asset`, lalu commit dan push.
--->
-[product-screenshot]: asset/screenshot.png
-
+---
+<p align="center">
+  Dibuat dengan ❤️ oleh AlfandoXeon & sedikit bantuan dari AI.
+</p>
