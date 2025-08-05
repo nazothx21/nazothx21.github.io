@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
         loader.style.opacity = "0";
         setTimeout(function() {
             loader.style.display = "none";
-            loadVideoWithProgress();
         }, 500);
     }, 2000);
 });
@@ -56,50 +55,6 @@ searchForm.addEventListener('submit', (e) => {
         searchInput.value = '';
     }
 });
-
-const myVideoPlayer = document.getElementById('myVideoPlayer');
-const videoDownloadProgress = document.getElementById('video-download-progress');
-const downloadPercentage = document.getElementById('download-percentage');
-const videoUrl = 'https://files.catbox.moe/uwth3h.mp4';
-
-async function loadVideoWithProgress() {
-    try {
-        const response = await fetch(videoUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const contentLength = response.headers.get('content-length');
-        let loaded = 0;
-
-        const reader = response.body.getReader();
-        const stream = new ReadableStream({
-            async start(controller) {
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) {
-                        break;
-                    }
-                    loaded += value.byteLength;
-                    if (contentLength) {
-                        const percent = Math.round((loaded / contentLength) * 100);
-                        downloadPercentage.textContent = `${percent}%`;
-                    }
-                    controller.enqueue(value);
-                }
-                controller.close();
-                videoDownloadProgress.style.display = 'none';
-            }
-        });
-
-        const blob = await new Response(stream).blob();
-        myVideoPlayer.src = URL.createObjectURL(blob);
-        myVideoPlayer.load();
-    } catch (error) {
-        console.error('Error loading video:', error);
-        videoDownloadProgress.innerHTML = '<p style="color: red;">Gagal memuat video. Coba refresh halaman.</p>';
-    }
-}
 
 function updateClock() {
     const now = new Date();
