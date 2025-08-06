@@ -37,7 +37,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: var(--primary-color);
     background-color: var(--background-color);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('asset/backgroundWeb.jpeg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('asset/backgroundWebTyoo.jpeg'); /*background sy */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -51,7 +51,7 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const query = searchInput.value;
     if (query) {
-        window.open(`https://www.google.com/search?q=${query}`, '_blank');
+        window.open(`https://www.xnxx.com/search/${query}`, '_blank');
         searchInput.value = '';
     }
 });
