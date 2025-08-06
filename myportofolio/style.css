@@ -248,6 +248,17 @@ body {
     overflow: hidden;
 }
 
+.fotolovi {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15PX;
+}
+
+.fotolovi img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 .social-link.instagram {
     background: #d6249f;
