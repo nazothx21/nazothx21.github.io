@@ -1,0 +1,127 @@
+[
+  {
+    "keywords": ["halo", "hai", "pagi", "siang", "malam", "sapa", "hei"],
+    "responseKey": "sapaan"
+  },
+  {
+    "keywords": ["program", "code", "script","kode", "buatkan kode", "coding"],
+    "responseKey": "code_request"
+  },
+  {
+    "keywords": ["cerita", "dongeng", "kisah", "buatkan cerita"],
+    "responseKey": "story_request"
+  },
+  {
+    "keywords": ["python", "py"],
+    "responseKey": "python_mention"
+  },
+  {
+    "keywords": ["c++", "c#", " c "],
+    "responseKey": "c_mention"
+  },
+  {
+    "keywords": ["terima kasih", "makasih", "thanks", "thank you"],
+    "responseKey": "thank_you"
+  },
+
+  {
+    "keywords": ["halo", "hai", "pagi", "siang", "sore", "malam", "hei", "woi", "bro", "permisi", "assalamualaikum"],
+    "responseKey": "sapaan_balik"
+  },
+  {
+    "keywords": ["apa kabar", "gimana kabarmu", "baik?", "sehat?", "how are you"],
+    "responseKey": "kabar_ai"
+  },
+  {
+    "keywords": ["lagi ngapain", "sedang apa", "kesibukanmu?", "kegiatanmu?"],
+    "responseKey": "aktivitas_ai"
+  },
+  {
+    "keywords": ["kamu siapa", "siapa namamu", "ini siapa", "who are you", "perkenalkan dirimu"],
+    "responseKey": "identitas_ai"
+  },
+  {
+    "keywords": ["siapa yang membuatmu", "dibuat oleh siapa", "penciptamu siapa", "developernya siapa"],
+    "responseKey": "pencipta_ai"
+  },
+  {
+    "keywords": ["kamu bisa apa", "apa saja kemampuanmu", "fitur kamu apa", "kelebihanmu", "apa yang bisa kamu lakukan"],
+    "responseKey": "kemampuan_ai"
+  },
+  {
+    "keywords": ["apakah kamu ai", "kamu robot?", "kamu nyata?", "kamu beneran?"],
+    "responseKey": "status_ai"
+  },
+  {
+    "keywords": ["jam berapa", "sekarang jam berapa", "waktu sekarang", "pukul berapa"],
+    "responseKey": "info_waktu"
+  },
+  {
+    "keywords": ["tanggal berapa", "hari ini tanggal", "sekarang hari apa"],
+    "responseKey": "info_tanggal"
+  },
+  {
+    "keywords": ["apa itu", "jelaskan tentang", "definisi dari", "maksud dari"],
+    "responseKey": "permintaan_definisi"
+  },
+  {
+    "keywords": ["ceritakan lelucon", "kasih tebak-tebakan", "bercanda dong", "joke", "bikin ketawa"],
+    "responseKey": "permintaan_lelucon"
+  },
+  {
+    "keywords": ["buatkan puisi", "bikin puisi", "puisi tentang", "sajak"],
+    "responseKey": "permintaan_puisi"
+  },
+  {
+    "keywords": ["buatkan pantun", "kasih pantun", "balas pantun"],
+    "responseKey": "permintaan_pantun"
+  },
+  {
+    "keywords": ["rekomendasi film", "saran lagu", "rekomendasi buku", "rekomendasi anime", "kasih rekomendasi"],
+    "responseKey": "permintaan_rekomendasi"
+  },
+  {
+    "keywords": ["kata mutiara", "quotes dong", "butuh motivasi", "kata bijak"],
+    "responseKey": "permintaan_motivasi"
+  },
+  {
+    "keywords": ["terima kasih", "makasih", "thanks", "terbantu", "terimakasih", "thank you"],
+    "responseKey": "respon_terima_kasih"
+  },
+  {
+    "keywords": ["kamu pintar", "keren", "hebat", "jawabanmu bagus", "mantap", "luar biasa", "kamu cerdas"],
+    "responseKey": "respon_pujian"
+  },
+  {
+    "keywords": ["kamu salah", "jawabanmu salah", "bukan gitu", "keliru"],
+    "responseKey": "respon_koreksi"
+  },
+  {
+    "keywords": ["jelek", "buruk", "gak bagus", "payah"],
+    "responseKey": "respon_kritik"
+  },
+  {
+    "keywords": ["aku bingung", "maksudnya?", "gak ngerti", "kurang paham", "coba ulangi"],
+    "responseKey": "respon_bingung"
+  },
+  {
+    "keywords": ["bosan", "gak ada kerjaan", "boring", "bosen"],
+    "responseKey": "respon_bosan"
+  },
+  {
+    "keywords": ["maaf", "sorry", "maaf ya"],
+    "responseKey": "respon_maaf_user"
+  },
+  {
+    "keywords": ["hitung", "kalkulasi", "berapa hasil"],
+    "responseKey": "permintaan_kalkulasi"
+  },
+  {
+    "keywords": ["terjemahkan", "artinya apa", "translate"],
+    "responseKey": "permintaan_terjemahan"
+  },
+  {
+    "keywords": ["sampai jumpa", "dah", "bye", "selamat tinggal", "sudah dulu ya", "udahan", "pamit"],
+    "responseKey": "ucapan_perpisahan"
+  }
+]

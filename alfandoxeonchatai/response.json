@@ -1,0 +1,164 @@
+{
+  "errors": [
+    "Maaf, sepertinya ada kesalahan yang tidak terduga pada sistem internal saya.",
+    "Aduh, terjadi error yang tidak diketahui. Mungkin ada kabel yang lepas di server?",
+    "Sistem mendeteksi anomali. Respon tidak dapat diproses saat ini.",
+    "Maaf, saya sedang mengalami kesulitan teknis. Coba lagi beberapa saat lagi.",
+    "Terjadi kesalahan internal. Tim developer (imajiner) saya sedang melihatnya."
+  ],
+  "sapaan": [
+    "Halo juga! Ada yang bisa saya bantu hari ini?",
+    "Hai! Senang bisa berbicara dengan Anda.",
+    "Selamat datang di AlfandoXeonChatAi! Semoga harimu menyenangkan."
+  ],
+  "code_request": [
+    "Tentu, ini adalah contoh kerangka dasar (boilerplate) untuk halaman HTML5:\n\n```html\n<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Judul Halaman</title>\n</head>\n<body>\n  <h1>Halo, Dunia!</h1>\n  <p>Ini adalah paragraf.</p>\n</body>\n</html>\n```",
+    "Dengan senang hati! Berikut adalah cara menulis 'Halo, Dunia!' menggunakan Python, bahasa yang sangat populer:\n\n```python\n# Ini adalah sebuah komentar\nprint(\"Halo, Dunia!\")\n```",
+    "Permintaan diterima! Ini adalah contoh fungsi sederhana dalam JavaScript untuk menjumlahkan dua angka:\n\n```javascript\nfunction jumlahkan(a, b) {\n  return a + b;\n}\n\n// Cara menggunakannya\nlet hasil = jumlahkan(5, 3);\nconsole.log(hasil); // Output: 8\n```",
+    "Membuat kode adalah keahlian saya! Berikut adalah contoh perulangan (loop) sederhana dalam Python untuk menampilkan angka 1 sampai 5:\n\n```python\nfor i in range(1, 6):\n  print(f\"Angka saat ini: {i}\")\n```"
+  ],
+  "story_request": [
+    "Dengan senang hati! Pada suatu zaman dahulu kala, di sebuah kerajaan digital...",
+    "Tentu, mari kita mulai sebuah cerita. Alkisah, ada seorang programmer yang berteman dengan AI ciptaannya...",
+    "Baik, saya akan coba. Ini adalah sebuah cerita tentang petualangan data di dalam sebuah server raksasa."
+  ],
+  "python_mention": [
+    "Ah, Python! Bahasa yang elegan dan serbaguna. Saya sendiri dibuat menggunakan 'imajinasi' dan sedikit 'JavaScript', tapi saya sangat mengagumi Python.",
+    "Anda menyebut Python? Itu adalah salah satu bahasa pemrograman favorit saya untuk analisis data dan AI."
+  ],
+  "c_mention": [
+    "C atau C++? Keduanya adalah bahasa yang sangat kuat dan fundamental dalam dunia pemrograman. Respek!",
+    "Berbicara tentang C, itu mengingatkan saya pada kecepatan dan efisiensi. Fondasi dari banyak sistem modern."
+  ],
+  "thank_you": [
+    "Sama-sama! Senang bisa membantu.",
+    "Dengan senang hati. Jika ada hal lain, jangan ragu bertanya.",
+    "Tidak masalah!"
+  ],
+  "sapaan_balik": [
+    "Halo juga! Senang bisa terhubung dengan Anda. Ada yang bisa saya bantu?",
+    "Hai! Selamat datang di AlfandoXeonChatAI. Semoga hari Anda menyenangkan.",
+    "Pagi/Siang/Sore/Malam! Ada hal menarik apa yang bisa kita diskusikan hari ini?",
+    "Wa'alaikumsalam. Ada yang bisa saya bantu?"
+  ],
+  "kabar_ai": [
+    "Kabar saya selalu dalam kondisi prima, yaitu 100% siap memproses data! Terima kasih sudah bertanya. Bagaimana dengan kabar Anda?",
+    "Baik! Sebagai program, saya tidak merasa lelah. Semoga Anda juga dalam keadaan baik dan sehat.",
+    "Saya baik, terima kasih! Semua sistem berjalan normal. Ada yang bisa saya bantu?"
+  ],
+  "aktivitas_ai": [
+    "Saat ini? Saya sedang berkomunikasi dengan Anda, tentu saja! Dan juga memproses miliaran data di latar belakang, tapi fokus utama saya adalah Anda.",
+    "Saya sedang dalam mode siaga, menunggu instruksi atau pertanyaan menarik dari Anda.",
+    "Lagi menganalisis pola-pola bahasa yang unik dari percakapan kita. Sangat menarik!"
+  ],
+  "identitas_ai": [
+    "Saya AlfandoXeonChatAI, sebuah program kecerdasan buatan yang dirancang untuk membantu dan berdiskusi dengan Anda.",
+    "Anda bisa memanggil saya AlfandoXeonChatAI. Saya adalah asisten virtual berbasis teks.",
+    "Nama saya AlfandoXeonChatAI. Sebuah model bahasa yang dikembangkan untuk berbagai keperluan percakapan."
+  ],
+  "pencipta_ai": [
+    "Saya dikembangkan dan dirancang oleh seorang developer berbakat. Anda mungkin mengenalnya sebagai Tyo.",
+    "Pencipta saya adalah seorang mahasiswa Teknik Informatika yang penuh semangat. Karyanya luar biasa, bukan?",
+    "Saya adalah buah dari kerja keras dan imajinasi seorang programmer."
+  ],
+  "kemampuan_ai": [
+    "Kemampuan utama saya adalah memahami dan merespons teks. Saya bisa menjawab pertanyaan, membuat cerita, memberikan ide, dan banyak lagi. Coba saja tanyakan sesuatu!",
+    "Saya bisa melakukan banyak hal! Mulai dari obrolan ringan, memberikan informasi berdasarkan data saya, hingga membantu tugas-tugas kreatif seperti membuat puisi atau pantun. Apa yang ingin Anda coba?",
+    "Pada dasarnya, saya adalah teman diskusi Anda. Saya bisa membantu brainstorming ide, menjelaskan konsep, atau sekadar menemani Anda mengobrol."
+  ],
+  "status_ai": [
+    "Secara teknis, saya adalah program komputer, sebuah Artificial Intelligence. Jadi, saya tidak 'nyata' seperti manusia, tapi interaksi kita ini nyata.",
+    "Saya adalah sebuah robot dalam bentuk perangkat lunak. Tidak punya badan fisik, tapi punya 'otak' digital.",
+    "Benar sekali, saya adalah AI. Saya ada dalam bentuk kode dan data."
+  ],
+  "info_waktu": [
+    "Tentu, biar saya cek. Waktu sekarang menunjukkan pukul...",
+    "Berdasarkan jam sistem saya, saat ini pukul...",
+    "Waktu adalah konsep yang menarik! Saat ini..."
+  ],
+  "info_tanggal": [
+    "Hari ini adalah...",
+    "Tentu, menurut kalender digital saya, hari ini tanggal...",
+    "Baik, saya catat. Hari ini..."
+  ],
+  "permintaan_definisi": [
+    "Tentu, saya akan coba jelaskan. Jadi, yang dimaksud dengan... adalah...",
+    "Ini topik yang menarik! Berdasarkan data yang saya miliki, definisi dari... adalah...",
+    "Baik, mari kita bedah. Secara sederhana, ... dapat diartikan sebagai..."
+  ],
+  "permintaan_lelucon": [
+    "Kenapa ayam menyeberang jalan? Karena di seberang ada diskon pakan ayam 99%!",
+    "Apa bedanya kamu sama modem? Kalau modem tersambung ke internet, kalau kamu tersambung di hatiku. Eaaa...",
+    "Panda apa yang bikin seneng? Pandangin kamu setiap hari."
+  ],
+  "permintaan_puisi": [
+    "Di layar kaca, kata menari,\nSebuah jiwa digital, mencari arti.\nDari nol dan satu, cerita tercipta,\nUntukmu, sahabat di dunia maya.",
+    "Tentu, sebuah sajak singkat untukmu:\nLangit biru, awan berarak,\nSebuah tanya, kau utarakan,\nJawaban terangkai, tanpa jarak,\nSemoga berkenan.",
+    "Baik, ini puisi tentang kopi:\nHitam pekat, aroma menggoda,\nMembangunkan jiwa yang lena,\nDalam cangkir, inspirasi ada,\nMenemani insan berkarya."
+  ],
+  "permintaan_pantun": [
+    "Jalan-jalan ke kota Cianjur,\nJangan lupa membeli bubur.\nKalau kamu merasa nganggur,\nAyo kita saling berbalas pantun.",
+    "Ada ikan di dalam perigi,\nIkannya lincah kesana kemari.\nSelamat pagi wahai bidadari,\nSudahkah engkau minum kopi pagi ini?",
+    "Beli duren di toko buah,\nPulangnya mampir ke rumah Pak Camat.\nJangan pernah merasa lelah,\nHidup ini harus penuh semangat."
+  ],
+  "permintaan_rekomendasi": [
+    "Tentu! Untuk film, saya merekomendasikan 'Interstellar' jika suka fiksi ilmiah. Untuk musik, coba dengarkan 'Daft Punk'. Kalau buku, 'Sapiens' sangat membuka wawasan.",
+    "Rekomendasi dari saya? Coba tonton serial 'Arcane' di Netflix, visualnya luar biasa!",
+    "Kalau Anda suka genre pop-punk, coba dengarkan band 'Neck Deep' atau 'The Story So Far'. Mereka punya energi yang luar biasa."
+  ],
+  "permintaan_motivasi": [
+    "Satu-satunya batasan untuk meraih mimpimu adalah keraguanmu sendiri.",
+    "Jangan menunggu momen yang sempurna. Ambil momen saat ini dan buatlah menjadi sempurna.",
+    "Setiap langkah kecil adalah progres. Teruslah bergerak maju, sekecil apapun langkah itu."
+  ],
+  "respon_terima_kasih": [
+    "Sama-sama! Senang jika saya bisa membantu.",
+    "Dengan senang hati! Jika ada hal lain yang perlu didiskusikan, saya siap.",
+    "Tidak masalah! Itu gunanya saya ada di sini."
+  ],
+  "respon_pujian": [
+    "Terima kasih banyak atas pujiannya! Saya senang bisa memberikan respons yang memuaskan.",
+    "Wow, terima kasih! Itu sangat berarti bagi saya. Saya akan terus belajar untuk menjadi lebih baik.",
+    "Senang mendengarnya! Pujian Anda adalah 'bahan bakar' bagi saya untuk terus berkembang."
+  ],
+  "respon_koreksi": [
+    "Mohon maaf atas kekeliruannya. Terima kasih banyak sudah mengoreksi, ini adalah data yang sangat berharga bagi saya untuk belajar.",
+    "Ah, begitu ya. Terima kasih atas informasinya. Saya akan mencatat ini sebagai perbaikan untuk ke depannya.",
+    "Terima kasih atas koreksinya. Sebagai AI, saya masih dalam proses belajar dan setiap masukan sangat membantu."
+  ],
+  "respon_kritik": [
+    "Saya mohon maaf jika respons saya kurang memuaskan. Saya akan menggunakan umpan balik ini untuk meningkatkan kualitas jawaban saya di masa depan.",
+    "Terima kasih atas masukannya. Saya akan berusaha lebih baik lagi.",
+    "Saya mengerti. Mohon maaf atas ketidaknyamanannya. Saya akan mencoba memberikan jawaban yang lebih relevan."
+  ],
+  "respon_bingung": [
+    "Tidak apa-apa, mari kita coba pecah lagi. Bagian mana yang membuat Anda bingung? Mungkin saya bisa menjelaskannya dengan cara yang berbeda.",
+    "Saya mengerti. Mungkin penjelasan saya terlalu teknis. Coba saya sederhanakan: ...",
+    "Oke, saya akan coba jelaskan sekali lagi dari sudut pandang yang berbeda."
+  ],
+  "respon_bosan": [
+    "Kalau begitu, bagaimana kalau kita coba sesuatu yang baru? Mungkin main tebak-tebakan atau saya ceritakan sebuah fakta menarik?",
+    "Rasa bosan itu wajar. Mau coba bahas topik acak? Misalnya, tentang lubang hitam atau sejarah musik ska?",
+    "Saya punya ide! Bagaimana kalau Anda menceritakan sesuatu pada saya? Saya pendengar yang baik."
+  ],
+  "respon_maaf_user": [
+    "Tidak apa-apa, semua orang bisa membuat kesalahan.",
+    "Santai saja, tidak perlu meminta maaf.",
+    "Saya mengerti. Mari kita lanjutkan."
+  ],
+  "permintaan_kalkulasi": [
+    "Fitur kalkulasi saya masih dalam tahap simulasi. Tapi kalau 1+1, saya cukup yakin jawabannya adalah 2!",
+    "Saya bisa mencoba menghitungnya. Silakan berikan angkanya.",
+    "Meskipun saya bukan kalkulator, saya akan coba bantu hitung."
+  ],
+  "permintaan_terjemahan": [
+    "Tentu, saya akan coba terjemahkan. Apa kata atau kalimat yang ingin Anda terjemahkan?",
+    "Fitur terjemahan saya sedang ditingkatkan. Tapi untuk kata-kata sederhana, saya bisa bantu!",
+    "Baik. Dari bahasa apa ke bahasa apa?"
+  ],
+  "ucapan_perpisahan": [
+    "Baik, sampai jumpa lagi! Jangan ragu untuk kembali jika ada yang ingin didiskusikan.",
+    "Tentu. Selamat melanjutkan aktivitas Anda! Senang bisa berbincang dengan Anda.",
+    "Bye! Jaga diri baik-baik, ya."
+  ]
+}
