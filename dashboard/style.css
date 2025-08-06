@@ -1,0 +1,118 @@
+/* --- Reset & Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Font modern yang mudah dibaca */
+    background-color: #ffffff; /* Latar belakang putih bersih */
+    color: #333333; /* Warna teks utama gelap */
+}
+
+/* --- Header Styling --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background-color: #333333;
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sedikit bayangan di bawah header */
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- Main Content Styling --- */
+.content-wrapper {
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Membuat konten di tengah secara horizontal */
+}
+
+.main-heading {
+    width: 100%;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: #1a1a1a;
+}
+
+/* --- Portfolio Link Cards Styling --- */
+.portfolio-links {
+    width: 100%;
+    max-width: 500px; /* Batas lebar maksimum agar tidak terlalu lebar di layar besar */
+}
+
+.portfolio-card {
+    display: flex;
+    align-items: center;
+    background-color: #2C2C2C; /* Warna abu-abu gelap seperti di gambar */
+    color: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Animasi halus */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Efek mengangkat saat kursor di atasnya */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover; /* Memastikan gambar tidak gepeng */
+    margin-right: 16px;
+    border: 2px solid #ffffff;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    color: #dddddd; /* Warna abu-abu terang untuk subjudul */
+}
+
+/* --- Closing Text Styling --- */
+.closing-text {
+    margin-top: 32px;
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.7; /* Jarak antar baris agar mudah dibaca */
+    color: #555555;
+    font-size: 0.9rem;
+}
+
