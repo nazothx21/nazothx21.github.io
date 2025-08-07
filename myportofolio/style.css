@@ -246,6 +246,13 @@ body {
 .video-container {
     border-radius: 15px;
     overflow: hidden;
+  /* Sesuaikan nilainya sesuai selera */
+}
+
+.video-container-web {
+    border-radius: 15px;
+    overflow: hidden;
+    height: 450px; /* Sesuaikan nilainya sesuai selera */
 }
 
 .fotolovi {
@@ -254,7 +261,20 @@ body {
     margin-bottom: 15PX;
 }
 
+.fotolovi-wlee {
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+
+
 .fotolovi img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.fotolovi-wlee img{
     width: 100%;
     height: auto;
     display: block;
@@ -294,4 +314,10 @@ footer .fa-heart {
 #calculator .btn {
     height: 60px;
     font-size: 1.5rem;
+}
+
+.iframe-interaktif {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
