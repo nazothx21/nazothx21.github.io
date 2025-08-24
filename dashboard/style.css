@@ -7,17 +7,43 @@
 
 body {
     font-family: 'Poppins', sans-serif; /* Font modern yang mudah dibaca */
-    background-color: #ffffff; /* Latar belakang putih bersih */
-    color: #333333; /* Warna teks utama gelap */
+    color: #ffffff; /* Warna teks utama putih agar kontras dengan video */
+    background-color: #000;
+}
+
+.page-content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Hide anything that spills out */
+    transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
 }
 
 /* --- Header Styling --- */
 .main-header {
+    position: fixed; /* Make header stay on top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Ensure header is above other content */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px 24px;
-    background-color: #333333;
+    background-color: rgba(51, 51, 51, 0.7); /* Warna header dengan sedikit transparansi */
     color: #ffffff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sedikit bayangan di bawah header */
 }
@@ -31,6 +57,7 @@ body {
     background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 11; /* Make sure button is on top of nav */
 }
 
 .menu-toggle span {
@@ -42,12 +69,73 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+.menu-toggle.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+
+/* --- Nav Menu Styling --- */
+.main-nav {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 44, 44, 0.95);
+    padding: 16px 0;
+}
+
+.main-nav.is-active {
+    display: block; /* Show when active */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.main-nav ul li {
+    margin-bottom: 16px;
+}
+
+.main-nav ul li:last-child {
+    margin-bottom: 0;
+}
+
+.main-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #a7a7a7;
+}
+
+
 /* --- Main Content Styling --- */
 .content-wrapper {
     padding: 32px 24px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Membuat konten di tengah secara horizontal */
+    padding-top: 100px; /* Add padding to push content below fixed header */
+    position: relative; /* Keep for stacking context if needed, but not for blur */
+    z-index: 1; /* Ensure content is above video */
 }
 
 .main-heading {
@@ -55,7 +143,8 @@ body {
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 32px;
-    color: #1a1a1a;
+    color: #ffffff; /* Warna heading putih */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks agar lebih terbaca */
 }
 
 /* --- Portfolio Link Cards Styling --- */
@@ -67,7 +156,7 @@ body {
 .portfolio-card {
     display: flex;
     align-items: center;
-    background-color: #2C2C2C; /* Warna abu-abu gelap seperti di gambar */
+    background-color: rgba(44, 44, 44, 0.8); /* Warna kartu dengan transparansi */
     color: #ffffff;
     padding: 16px;
     border-radius: 12px;
@@ -112,7 +201,35 @@ body {
     text-align: center;
     max-width: 500px;
     line-height: 1.7; /* Jarak antar baris agar mudah dibaca */
-    color: #555555;
+    color: #ffffff; /* Warna teks putih */
     font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Bayangan teks agar lebih terbaca */
 }
 
+/* --- Effects for when Nav is Open --- */
+
+@keyframes fire-flicker {
+    0% { background-color: rgba(255, 100, 0, 0.1); }
+    25% { background-color: rgba(255, 165, 0, 0.15); }
+    50% { background-color: rgba(255, 69, 0, 0.1); }
+    75% { background-color: rgba(255, 140, 0, 0.2); }
+    100% { background-color: rgba(255, 99, 71, 0.15); }
+}
+
+.page-content.is-blurred {
+    filter: blur(8px);
+    transform: scale(1.05); /* Scale up slightly to hide edges from blur */
+}
+
+.page-content.is-blurred::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 100, 0, 0.1);
+    z-index: 2;
+    animation: fire-flicker 1s infinite alternate;
+    pointer-events: none;
+}
