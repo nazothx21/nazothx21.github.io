@@ -1,450 +1,1819 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
-    <title>About Tyo Alfando Yang Lagi Gamon Dan Cari Kerja</title>
-    <!-- Favicon / Logo Browser -->
-    <link rel="icon" href="asset/olineTyoo.jpeg" type="image/jpeg">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="dark-mode">
+<html lang="id" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Grateo Alfando Atmojo</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"
+    ></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              "electric-blue": "#00BFFF",
+              "cyan-glow": "#00FFFF",
+              "purple-glow": "#8B5CF6",
+              "pink-glow": "#EC4899",
+              "green-glow": "#10B981",
+              "orange-glow": "#F59E0B",
+              "dark-bg": "#0F0F23",
+              "dark-card": "#1A1A2E",
+              "light-bg": "#F1F5F9",
+              "light-card": "#FEFEFE",
+            },
+            boxShadow: {
+              "neuro-dark": "8px 8px 16px #0a0a0a, -8px -8px 16px #1e1e1e",
+              "neuro-light": "8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff",
+              glow: "0 0 20px rgba(0, 191, 255, 0.5)",
+              "glow-strong": "0 0 30px rgba(0, 255, 255, 0.8)",
+              "glow-purple": "0 0 20px rgba(139, 92, 246, 0.6)",
+              "glow-pink": "0 0 20px rgba(236, 72, 153, 0.6)",
+              "glow-green": "0 0 20px rgba(16, 185, 129, 0.6)",
+            },
+            animation: {
+              typing:
+                "typing 3.5s steps(40, end), blink-caret .75s step-end infinite",
+              float: "float 6s ease-in-out infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "bounce-slow": "bounce 3s infinite",
+              "spin-slow": "spin 8s linear infinite",
+              wiggle: "wiggle 1s ease-in-out infinite",
+              gradient: "gradient 15s ease infinite",
+              "slide-up": "slideUp 0.5s ease-out",
+              "slide-in": "slideIn 0.6s ease-out",
+              "scale-in": "scaleIn 0.5s ease-out",
+              "fade-in": "fadeIn 0.5s ease-out",
+            },
+            keyframes: {
+              typing: {
+                from: { width: "0" },
+                to: { width: "100%" },
+              },
+              "blink-caret": {
+                "from, to": { borderColor: "transparent" },
+                "50%": { borderColor: "#00BFFF" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-8px)" },
+              },
+              wiggle: {
+                "0%, 100%": { transform: "rotate(-3deg)" },
+                "50%": { transform: "rotate(3deg)" },
+              },
+              gradient: {
+                "0%, 100%": { backgroundPosition: "0% 50%" },
+                "50%": { backgroundPosition: "100% 50%" },
+              },
+              slideUp: {
+                from: { transform: "translateY(100px)", opacity: "0" },
+                to: { transform: "translateY(0)", opacity: "1" },
+              },
+              slideIn: {
+                from: { transform: "translateX(-100px)", opacity: "0" },
+                to: { transform: "translateX(0)", opacity: "1" },
+              },
+              scaleIn: {
+                from: { transform: "scale(0.8)", opacity: "0" },
+                to: { transform: "scale(1)", opacity: "1" },
+              },
+              fadeIn: {
+                from: { opacity: "0" },
+                to: { opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/css">
+      .glass {
+        background: rgba(224, 224, 224, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(70, 70, 70, 0.1);
+      }
+      .glass-light {
+        background: rgba(164, 153, 153, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 0, 0, 0.6);
+      }
+      .gradient-bg {
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+      .skill-bar {
+        position: relative;
+        overflow: hidden;
+      }
+      .skill-progress {
+        height: 100%;
+        background: linear-gradient(90deg, #00bfff, #8b5cf6, #ec4899);
+        border-radius: inherit;
+        transform: translateX(-100%);
+        transition: transform 2s ease-in-out;
+      }
+      .skill-progress.animate {
+        transform: translateX(0);
+      }
+      .tech-icon {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        filter: grayscale(100%) brightness(0.8);
+      }
+      .tech-icon:hover,
+      .tech-icon:active {
+        filter: grayscale(0%) brightness(1.2);
+        transform: translateY(-10px) scale(1.1);
+      }
+      .project-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+      }
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+      .project-card:hover::before,
+      .project-card:active::before {
+        left: 100%;
+      }
+      .project-card:hover,
+      .project-card:active {
+        transform: translateY(-10px) scale(1.02);
+      }
+      .floating-label {
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+      .form-input:focus + .floating-label,
+      .form-input:not(:placeholder-shown) + .floating-label {
+        transform: translateY(-25px) scale(0.8);
+        color: #00bfff;
+      }
+      .certificate-card {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .certificate-card:hover,
+      .certificate-card:active {
+        transform: translateY(-5px) rotateY(5deg);
+      }
+      .testimonial-card {
+        transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .testimonial-card:hover,
+      .testimonial-card:active {
+        transform: scale(1.05);
+      }
+      .testimonial-content {
+        flex-grow: 1;
+      }
+      .github-activity {
+        display: grid;
+        grid-template-columns: repeat(53, 1fr);
+        gap: 2px;
+        max-width: 100%;
+        overflow-x: auto;
+      }
+      .activity-day {
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        transition: all 0.2s ease;
+        min-width: 10px;
+      }
+      .activity-day:hover {
+        transform: scale(1.5);
+      }
+      .activity-0 {
+        background-color: #161b22;
+      }
+      .activity-1 {
+        background-color: #0e4429;
+      }
+      .activity-2 {
+        background-color: #006d32;
+      }
+      .activity-3 {
+        background-color: #26a641;
+      }
+      .activity-4 {
+        background-color: #39d353;
+      }
+      @media (max-width: 768px) {
+        .github-activity {
+          grid-template-columns: repeat(26, 1fr);
+        }
+        .activity-day {
+          width: 8px;
+          height: 8px;
+          min-width: 8px;
+        }
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+      }
+      .modal.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease-out;
+      }
+      .modal-content {
+        background: rgba(26, 26, 46, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 2rem;
+        max-width: 500px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        animation: scaleIn 0.3s ease-out;
+        margin: 1rem;
+      }
+      @media (max-width: 640px) {
+        .modal-content {
+          padding: 1.5rem;
+          margin: 0.5rem;
+        }
+      }
+      .star-rating {
+        display: flex;
+        gap: 4px;
+        margin: 8px 0;
+      }
+      .star {
+        font-size: 20px;
+        color: #374151;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .star:hover,
+      .star:active,
+      .star.active {
+        color: #fbbf24;
+      }
+      .card-grid {
+        display: grid;
+        gap: 1.5rem;
+        width: 100%;
+      }
+      .card-grid.cols-1,
+      .card-grid.cols-2,
+      .card-grid.cols-3,
+      .card-grid.cols-4 {
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 640px) {
+        .card-grid {
+          gap: 2rem;
+        }
+        .card-grid.cols-2,
+        .card-grid.cols-3,
+        .card-grid.cols-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .card-grid.cols-3 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .card-grid.cols-4 {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        justify-items: center;
+        align-items: start;
+      }
+      @media (min-width: 480px) {
+        .skills-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.5rem;
+        }
+      }
+      @media (min-width: 640px) {
+        .skills-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (min-width: 768px) {
+        .skills-grid {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 2rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .skills-grid {
+          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        }
+      }
+      .skill-card {
+        background: rgb(255, 255, 255);
+        border: black;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 1rem;
+        width: 100%;
+        max-width: 140px;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        -webkit-tap-highlight-color: transparent;
+      }
+      @media (min-width: 640px) {
+        .skill-card {
+          padding: 1.5rem;
+        }
+      }
+      .skill-card:hover,
+      .skill-card:active {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 191, 255, 0.3);
+        border-color: rgba(0, 191, 255, 0.5);
+      }
+      .skill-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.6s;
+      }
+      .skill-card:hover::before,
+      .skill-card:active::before {
+        left: 100%;
+      }
+      .skill-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 0.75rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      @media (min-width: 640px) {
+        .skill-icon-wrapper {
+          width: 60px;
+          height: 60px;
+          margin: 0 auto 1rem;
+        }
+      }
+      .skill-icon {
+        font-size: 1.5rem;
+        color: rgb(0, 0, 0);
+        z-index: 2;
+        position: relative;
+      }
+      @media (min-width: 640px) {
+        .skill-icon {
+          font-size: 2rem;
+        }
+      }
+      .skill-name {
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #e5e7eb;
+      }
+      @media (min-width: 640px) {
+        .skill-name {
+          font-size: 0.875rem;
+        }
+      }
+      .skill-level {
+        width: 100%;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+      }
+      .skill-level-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #00bfff, #8b5cf6);
+        border-radius: 2px;
+        transform: translateX(-100%);
+        transition: transform 1.5s ease-out;
+      }
+      .skill-level-fill.animate {
+        transform: translateX(0);
+      }
+      .iframe-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .scaled-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 133.33%;
+        height: 133.33%;
+        transform: scale(0.75);
+        transform-origin: 0 0;
+        border: none;
+      }
+      @media (hover: none) and (pointer: coarse) {
+        .skill-card:active,
+        .project-card:active,
+        .certificate-card:active,
+        .testimonial-card:active {
+          transform: scale(0.98);
+        }
+      }
+      button, .skill-card, .project-card, .certificate-card, .testimonial-card {
+        min-height: 44px;
+        min-width: 44px;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-50 dark:bg-dark-bg text-gray-700 dark:text-gray-200 font-sans transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 glass-light dark:glass transition-all duration-300"
+    >
+      <div class="container mx-auto px-4 sm:px-6 py-4">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a href="#" class="text-xl sm:text-2xl font-bold text-electric-blue">
+            <span class="gradient-bg bg-clip-text text-transparent"
+              >Grateo </span
+            ><span class="text-electric-blue">Alfando</span>
+          </a>
 
-    <div id="background-video-container">
-        <!-- Video akan dipindahkan ke sini secara visual oleh CSS -->
-    </div>
+          <!-- Navigasi -->
+          <nav class="hidden md:flex space-x-6 lg:space-x-8">
+            <a
+              href="#home"
+              class="nav-link active py-2 text-sm lg:text-base text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+              >Beranda</a
+            >
+            <a
+              href="#about"
+              class="nav-link py-2 text-sm lg:text-base text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+              >Tentang</a
+            >
+            <a
+              href="#projects"
+              class="nav-link py-2 text-sm lg:text-base text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+              >Proyek</a
+            >
+            <a
+              href="#skills"
+              class="nav-link py-2 text-sm lg:text-base text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+              >Keahlian</a
+            >
+            <a
+              href="#github"
+              class="nav-link py-2 text-sm lg:text-base text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+              >Github</a
+            >
+            <a
+              href="#certificates"
+              class="nav-link py-2 text-sm lg:text-base text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+              >Sertifikat</a
+            >
+            <a
+              href="#testimonials"
+              class="nav-link py-2 text-sm lg:text-base text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+              >Testimoni</a
+            >
+            <a
+              href="#contact"
+              class="nav-link py-2 text-sm lg:text-base text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+              >Kontak</a
+            >
+          </nav>
 
-    <div class="loader-wrapper">
-        <div class="loader"></div>
-        <p></p>
-    </div>
+          <!-- Tombol Tema -->
+          <button
+            id="theme-toggle"
+            class="p-2 sm:p-3 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 dark:from-blue-500 dark:to-purple-600 hover:shadow-glow transition-all duration-300 transform hover:scale-110"
+          >
+            <i
+              class="fas fa-sun text-white dark:hidden text-sm sm:text-base"
+            ></i>
+            <i
+              class="fas fa-moon text-white hidden dark:block text-sm sm:text-base"
+            ></i>
+          </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">AlfandoXeon <span id="current-date"></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#my-projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#social-media">Contact</a>
-                    </li>
-                </ul>
-                <form class="d-flex" id="search-form">
-                    <input class="form-control me-2" type="search" id="search-input" placeholder="Chat With AlfandoXeon AI...">
-                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-                <button class="btn btn-outline-info ms-2 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#calculatorModal">
-                    <i class="fas fa-calculator"></i>
-                </button>
-            </div>
+          <!-- Tombol Menu Mobile -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-gray-800 dark:text-gray-200 focus:outline-none ml-2"
+          >
+            <i class="fas fa-bars text-xl sm:text-2xl"></i>
+          </button>
         </div>
-    </nav>
 
-    <header class="hero d-flex justify-content-center align-items-center text-center">
-        <div class="hero-content">
-            <div class="profile-video-container">
-                <div class="profile-video-wrapper">
-                    <video id="profileVideo" src="https://res.cloudinary.com/dkt9v96ic/video/upload/profilevideo_zhsilh.mp4" alt="Video Profil Mas Tyo" class="profile-pic" autoplay loop muted playsinline></video>
-                    <img id="profileImage" src="asset/profile.jpg" alt="Foto Profil Mas Tyo" class="profile-pic" style="display: none;">
-                </div>
-                <button id="volume-toggle" class="volume-button"><i class="fas fa-volume-mute"></i></button>
-            </div>
-            <h2 id="greeting" class="mb-3"></h2>
-            <h1 class="display-4 fw-bold">Grateo Alfando Atmojo</h1>
-            <p class="lead">Full-stack Video Editor & Mahasiswa Teknik Informatika</p>
-
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 space-y-2">
+          <a
+            href="#home"
+            class="block py-2 text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+            >Beranda</a
+          >
+          <a
+            href="#about"
+            class="block py-2 text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+            >Tentang</a
+          >
+          <a
+            href="#projects"
+            class="block py-2 text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+            >Proyek</a
+          >
+          <a
+            href="#skills"
+            class="block py-2 text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+            >Keahlian</a
+          >
+          <a
+            href="#github"
+            class="block py-2 text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+            >Github</a
+          >
+          <a
+            href="#certificates"
+            class="block py-2 text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+            >Sertifikat</a
+          >
+          <a
+            href="#testimonials"
+            class="block py-2 text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+            >Testimoni</a
+          >
+          <a
+            href="#contact"
+            class="block py-2 text-gray-800 dark:text-gray-200 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+            >Kontak</a
+          >
         </div>
+      </div>
     </header>
 
-    <main class="container my-5">
-        <section id="about" class="mb-5">
-            <h2 class="text-center mb-4"><i class="fas fa-user"></i> Sedikit Info About Me</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Profil Pribadi</h3>
-                            <ul class="list-unstyled">
-                                <li><strong>Nama Lengkap:</strong> Grateo Alfando Atmojo</li>
-                                <li><strong>Panggilan:</strong> Grateo - Mas Tyo - Teo - Alfando</li>
-                                <li><strong>Pendidikan:</strong> S1 Teknik Informatika, UKSW</li>
-                                <li><strong>Latar Belakang:</strong> Nolep</li>
-                                <li><strong>Ulang Tahun:</strong> 07 Mei</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Latar Belakang Percintaan</h3>
-                            <ul class="list-unstyled">
-                                <li><strong>Percintaan:</strong> Kandas</li>
-                                <li><strong>Alasan:</strong> Masih Kurang Dalam Segala Hal</li>
-                                <li><strong>Korban:</strong> Mbak perawat</li>
-                                <li><strong><br>Kronologi:</strong></li>
-                                <li>   <i>"Seorang perawat telah mengambil seluruh rasa cintaku, lalu membuangnya seolah sampah yang tak berharga. Kini, yang tersisa hanyalah Tyo yang tersakiti, seorang kakak yang kehilangan kekuatannya, seorang sedang diuji oleh kenangan akan seseorang yang telah membuangnya dengan sia-sia."</i> </li>
-                                <li><i><br>"Perawat yang katanya menyembuhkan luka, tetapi justru memberi luka yang begitu dalam~ <br>Aduhhh, jangan ya dek yaaa "</i></li>
-                                <h3 class="card-title"">instagram: @grteo_alfndd21</h3>
-                                <h2><br><br>Btw, disini saya membuat sebuah aplikasi <b>Kalkulator Cinta</b></h2>
-                                <p>Supaya tidak salah pasangan, ada baiknya kalian mencoba <b>Tes Kecocokan</b> dengan pasangan kalian sebelum melanjutkan <i>hubungan yaa...</i></p>
-                                <p>Biar gak kandas kayak mimin deh hehe...</p>
-                                <div class="text-center mt-3"><br>
-                                    <a href="http://nazothx21.github.io/love-calculator" target="_blank" class="btn btn-primary"><h3><b>Love Calculator</b><br><i>By AlfandoXeon2025</i></h3></a>
-                                </div>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    <!-- Bagian Hero -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      <div class="absolute inset-0 gradient-bg opacity-20"></div>
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-1/4 left-1/4 w-32 h-32 bg-electric-blue rounded-full filter blur-3xl opacity-30 animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/3 right-1/4 w-40 h-40 bg-purple-glow rounded-full filter blur-3xl opacity-20 animate-float"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 w-24 h-24 bg-pink-glow rounded-full filter blur-3xl opacity-25 animate-float"
+          style="animation-delay: 2s"
+        ></div>
+      </div>
+      <div class="container mx-auto px-4 sm:px-6 z-10 text-center">
+        <p
+          class="text-lg sm:text-xl md:text-2xl font-light mb-4 text-gray-400 animate-slide-in"
+        >
+          Halo, saya
+        </p>
+        <h1
+          class="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-white animate-scale-in"
+        >
+          <span class="typing-container">
+            <span
+              class="typing-text gradient-bg bg-clip-text text-transparent"
+              id="dev-name"
+              >Grateo Alfando Atmojo</span
+            >
+          </span>
+        </h1>
+        <h2
+          class="text-xl sm:text-2xl md:text-3xl font-light mb-8 text-electric-blue animate-slide-up"
+        >
+          <span class="typing-container" style="animation-delay: 3.5s">
+            <span class="typing-text" id="dev-title"></span>
+          </span>
+        </h2>
+        <div
+          class="flex flex-col sm:flex-row justify-center gap-4 mt-8 animate-slide-up"
+        >
+          <a
+            href="#projects"
+            class="px-6 sm:px-8 py-3 rounded-full bg-gradient-to-r from-electric-blue to-purple-glow text-white font-medium hover:shadow-glow-strong transform hover:scale-105 transition-all duration-300"
+            >Lihat Karya Saya</a
+          >
+          <a
+            href="#contact"
+            class="px-6 sm:px-8 py-3 rounded-full bg-transparent border-2 border-electric-blue text-electric-blue font-medium hover:bg-electric-blue hover:text-white hover:shadow-glow transform hover:scale-105 transition-all duration-300"
+            >Hubungi Saya</a
+          >
+        </div>
+      </div>
+      <div
+        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow"
+      >
+        <a
+          href="#about"
+          class="text-white opacity-70 hover:opacity-100 transition-opacity"
+        >
+          <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Bagian Tentang Saya -->
+    <section id="about" class="py-16 sm:py-28 md:py-28 scroll-mt-20 md:scroll-mt-10">
+
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 sm:mb-16 text-center relative -mt-5"
+        >
+          <span class="-ml-16 relative gradient-bg bg-clip-text text-transparent">
+            Tentang Saya
+          </span>
+        </h2>
+        <div
+          class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12"
+        >
+          <div class="lg:w-2/5 flex justify-center">
+            <div class="relative animate-float -mt-10">
+              <div
+                class="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-neuro-dark dark:shadow-neuro-dark border-4 border-gradient-to-r from-electric-blue via-purple-glow to-pink-glow"
+              >
+                <img
+                  src="image/tyo.jpg"
+                  alt="Foto Profil"
+                  class="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div
+                class="absolute inset-0 rounded-full border-4 border-cyan-glow opacity-50 animate-pulse-slow"
+              ></div>
+              <div
+                class="absolute -top-4 -right-4 w-8 h-8 bg-green-glow rounded-full animate-pulse sparkle"
+              ></div>
+              <div
+                class="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-glow rounded-full animate-pulse sparkle"
+                style="animation-delay: 1s"
+              ></div>
             </div>
-        </section>
-        <section id="my-jj-videos" class="mb-5">
-            <h2 class="text-center mb-4"><i class="fas fa-girl"></i> Kekasihku Terindah (Dulu) :) </h2>
-            <div class="scroll-container-wrapper">
-                <div class="scroll-container">
-                    <div class="scroll-item">
-                        <div class="video-container">
-                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464213/4e60vj_qsidzj.mp4" loop playsinline controls class="w-100" title="JJ Video 1"></video>
-                        </div>
-                        <div class="text-center mt-3">
-                            <p>pencet tombol dibawah ini buat balikan...</p>
-                            <a href="https://wa.me/6285764175824?text=sayanggg%20aku%20kangennnn...%20balikan%20yaaa" target="_blank" class="btn btn-primary"><h2>pliss sayanggg, pencet ini yaaa</h2></a>
-                        </div>
-                    </div>
-                    <div class="scroll-item">
-                        <div class="video-container">
-                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464335/awk8r6_xi8vas.mp4" loop playsinline controls class="w-100" title="JJ Video 2"></video>
-                        </div>
-                        <div class="text-center mt-3">
-                            <p>aku kangen...</p>
-                        </div>
-                    </div>
-                    <div class="scroll-item">
-                        <div class="fotolovi-wlee">
-                            <img src="asset/lovi.jpg" alt="">
-                        </div>
-                        <div class="text-center mt-3">
-                            <p>hmm</p>
-                        </div>
-                    </div>
-                    <div class="scroll-item">
-                        <div class="fotolovi">
-                            <img src="https://res.cloudinary.com/dkt9v96ic/image/upload/v1754470639/WIN_20250511_15_12_22_Pro_lrhsbj.jpg" alt="">
-                        </div>
-                        <div class="fotolovi">
-                            <img src="https://res.cloudinary.com/dkt9v96ic/image/upload/v1754470724/IMG_20250511_215822_793_yspprc.jpg" alt="">
-                        </div>
-                        <div class="fotolovi">
-                            <img src="https://res.cloudinary.com/dkt9v96ic/image/upload/v1754470770/tyoo_x_lovi_1_i6xjdo.jpg" alt="">
-                        </div>
-                        <div class="text-center mt-3">
-                            <p>foto kita masih lengkap di galeri..<br>aku ga tega menghapus nya..</p>
-                             <a href="https://wa.me/6285764175824?text=sayanggg%20aku%20kangennnn...%20balikan%20yaaa" target="_blank" class="btn btn-primary"><h2><i class="fas fa-images"></i> Lihat Galeri Kita</h2></a>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="lg:w-3/5">
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
+              Saya
+              <span class="gradient-bg bg-clip-text text-transparent"
+                >Grateo Alfando Atmojo</span
+              >, seorang Full-Stack Web Developer
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-sm sm:text-base"
+            >
+              Saya berspesialisasi dalam membangun pengalaman digital luar biasa yang hidup di internet. Dengan fokus pada pembuatan aplikasi yang elegan, efisien, dan ramah pengguna, saya mewujudkan ide menjadi kode.
+            </p>
+            <p
+              class="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed text-sm sm:text-base"
+            >
+              Sebagai lulusan Sarjana Teknik Informatika dari UKSW, saya telah mengerjakan berbagai proyek yang mengasah kemampuan saya. Saya senang menggabungkan keterampilan teknis dengan pemecahan masalah yang kreatif untuk memberikan solusi yang efektif dan menarik.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              <div
+                class="flex items-center p-3 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20"
+              >
+                <i
+                  class="fas fa-map-marker-alt text-electric-blue mr-3 text-lg"
+                ></i>
+                <span class="text-sm sm:text-base">Lampung Timur, Indonesia</span>
+              </div>
+              <div
+                class="flex items-center p-3 rounded-lg bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20"
+              >
+                <i class="fas fa-envelope text-green-glow mr-3 text-lg"></i>
+                <span class="text-sm sm:text-base">grateoalfandoatmojo@gmail.com</span>
+              </div>
+              <div
+                class="flex items-center p-3 rounded-lg bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20"
+              >
+                <i class="fas fa-phone text-purple-glow mr-3 text-lg"></i>
+                <span class="text-sm sm:text-base">+62 857641758424</span>
+              </div>
+              <div
+                class="flex items-center p-3 rounded-lg bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20"
+              >
+                <i
+                  class="fas fa-graduation-cap text-orange-glow mr-3 text-lg"
+                ></i>
+                <span class="text-sm sm:text-base"
+                  >S1 Teknik Informatika, UKSW</span
+                >
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="file/tyoCV.pdf"
+                download
+                class="px-6 py-3 rounded-full bg-gradient-to-r from-electric-blue to-purple-glow text-white font-medium hover:shadow-glow transform hover:scale-105 transition-all duration-300 text-center"
+              >
+                <i class="fas fa-download mr-2"></i> Unduh CV
+              </a>
+              <a
+                href="#contact"
+                class="px-6 py-3 rounded-full bg-transparent border-2 border-electric-blue text-electric-blue font-medium hover:bg-electric-blue hover:text-white hover:shadow-glow transform hover:scale-105 transition-all duration-300 text-center"
+              >
+                <i class="fas fa-paper-plane mr-2"></i> Rekrut Saya
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Proyek -->
+    <section
+      id="projects"
+      class="py-16 sm:py-20 md:py-28 md:scroll-mt-1 scroll-mt-20 bg-slate-100 dark:bg-gray-900"
+    >
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center"
+        >
+          <span class="relative gradient-bg bg-clip-text text-transparent">
+            Proyek Unggulan Saya
+          </span>
+        </h2>
+        <div class="card-grid cols-4">
+          <!-- Proyek 1: AlfandoXeonChatAI -->
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+          >
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+              <iframe src="https://nazothx21.github.io/alfandoxeonchatai" class="w-full h-full" frameborder="0"></iframe>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                AlfandoXeonChatAI
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify">
+                Sebuah proyek chatbot inovatif yang dirancang untuk interaksi dinamis. Memanfaatkan teknologi AI terdepan untuk menciptakan percakapan yang alami dan responsif.
+              </p>
+              <div class="flex gap-3 mt-4">
+                <a
+                  href="https://nazothx21.github.io/alfandoxeonchatai"
+                  target="_blank"
+                  class="flex-1 px-4 py-2 rounded-full bg-gradient-to-r from-electric-blue to-cyan-glow text-white text-sm font-medium hover:shadow-glow transform hover:scale-105 transition-all duration-300 text-center"
+                >
+                  <i class="fas fa-eye mr-1"></i> Lihat Proyek
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyek 2: Jam Digital JDAX -->
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+          >
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+              <iframe src="https://alfando345.github.io/jamdigital/" class="w-full h-full" frameborder="0"></iframe>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                Jam Digital JDAX
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify">
+                Aplikasi jam digital yang fungsional dengan desain antarmuka yang modern dan bersih. Proyek ini menonjolkan kemampuan dalam menciptakan utilitas web yang presisi dan estetis.
+              </p>
+              <div class="flex gap-3 mt-4">
+                <a
+                  href="https://alfando345.github.io/jamdigital"
+                  target="_blank"
+                  class="flex-1 px-4 py-2 rounded-full bg-gradient-to-r from-electric-blue to-cyan-glow text-white text-sm font-medium hover:shadow-glow transform hover:scale-105 transition-all duration-300 text-center"
+                >
+                  <i class="fas fa-eye mr-1"></i> Lihat Proyek
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyek 3: Kalkulator -->
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+          >
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+              <iframe src="https://alfando345.github.io/kalktulator" class="w-full h-full" frameborder="0"></iframe>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                Kalkulator
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify">
+                Kalkulator web yang intuitif dan mudah digunakan dengan antarmuka yang responsif. Sempurna untuk perhitungan cepat, menunjukkan fokus pada fungsionalitas dan UX yang lancar.
+              </p>
+              <div class="flex gap-3 mt-4">
+                <a
+                  href="https://alfando345.github.io/kalktulator"
+                  target="_blank"
+                  class="flex-1 px-4 py-2 rounded-full bg-gradient-to-r from-electric-blue to-cyan-glow text-white text-sm font-medium hover:shadow-glow transform hover:scale-105 transition-all duration-300 text-center"
+                >
+                  <i class="fas fa-eye mr-1"></i> Lihat Proyek
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyek 4: Love Calculator -->
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-electric-blue/20"
+          >
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+              <iframe src="https://nazothx21.github.io/love-calculator" class="w-full h-full" frameborder="0"></iframe>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                Love Calculator
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify">
+                Sebuah proyek hiburan yang menyenangkan dan interaktif. Dibuat untuk memberikan pengalaman yang ringan dan menarik bagi pengguna, menunjukkan kreativitas dalam pengembangan aplikasi web.
+              </p>
+              <div class="flex gap-3 mt-4">
+                <a
+                  href="https://nazothx21.github.io/love-calculator"
+                  target="_blank"
+                  class="flex-1 px-4 py-2 rounded-full bg-gradient-to-r from-electric-blue to-cyan-glow text-white text-sm font-medium hover:shadow-glow transform hover:scale-105 transition-all duration-300 text-center"
+                >
+                  <i class="fas fa-eye mr-1"></i> Lihat Proyek
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyek 5: AlfandoOxxyn Bot -->
+          <div
+            class="project-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+          >
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden text-green-400">
+              <i class="fab fa-whatsapp text-8xl"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-base font-bold mb-2 text-gray-800 dark:text-white">
+                AlfandoOxxyn Bot
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-4 text-xs text-justify">
+                Bot WhatsApp serbaguna yang dirancang untuk mengotomatisasi tugas. Menunjukkan keahlian dalam integrasi API dan pengembangan backend untuk platform perpesanan.
+              </p>
+              <div class="flex gap-3 mt-4">
+                <a
+                  href="https://nazothx21.github.io"
+                  target="_blank"
+                  class="flex-1 px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-medium hover:shadow-glow-green transform hover:scale-105 transition-all duration-300 text-center"
+                >
+                  <i class="fas fa-eye mr-1"></i> Lihat Info
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Keahlian -->
+    <section id="skills" class="py-16 sm:py-20 md:py-32 md:scroll-mt-1 scroll-mt-20">
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 sm:mb-16 text-center"
+        >
+          <span class="relative gradient-bg bg-clip-text text-transparent">
+            Keahlian Saya
+          </span>
+        </h2>
+
+        <!-- Keahlian Teknis -->
+        <div class="mb-16">
+          <h3
+            class="text-xl sm:text-2xl font-bold mb-8 text-center gradient-bg bg-clip-text text-transparent"
+          >
+            Keterampilan Teknis
+          </h3>
+          <div class="skills-grid">
+            <!-- HTML -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="html">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-orange-400 to-red-500"
+              >
+                <i class="fab fa-html5 skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">HTML5</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
             </div>
 
-        </section>
-        <h2 class="text-center mb-4"><i class="fas fa-girl"></i>Bukti Nyata Bahwa Saya Memiliki Keahlian</h2>
-        <div class="scroll-container-wrapper">
-            
-            <div class="scroll-container">
-                <div class="scroll-item">
-                    <section id="my-video" class="container">
-                        <h2 class="text-center mb-4"><i class="fas fa-video"></i> My Video</h2>
-                        <div class="video-container">
-                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464509/uwth3h_xssrbn.mp4" loop playsinline controls class="w-100" title="My Video"></video>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="https://nazothx21.github.io" target="_blank" class="btn btn-primary">My Editor Portofolio</a>
-                        </div>
-                    </section>
-
-                </div>
-
-                <div class="scroll-item">
-                    <section id="my-video" class="container">
-                        <h2 class="text-center mb-4"><i class="fas fa-wifi"></i> MLBB</h2>
-                        <div class="video-container">
-                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464537/zehsdq_q9xkja.mp4" loop playsinline controls class="w-100" title="My Video"></video>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="https://nazothx21.github.io" target="_blank" class="btn btn-primary">Mabar Sinii</a>
-                        </div>
-                    </section>
-
-                </div>
-                <div class="scroll-item">
-                    <section id="my-program" class="container">
-                        <h2 class="text-center mb-4"><i class="fas fa-code"></i> My Program</h2>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Hai Dunia</h3>
-                                        <pre class="bg-dark text-light p-3 rounded"><code>#include &lt;stdio.h&gt;
-
-int main () {
-    printf("Hello, World!");
-    return AkuKangenSayanggg;
-}</code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Selamat Datang To World</h3>
-                                        <pre class="bg-dark text-light p-3 rounded"><code>print("Welcome, World!")</code></pre>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="scroll-item">
-                    <section id="my-projects" class="container">
-                        <h2 class="text-center mb-4"><i class="fas fa-project-diagram"></i> My Projects</h2>
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Jam Digital</h3>
-                                        <p class="card-text">A simple digital clock created with HTML, CSS, and JavaScript.</p>
-                                        <a href="https://alfando345.github.io/jamdigital" target="_blank" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Kalkulator</h3>
-                                        <p class="card-text">A calculator with basic arithmetic functions.</p>
-                                        <a href="https://alfando345.github.io/kalktulator/" target="_blank" class="btn btn-primary">View Project</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="scroll-item">
-                    <section id="my-video" class="container">
-                        <h2 class="text-center mb-4"><i class="fas fa-video"></i> AlfandoOxxyn Bot</h2>
-                        <div class="video-container">
-                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464572/w3006s_whvknw.mp4" loop playsinline controls class="w-100" title="My Video"></video>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="https://nazothx21.github.io" target="_blank" class="btn btn-primary">Chat With My Bot Whatsapp</a>
-                        </div>
-                    </section>
-                </div>
-
+            <!-- CSS -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="css">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-blue-400 to-blue-600"
+              >
+                <i class="fab fa-css3-alt skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">Tailwind CSS</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
             </div>
+
+            <!-- JavaScript -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="js">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-yellow-400 to-yellow-600"
+              >
+                <i class="fab fa-js skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">JavaScript</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Cisco -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="cisco">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-cyan-400 to-blue-500"
+              >
+                <i class="fas fa-network-wired skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">Cisco</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- MySQL -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="mysql">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-green-500 to-green-700"
+              >
+                <i class="fas fa-database skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">MySQL</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- PHP -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="php">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-blue-500 to-yellow-500"
+              >
+                <i class="fab fa-php skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">PHP</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Laravel -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="laravel">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-red-500 to-orange-500"
+              >
+                <i class="fab fa-laravel skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">Laravel</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Figma -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="figma">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-purple-500 to-pink-500"
+              >
+                <i class="fab fa-figma skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">Figma</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="github">
+              <div class="skill-icon-wrapper bg-gradient-to-br from-gray-700 to-black">
+                <i class="fab fa-github skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">GitHub</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Vercel -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="vercel">
+              <div class="skill-icon-wrapper bg-gradient-to-br from-black to-gray-800">
+                <i class="fas fa-rocket skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">Vercel</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <!-- Excel -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="excel">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-green-600 to-green-800"
+              >
+                <i class="fas fa-file-excel skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">Excel</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <!-- Word -->
+            <div class="skill-card border-black border bg-white dark:bg-black skill-item" data-skill="word">
+              <div
+                class="skill-icon-wrapper bg-gradient-to-br from-blue-600 to-blue-800"
+              >
+                <i class="fas fa-file-word skill-icon"></i>
+              </div>
+              <div class="skill-name text-black dark:text-white">Word</div>
+              <div class="skill-level">
+                <div class="skill-level-fill" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <section id="my-jj-videos" class="mb-5">
-            <h2 class="text-center mb-4"><i class="fas fa-film"></i> JJ Dulu</h2>
-            <div class="scroll-container-wrapper">
-                <div class="scroll-container">
-                    <div class="scroll-item">
-                        <div class="video-container">
-                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464600/tj9pa4_oy6tj9.mp4" loop playsinline controls class="w-100" title="JJ Video 1"></video>
-                        </div>
-                    </div>
-                    <div class="scroll-item">
-                        <div class="video-container">
-                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754463171/profilevideo_zhsilh.mp4" loop playsinline controls class="w-100" title="JJ Video 2"></video>
-                        </div>
-                    </div>
-                    <!-- Untuk menambah video baru, cukup salin dan tempel blok .scroll-item di atas -->
-                </div>
+        <!-- Statistik GitHub -->
+        <div id="github" class="mt-20 scroll-mt-28 sm:scroll-mt-32">
+          <h3
+            class="text-xl sm:text-2xl font-bold mb-8 text-center gradient-bg bg-clip-text text-transparent"
+          >
+            Statistik GitHub
+          </h3>
+
+          <!-- Peta Aktivitas GitHub -->
+          <div
+            class="mb-12 p-4 sm:p-6 rounded-xl shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass"
+          >
+            <h4 class="text-base sm:text-lg font-medium mb-4 text-center">
+              Aktivitas Kontribusi
+            </h4>
+            <div class="github-activity mx-auto" id="github-activity">
+              <!-- Kotak aktivitas akan dibuat oleh JavaScript -->
+            </div>
+            <div
+              class="flex justify-between items-center mt-4 text-xs sm:text-sm text-gray-600 dark:text-gray-400"
+            >
+              <span>Kurang</span>
+              <div class="flex space-x-1">
+                <div class="w-3 h-3 rounded-sm activity-0"></div>
+                <div class="w-3 h-3 rounded-sm activity-1"></div>
+                <div class="w-3 h-3 rounded-sm activity-2"></div>
+                <div class="w-3 h-3 rounded-sm activity-3"></div>
+                <div class="w-3 h-3 rounded-sm activity-4"></div>
+              </div>
+              <span>Banyak</span>
+            </div>
+          </div>
+
+          <!-- Kartu Statistik -->
+          <div class="card-grid cols-4">
+            <div
+              class="rounded-xl p-4 sm:p-6 shadow-neuro-light dark:shadow-neuro-dark bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 glass dark:glass"
+            >
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="text-sm sm:text-lg font-medium">Repositori</h4>
+                <i
+                  class="fas fa-code-branch text-electric-blue text-xl sm:text-2xl animate-pulse"
+                ></i>
+              </div>
+              <p
+                class="text-2xl sm:text-4xl font-bold text-electric-blue count-up"
+                data-target="12"
+              >
+                0
+              </p>
+              <p
+                class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-2"
+              >
+                Repositori publik
+              </p>
+              <div
+                class="mt-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+              >
+                <div
+                  class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full"
+                  style="width: 100%"
+                ></div>
+              </div>
             </div>
 
-        </section>
-
-        <section id="my-jj-videos" class="mb-5">
-            <h2 class="text-center mb-4">  Beberapa Website Buatan Saya</h2>
-            <div class="scroll-container-wrapper">
-                <div class="scroll-container">
-                    <div class="scroll-item">
-                        <div class="video-container-web">
-                            <iframe class="iframe-interaktif" src="https://nazothx21.github.io/alfandoxeonchatai"></iframe>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="https://nazothx21.github.io/alfandoxeonchatai" target="_blank" class="btn btn-primary"><b> AlfandoXeonChatAI </b></a>
-                        </div>
-                    </div>
-                    <div class="scroll-item">
-                        <div class="video-container-web">
-                            <iframe class="iframe-interaktif" src="https://alfando345.github.io/jamdigital/"></iframe>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="https://alfando345.github.io/jamdigital" target="_blank" class="btn btn-primary"><b> Jam Digital JDAX</b></a>
-                        </div>
-                    </div>
-                    <div class="scroll-item">
-                        <div class="video-container-web">
-                            <iframe class="iframe-interaktif" src="https://alfando345.github.io/kalktulator/"></iframe>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="https://alfando345.github.io/kalktulator/" target="_blank" class="btn btn-primary"><b> Kalkulator </b></a>
-                        </div>
-                    </div>
-                    <div class="scroll-item">
-                        <div class="video-container-web">
-                            <iframe class="iframe-interaktif" src="https://nazothx21.github.io/love-calculator"></iframe>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="https://nazothx21.github.io/love-calculator" target="_blank" class="btn btn-primary"><b> love-calculator </b></a>
-                        </div>
-                    </div>
-                    <div class="scroll-item">
-                        <div class="video-container-web">
-                            
-                            <iframe class="video-container-web" src="https://github.com/Alfando345"></iframe>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="https://github.com/Alfando345" target="_blank" class="btn btn-primary"><b> Open My Github </b></a>
-                        </div>
-                    </div>
-
-                    <!-- Untuk menambah video baru, cukup salin dan tempel blok .scroll-item di atas -->
-                </div>
+            <div
+              class="rounded-xl p-4 sm:p-6 shadow-neuro-light dark:shadow-neuro-dark bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 glass dark:glass"
+            >
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="text-sm sm:text-lg font-medium">Bintang</h4>
+                <i
+                  class="fas fa-star text-yellow-500 text-xl sm:text-2xl animate-pulse"
+                ></i>
+              </div>
+              <p
+                class="text-2xl sm:text-4xl font-bold text-yellow-500 count-up"
+                data-target="3"
+              >
+                0
+              </p>
+              <p
+                class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-2"
+              >
+                Diterima pada proyek
+              </p>
+              <div
+                class="mt-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+              >
+                <div
+                  class="bg-gradient-to-r from-yellow-500 to-orange-500 h-2 rounded-full"
+                  style="width: 100%"
+                ></div>
+              </div>
             </div>
 
-        </section>
-
-        <section id="skills" class="mb-5">
-            <h2 class="text-center mb-4"><i class="fas fa-cogs"></i> Keahlian Profesional</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Editor Video Full-Stack</h3>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-microphone-alt"></i> <strong>Dubbing:</strong> Kemampuan mengisi suara dan narasi profesional.</li>
-                                <li><i class="fas fa-file-alt"></i> <strong>Scripting:</strong> Keahlian menulis naskah dan alur cerita yang menarik.</li>
-                                <li><i class="fas fa-video"></i> <strong>Editing:</strong> Penguasaan teknik penyuntingan video untuk hasil yang memukau.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Keahlian Tambahan</h3>
-                            <p class="card-text">Di era digital ini, perpaduan antara seni dan teknologi menjadi sangat penting. Sebagai seorang editor video yang juga mahasiswa Teknik Informatika, saya memiliki perspektif ganda: mata seorang kreator dan pemahaman seorang teknisi. Keahlian ini membuat saya mampu menggarap proyek video, terutama yang berkaitan dengan teknologi dan inovasi, dengan kualitas visual yang memukau serta akurasi yang terjamin. Ini adalah nilai tambah unik yang saya tawarkan.</p>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="rounded-xl p-4 sm:p-6 shadow-neuro-light dark:shadow-neuro-dark bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/20 glass dark:glass"
+            >
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="text-sm sm:text-lg font-medium">Kontribusi</h4>
+                <i
+                  class="fas fa-code-commit text-green-glow text-xl sm:text-2xl animate-pulse"
+                ></i>
+              </div>
+              <p
+                class="text-2xl sm:text-4xl font-bold text-green-glow count-up"
+                data-target="10"
+              >
+                0
+              </p>
+              <p
+                class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-2"
+              >
+                Tahun lalu
+              </p>
+              <div
+                class="mt-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+              >
+                <div
+                  class="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full"
+                  style="width: 100%"
+                ></div>
+              </div>
             </div>
-        </section>
 
-        <section id="character" class="mb-5">
-            <h2 class="text-center mb-4"><i class="fas fa-heart"></i> Karakter & Hobi</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Etos Kerja & Karakter</h3>
-                            <ul class="list-unstyled">
-                                <li><strong>Fokus:</strong> Kemampuan untuk berkonsentrasi penuh dalam setiap pekerjaan.</li>
-                                <li><strong>Motivasi Diri:</strong> Selalu antusias belajar hal baru, bahkan di luar bidang utama.</li>
-                                <li><strong>Karakter Kuat:</strong> Konsisten, pekerja keras, dan berambisi untuk terus menjadi lebih baik.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">Hobi & Kreativitas</h3>
-                            <p class="card-text">Musik adalah cara saya mengekspresikan diri dan menemukan inspirasi. Dengan menguasai piano, gitar, dan bass, saya membangun fondasi artistik yang kuat. Genre pop punk dan ska bukan hanya sekadar hobi, melainkan sumber energi dan kreativitas yang membentuk cara pandang saya dalam menyusun narasi visual dan memadukan audio dengan gambar. Kepekaan musikal ini menjadi nilai tambah yang unik dalam setiap proyek editing video yang saya tangani.</p>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="rounded-xl p-4 sm:p-6 shadow-neuro-light dark:shadow-neuro-dark bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 glass dark:glass"
+            >
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="text-sm sm:text-lg font-medium">Pengikut</h4>
+                <i
+                  class="fas fa-users text-purple-glow text-xl sm:text-2xl animate-pulse"
+                ></i>
+              </div>
+              <p
+                class="text-2xl sm:text-4xl font-bold text-purple-glow count-up"
+                data-target="10"
+              >
+                0
+              </p>
+              <p
+                class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-2"
+              >
+                Pengikut GitHub
+              </p>
+              <div
+                class="mt-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+              >
+                <div
+                  class="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
+                  style="width: 100%"
+                ></div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section id="social-media" class="text-center">
-            <h2><i class="fas fa-share-alt"></i> Find Me On</h2>
-            <div class="mt-3">
-                <a href="https://www.instagram.com/grteo_alfndd21" target="_blank" class="btn btn-primary btn-lg social-link instagram">
-                    <i class="fab fa-instagram"></i>
-                    <span>Follow IG Saya</span>
-                </a>
+    <!-- Bagian Sertifikat -->
+    <section
+      id="certificates"
+      class="py-16 sm:py-20 md:py-32 md:scroll-mt-1 scroll-mt-20 bg-slate-100 dark:bg-gray-900"
+    >
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 sm:mb-16 text-center"
+        >
+          <span class="relative gradient-bg bg-clip-text text-transparent">
+            Sertifikat & Pencapaian
+          </span>
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Sertifikat 1 -->
+          <div
+            class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-green-glow/20"
+          >
+            <div
+              class="relative h-40 sm:h-48 bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center"
+            >
+              <i class="fas fa-award text-white text-6xl"></i>
             </div>
-        </section>
-    </main>
+            <div class="p-4 sm:p-6">
+              <h3 class="text-lg sm:text-xl font-bold mb-2">
+                Sertifikasi Pengembangan Web
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                Lembaga Terkemuka
+              </p>
+              <p
+                class="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mb-4"
+              >
+                Memvalidasi keahlian dalam membangun aplikasi web yang kompleks dan skalabel, mencakup teknologi frontend dan backend modern.
+              </p>
+            </div>
+          </div>
 
-    <footer class="text-center py-4">
-        <p>&copy; 2025 AlfandoXeon. Mantannya Lovi <br> Dari <i>"Hai Sayang"   <i class="fas fa-heart"></i></i><b>  Menjadi -></b> <i>Dada Sayang 👋</i></i>.</p>
-        <h1>Korban Mbak Mbak Perawat</h1>
+          <!-- Sertifikat 2 -->
+          <div
+            class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-blue-500/20"
+          >
+            <div
+              class="relative h-40 sm:h-48 bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center"
+            >
+              <i class="fas fa-award text-white text-6xl"></i>
+            </div>
+            <div class="p-4 sm:p-6">
+              <h3 class="text-lg sm:text-xl font-bold mb-2">
+                Sertifikasi Desain UI/UX
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                Platform Desain
+              </p>
+              <p
+                class="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mb-4"
+              >
+                Menunjukkan pemahaman mendalam tentang prinsip desain antarmuka dan pengalaman pengguna yang intuitif dan fungsional.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sertifikat 3 -->
+          <div
+            class="certificate-card rounded-xl overflow-hidden shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-purple-500/20"
+          >
+            <div
+              class="relative h-40 sm:h-48 bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center"
+            >
+              <i class="fas fa-award text-white text-6xl"></i>
+            </div>
+            <div class="p-4 sm:p-6">
+              <h3 class="text-lg sm:text-xl font-bold mb-2">
+                Sertifikasi Jaringan Komputer
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 mb-3 text-sm">
+                Akademi Jaringan
+              </p>
+              <p
+                class="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mb-4"
+              >
+                Mengkonfirmasi kompetensi dalam konfigurasi, manajemen, dan keamanan jaringan untuk infrastruktur yang andal.
+              </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Testimoni -->
+    <section id="testimonials" class="py-16 sm:py-20 md:py-32 scroll-mt-20 md:scroll-mt-1">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div
+          class="flex flex-col sm:flex-row justify-between items-center mb-12 sm:mb-16"
+        >
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-0">
+            <span class="relative gradient-bg bg-clip-text text-transparent">
+              Apa Kata Klien
+            </span>
+          </h2>
+          <button
+            id="add-testimonial-btn"
+            class="px-6 py-3 rounded-full bg-gradient-to-r from-electric-blue to-purple-glow text-white font-medium hover:shadow-glow-strong transform hover:scale-105 transition-all duration-300"
+          >
+            <i class="fas fa-plus mr-2"></i> Tambah Testimoni
+          </button>
+        </div>
+
+        <div id="testimonials-grid" class="card-grid cols-3">
+          <!-- Testimoni 1 -->
+          <div
+            class="testimonial-card rounded-xl p-4 sm:p-6 shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass border border-purple-glow/20"
+          >
+            <div class="testimonial-content">
+              <div class="flex items-center mb-4">
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400"
+                  >5.0</span
+                >
+              </div>
+              <p
+                class="text-gray-600 dark:text-gray-400 mb-6 italic leading-relaxed text-sm sm:text-base"
+              >
+                "Bekerja dengan Grateo terasa seperti bermain Ular Tangga—tetapi tanpa pernah menginjak ular. Keterampilan pemecahan masalahnya membuat kemajuan kami terus menanjak, membantu kami mencapai garis finis lebih cepat dari yang diharapkan."
+              </p>
+            </div>
+            <div class="flex items-center">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                alt="Michael Chen"
+                class="w-12 h-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <h4
+                  class="font-semibold text-gray-800 dark:text-white text-sm sm:text-base"
+                >
+                  Michael Chen
+                </h4>
+                <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                  CTO, InnovateLab
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Kontak -->
+    <section
+      id="contact"
+      class="py-16 sm:py-20 md:py-32 scroll-mt-20 md:scroll-mt-1 bg-slate-100 dark:bg-gray-900"
+    >
+      <div class="container mx-auto px-4 sm:px-6">
+        <h2
+          class="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 sm:mb-16 text-center"
+        >
+          <span class="relative gradient-bg bg-clip-text text-transparent">
+            Hubungi Saya
+          </span>
+        </h2>
+        <div
+          class="max-w-3xl mx-auto p-6 sm:p-8 rounded-xl shadow-neuro-light dark:shadow-neuro-dark bg-light-card dark:bg-dark-card glass dark:glass"
+        >
+          <form id="contact-form">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+              <div class="relative">
+                <input
+                  type="text"
+                  id="from_name"
+                  name="from_name"
+                  class="form-input w-full px-4 py-3 bg-transparent border-b-2 border-gray-300 dark:border-gray-600 focus:border-electric-blue focus:outline-none transition-colors"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  for="from_name"
+                  class="floating-label absolute left-4 top-3 text-gray-500 dark:text-gray-400"
+                  >Nama Anda</label
+                >
+              </div>
+              <div class="relative">
+                <input
+                  type="email"
+                  id="from_email"
+                  name="from_email"
+                  class="form-input w-full px-4 py-3 bg-transparent border-b-2 border-gray-300 dark:border-gray-600 focus:border-electric-blue focus:outline-none transition-colors"
+                  placeholder=" "
+                  required
+                />
+                <label
+                  for="from_email"
+                  class="floating-label absolute left-4 top-3 text-gray-500 dark:text-gray-400"
+                  >Email Anda</label
+                >
+              </div>
+            </div>
+            <div class="relative mb-6">
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                class="form-input w-full px-4 py-3 bg-transparent border-b-2 border-gray-300 dark:border-gray-600 focus:border-electric-blue focus:outline-none transition-colors"
+                placeholder=" "
+                required
+              ></textarea>
+              <label
+                for="message"
+                class="floating-label absolute left-4 top-3 text-gray-500 dark:text-gray-400"
+                >Pesan Anda</label
+              >
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="px-8 py-3 rounded-full bg-gradient-to-r from-electric-blue to-purple-glow text-white font-medium hover:shadow-glow-strong transform hover:scale-105 transition-all duration-300"
+              >
+                <i class="fas fa-paper-plane mr-2"></i> Kirim Pesan
+              </button>
+            </div>
+          </form>
+          <div
+            id="form-status"
+            class="mt-6 text-center text-sm"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card text-gray-400 py-12">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-center md:text-left"
+        >
+          <div class="mb-6 md:mb-0">
+            <h3 class="text-xl font-bold text-white mb-2">
+              Grateo Alfando Atmojo
+            </h3>
+            <p class="text-sm">Full-Stack Web Developer</p>
+          </div>
+          <div class="flex space-x-6 mb-6 md:mb-0">
+            <a
+              href="https://github.com/Alfando345"
+              target="_blank"
+              class="text-2xl hover:text-electric-blue transition-colors"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://instagram.com/grteo_alfndd21"
+              target="_blank"
+              class="text-2xl hover:text-pink-glow transition-colors"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="text-2xl hover:text-green-glow transition-colors"
+              title="naothx_21"
+              ><i class="fas fa-gamepad"></i
+            ></a>
+          </div>
+          <div class="text-sm">
+            <p>&copy; <span id="current-year"></span> Grateo Alfando Atmojo. Semua Hak Dilindungi.</p>
+          </div>
+        </div>
+      </div>
     </footer>
 
-    <!-- Calculator Modal -->
-    <div class="modal fade" id="calculatorModal" tabindex="-1" aria-labelledby="calculatorModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="calculatorModalLabel">Kalkulator By AlfandoXeon</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="calculator" class="mx-auto">
-                        <input type="text" id="display" class="form-control text-end mb-2" disabled>
-                        <div class="row g-2">
-                            <div class="col-3"><button class="btn btn-secondary w-100">7</button></div>
-                            <div class="col-3"><button class="btn btn-secondary w-100">8</button></div>
-                            <div class="col-3"><button class="btn btn-secondary w-100">9</button></div>
-                            <div class="col-3"><button class="btn btn-warning w-100">/</button></div>
-
-                            <div class="col-3"><button class="btn btn-secondary w-100">4</button></div>
-                            <div class="col-3"><button class="btn btn-secondary w-100">5</button></div>
-                            <div class="col-3"><button class="btn btn-secondary w-100">6</button></div>
-                            <div class="col-3"><button class="btn btn-warning w-100">*</button></div>
-
-                            <div class="col-3"><button class="btn btn-secondary w-100">1</button></div>
-                            <div class="col-3"><button class="btn btn-secondary w-100">2</button></div>
-                            <div class="col-3"><button class="btn btn-secondary w-100">3</button></div>
-                            <div class="col-3"><button class="btn btn-warning w-100">-</button></div>
-
-                            <div class="col-3"><button class="btn btn-secondary w-100">0</button></div>
-                            <div class="col-3"><button class="btn btn-secondary w-100">.</button></div>
-                            <div class="col-3"><button id="clear" class="btn btn-danger w-100">C</button></div>
-                            <div class="col-3"><button class="btn btn-warning w-100">+</button></div>
-
-                            <div class="col-12"><button id="equals" class="btn btn-success w-100">=</button></div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Modal Testimoni -->
+    <div id="testimonial-modal" class="modal">
+      <div class="modal-content">
+        <h3 class="text-2xl font-bold mb-6 text-white">Beri Testimoni</h3>
+        <form id="testimonial-form">
+          <div class="relative mb-6">
+            <input
+              type="text"
+              id="testimonial_name"
+              name="testimonial_name"
+              class="form-input w-full px-4 py-3 bg-transparent border-b-2 border-gray-600 focus:border-electric-blue focus:outline-none transition-colors"
+              placeholder=" "
+              required
+            />
+            <label
+              for="testimonial_name"
+              class="floating-label absolute left-4 top-3 text-gray-400"
+              >Nama Anda</label
+            >
+          </div>
+          <div class="relative mb-6">
+            <input
+              type="text"
+              id="testimonial_role"
+              name="testimonial_role"
+              class="form-input w-full px-4 py-3 bg-transparent border-b-2 border-gray-600 focus:border-electric-blue focus:outline-none transition-colors"
+              placeholder=" "
+              required
+            />
+            <label
+              for="testimonial_role"
+              class="floating-label absolute left-4 top-3 text-gray-400"
+              >Peran/Jabatan Anda (misal: CEO, TechCorp)</label
+            >
+          </div>
+          <div class="relative mb-6">
+            <textarea
+              id="testimonial_message"
+              name="testimonial_message"
+              rows="4"
+              class="form-input w-full px-4 py-3 bg-transparent border-b-2 border-gray-600 focus:border-electric-blue focus:outline-none transition-colors"
+              placeholder=" "
+              required
+            ></textarea>
+            <label
+              for="testimonial_message"
+              class="floating-label absolute left-4 top-3 text-gray-400"
+              >Testimoni Anda</label
+            >
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-400 mb-2">Rating</label>
+            <div class="star-rating">
+              <i class="star fas fa-star" data-value="1"></i>
+              <i class="star fas fa-star" data-value="2"></i>
+              <i class="star fas fa-star" data-value="3"></i>
+              <i class="star fas fa-star" data-value="4"></i>
+              <i class="star fas fa-star" data-value="5"></i>
             </div>
-        </div>
+            <input type="hidden" id="rating" name="rating" value="0" />
+          </div>
+          <div class="flex justify-end gap-4">
+            <button
+              type="button"
+              id="cancel-testimonial"
+              class="px-6 py-2 rounded-full bg-transparent border border-gray-600 text-gray-400 hover:bg-gray-700 transition-colors"
+            >
+              Batal
+            </button>
+            <button
+              type="submit"
+              class="px-6 py-2 rounded-full bg-gradient-to-r from-electric-blue to-purple-glow text-white font-medium hover:shadow-glow-strong"
+            >
+              Kirim
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Custom Script -->
-    <script src="script.js"></script>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Inisialisasi EmailJS
+        (function () {
+          emailjs.init("YOUR_USER_ID"); // Ganti dengan User ID EmailJS Anda
+        })();
+
+        // Animasi Mengetik
+        const devName = "Grateo Alfando Atmojo";
+        const devTitle = "Full-Stack Web Developer";
+        const devNameEl = document.getElementById("dev-name");
+        const devTitleEl = document.getElementById("dev-title");
+
+        if (devNameEl) {
+          devNameEl.textContent = devName;
+        }
+
+        if (devTitleEl) {
+          setTimeout(() => {
+            devTitleEl.parentElement.style.display = "inline-block";
+            devTitleEl.textContent = devTitle;
+            devTitleEl.style.width = "100%";
+            devTitleEl.style.animation = "typing 3.5s steps(40, end), blink-caret .75s step-end infinite";
+          }, 4000);
+        }
+
+        // Toggle Tema
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+          });
+        }
+
+        // Menu Mobile
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+          });
+        }
+
+        // Navigasi Smooth Scroll & Active Link
+        const navLinks = document.querySelectorAll(".nav-link");
+        const sections = document.querySelectorAll("section");
+
+        function changeActiveLink() {
+          let index = sections.length;
+          while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+          navLinks.forEach((link) => link.classList.remove("active"));
+          if (navLinks[index]) {
+            navLinks[index].classList.add("active");
+          }
+        }
+
+        changeActiveLink();
+        window.addEventListener("scroll", changeActiveLink);
+
+        // Animasi saat scroll
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate");
+                if (entry.target.classList.contains("count-up")) {
+                  animateCountUp(entry.target);
+                }
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll(".skill-level-fill, .count-up").forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Animasi Angka
+        function animateCountUp(el) {
+          const target = +el.getAttribute("data-target");
+          const duration = 2000;
+          const frameRate = 1000 / 60;
+          const totalFrames = Math.round(duration / frameRate);
+          let frame = 0;
+          const counter = setInterval(() => {
+            frame++;
+            const progress = frame / totalFrames;
+            const currentCount = Math.round(target * progress);
+            el.textContent = currentCount;
+            if (frame === totalFrames) {
+              clearInterval(counter);
+              el.textContent = target; // Pastikan angka akhir sesuai target
+            }
+          }, frameRate);
+        }
+
+        // Statistik GitHub (Placeholder)
+        const githubActivity = document.getElementById("github-activity");
+        if (githubActivity) {
+          for (let i = 0; i < 365; i++) {
+            const day = document.createElement("div");
+            const level = Math.floor(Math.random() * 5);
+            day.className = `activity-day activity-${level}`;
+            day.title = `${Math.floor(Math.random() * 10)} kontribusi pada hari ini`;
+            githubActivity.appendChild(day);
+          }
+        }
+
+        // Formulir Kontak
+        const contactForm = document.getElementById("contact-form");
+        const formStatus = document.getElementById("form-status");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            formStatus.textContent = "Mengirim...";
+            formStatus.className = "text-blue-500";
+
+            emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this).then(
+              () => {
+                formStatus.textContent = "Pesan berhasil terkirim!";
+                formStatus.className = "text-green-500";
+                contactForm.reset();
+              },
+              (error) => {
+                formStatus.textContent = "Gagal mengirim pesan. Coba lagi.";
+                formStatus.className = "text-red-500";
+                console.log("FAILED...", error);
+              }
+            );
+          });
+        }
+
+        // Modal Testimoni
+        const modal = document.getElementById("testimonial-modal");
+        const addBtn = document.getElementById("add-testimonial-btn");
+        const cancelBtn = document.getElementById("cancel-testimonial");
+        const testimonialForm = document.getElementById("testimonial-form");
+        const stars = document.querySelectorAll(".star");
+        const ratingInput = document.getElementById("rating");
+
+        if (addBtn) addBtn.onclick = () => modal.classList.add("show");
+        if (cancelBtn) cancelBtn.onclick = () => modal.classList.remove("show");
+        window.onclick = (event) => {
+          if (event.target == modal) {
+            modal.classList.remove("show");
+          }
+        };
+
+        stars.forEach((star) => {
+          star.addEventListener("click", () => {
+            const value = star.getAttribute("data-value");
+            ratingInput.value = value;
+            stars.forEach((s) => {
+              s.classList.toggle(
+                "active",
+                s.getAttribute("data-value") <= value
+              );
+            });
+          });
+        });
+
+        if (testimonialForm) {
+          testimonialForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Logika untuk menambahkan testimoni (bisa disimpan di localStorage atau dikirim ke server)
+            const name = document.getElementById("testimonial_name").value;
+            const role = document.getElementById("testimonial_role").value;
+            const message = document.getElementById("testimonial_message").value;
+            const rating = ratingInput.value;
+
+            console.log({ name, role, message, rating });
+            alert("Terima kasih atas testimoni Anda!");
+            modal.classList.remove("show");
+            testimonialForm.reset();
+            stars.forEach(s => s.classList.remove("active"));
+            ratingInput.value = "0";
+          });
+        }
+
+        // Tahun saat ini untuk footer
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
 </html>
