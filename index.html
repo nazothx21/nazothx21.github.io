@@ -1,139 +1,369 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Mabar Dan Info NazoTHX🆗🆗</title>
-    <link rel="icon" href="nazothx.png" type="image/x-icon">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NazoTHX - MLBB Content Creator Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Root colors for dark and light mode */
+    :root {
+      --color-primary-dark: #1a237e; /* biru dongker */
+      --color-secondary-dark: #6a1b9a; /* ungu */
+      --color-bg-dark: #121212;
+      --color-text-dark: #e0e0e0;
+
+      --color-primary-light: #3f51b5;
+      --color-secondary-light: #9c27b0;
+      --color-bg-light: #f5f5f5;
+      --color-text-light: #222;
+    }
+
+    /* Dark mode by default */
+    body {
+      background: linear-gradient(135deg, var(--color-primary-dark), var(--color-secondary-dark));
+      color: var(--color-text-dark);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background 0.5s ease, color 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    body.light-mode {
+      background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+      color: var(--color-text-light);
+    }
+
+    /* Container */
+    .portfolio-container {
+      background: rgba(0,0,0,0.5);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 400px;
+      width: 100%;
+      box-shadow:
+        0 0 10px var(--color-secondary-dark),
+        0 0 20px var(--color-primary-dark);
+      transition: background 0.5s ease, box-shadow 0.5s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    body.light-mode .portfolio-container {
+      background: rgba(255,255,255,0.85);
+      box-shadow:
+        0 0 10px var(--color-secondary-light),
+        0 0 20px var(--color-primary-light);
+      color: var(--color-text-light);
+    }
+
+    /* Profile */
+    .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--color-secondary-dark);
+      box-shadow: 0 0 15px var(--color-secondary-dark);
+      object-fit: cover;
+      transition: border-color 0.5s ease, box-shadow 0.5s ease;
+      cursor: pointer;
+    }
+
+    body.light-mode .profile-img {
+      border-color: var(--color-secondary-light);
+      box-shadow: 0 0 15px var(--color-secondary-light);
+    }
+
+    .profile h1 {
+      margin-top: 1rem;
+      font-weight: 900;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px var(--color-primary-dark);
+      transition: text-shadow 0.5s ease;
+    }
+
+    body.light-mode .profile h1 {
+      text-shadow: 0 0 8px var(--color-primary-light);
+    }
+
+    .profile p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ccc;
+      transition: color 0.5s ease;
+    }
+
+    body.light-mode .profile p {
+      color: #555;
+    }
+
+    /* Links */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--color-text-dark);
+      background: rgba(255 255 255 / 0.1);
+      box-shadow: 0 0 8px var(--color-primary-dark);
+      transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease,
+        transform 0.2s ease;
+      user-select: none;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    body.light-mode .link-btn {
+      color: var(--color-text-light);
+      background: rgba(0 0 0 / 0.05);
+      box-shadow: 0 0 8px var(--color-primary-light);
+    }
+
+    .link-btn:hover,
+    .link-btn:focus {
+      background: var(--color-primary-dark);
+      color: white;
+      box-shadow: 0 0 15px var(--color-secondary-dark);
+      transform: scale(1.05);
+      border-color: var(--color-secondary-dark);
+      outline: none;
+    }
+
+    body.light-mode .link-btn:hover,
+    body.light-mode .link-btn:focus {
+      background: var(--color-primary-light);
+      box-shadow: 0 0 15px var(--color-secondary-light);
+      border-color: var(--color-secondary-light);
+    }
+
+    /* Icons */
+    .link-btn i {
+      font-size: 1.5rem;
+      min-width: 30px;
+      text-align: center;
+      transition: color 0.3s ease;
+    }
+
+    /* Pulse animation for donate buttons */
+    .donate-button {
+      position: relative;
+      overflow: visible;
+    }
+    .donate-button.pulse::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 120%;
+      height: 120%;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50px;
+      transform: translate(-50%, -50%) scale(1);
+      animation: pulse 2.5s infinite;
+      z-index: -1;
+      filter: blur(8px);
+    }
+
+    /* Toggle button */
+    #modeToggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--color-secondary-dark);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--color-secondary-dark);
+      transition: background 0.5s ease, box-shadow 0.5s ease;
+      z-index: 1050;
+    }
+
+    body.light-mode #modeToggle {
+      background: var(--color-secondary-light);
+      box-shadow: 0 0 10px var(--color-secondary-light);
+      color: #222;
+    }
+
+    #modeToggle:focus {
+      outline: none;
+      box-shadow: 0 0 15px 3px var(--color-primary-dark);
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 576px) {
+      .portfolio-container {
+        max-width: 100%;
+        padding: 1.5rem 1rem;
+      }
+      .profile h1 {
+        font-size: 2rem;
+      }
+      .link-btn {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+      }
+      #modeToggle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="animated-bg"></div>
+  <button id="modeToggle" aria-label="Toggle light/dark mode" title="Toggle Light/Dark Mode">
+    <i class="fa-solid fa-moon"></i>
+  </button>
 
-    <button id="openBtn" class="btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#mySidebar" aria-controls="mySidebar">
-        ☰
-    </button>
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="mySidebar" aria-labelledby="mySidebarLabel">
-        <div class="offcanvas-header">
-            <div class="sidebar-profile">
-                <img src="nazothx.png" alt="NazoTHX Logo">
-                <h5 class="offcanvas-title" id="mySidebarLabel">NazoTHX</h5>
-            </div>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <p class="sidebar-greeting">Makasih Yang Udah Mampirr ^_^</p>
-            <div class="sidebar-links">
-                <a href="https://sociabuzz.com/nazothx/tribe" target="_blank"><i class="fas fa-heart"></i> Donasi</a>
-                <a href="#" id="darkModeToggleSidebarLink"><i class="fas fa-moon"></i> 
-                    <span>Dark Mode</span>
-                    <label class="switch">
-                        <input type="checkbox" id="darkModeToggleSidebar">
-                        <span class="slider round"></span>
-                    </label>
-                </a>
-                <a href="mailto:grateoalfandoatmojo@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-            </div>
-
-            <!-- Widget: Aesthetic Clock -->
-            <div class="sidebar-clock-widget">
-                <div class="clock-container">
-                    <div id="clockDisplay" class="clock-display">00:00:00</div>
-                    <div id="dateDisplay" class="date-display"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="header">
-        <button class="info-btn" data-bs-toggle="modal" data-bs-target="#infoModal"><i class="fas fa-info-circle"></i></button>
+  <div class="portfolio-container shadow-lg">
+    <div class="profile">
+      <img src="nazothx.png" alt="NazoTHX Logo" class="profile-img" />
+      <h1>NazoTHX</h1>
+      <p>No.1 MLBB Content Creator</p>
     </div>
 
+    <div class="links">
+      <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-btn donate-button pulse" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Group NazoTHX Kedua</span>
+      </a>
 
-    <div class="container" id="mainContent">
-        <div class="profile fade-in">
-            <img src="nazothx.png" alt="NazoTHX Logo" class="profile-img">
-            <h1>NazoTHX</h1>
-            <p>MLBB Content Creator
-                Jangan Lupa Follow Semua Sosmed NazoTHX Yaa ^_^
-            </p>
-        </div>
+      <a href="https://sociabuzz.com/nazothx/tribe" class="link-btn donate-button pulse" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-hand-holding-heart"></i>
+        <span>Buat Beli Kopi (Mabar VIP)</span>
+      </a>
 
-        <div class="links">
-            <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-btn donate-button pulse" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-                <span>Group NazoTHX Kedua</span>
-            </a>
+      <a href="https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
 
-            <a href="https://sociabuzz.com/nazothx/tribe" class="link-btn donate-button pulse" target="_blank">
-                <i class="fas fa-hand-holding-heart"></i>
-                <span>Buat Beli Kopi (Mabar VIP)</span>
-            </a>
-            <a href="https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" class="link-btn" target="_blank">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-            <a href="https://youtube.com/@nazo_thx?si=QpCAbDNNPc_wpB46" class="link-btn" target="_blank">
-                <i class="fab fa-youtube"></i>
-                <span>YouTube</span>
-            </a>
-            <a href="https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1" class="link-btn" target="_blank">
-                <i class="fab fa-tiktok"></i>
-                <span>TikTok</span>
-            </a>
-            <a href="https://www.facebook.com/share/19woivSQTB/" class="link-btn" target="_blank">
-                <i class="fab fa-facebook"></i>
-                <span>Facebook</span>
-            </a>
-            <a href="https://chat.whatsapp.com/IEXLKlOQcN4BQ0PFOx4qzh" class="link-btn" target="_blank">
-                <i class="fab fa-discord"></i>
-                <span>Nazothx Community</span>
-            </a>
-            <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i>
-                <span>Group Mabar NazoTHX</span>
-            </a>
-            <a href="https://wa.me/6285764175824?text=Endorse%20NazoTHX" class="link-btn donate-button pulse" target="_blank">
-                <i class="fas fa-store"></i>
-                <span>Endorse And Bussines</span>
-            </a>
-            <a href="https://github.com/nazothx21/" class="link-btn" target="_blank">
-                <i class="fab fa-github"></i>
-                <span>GitHub</span>
-            </a>
-        </div>
+      <a href="https://youtube.com/@nazo_thx?si=QpCAbDNNPc_wpB46" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube</span>
+      </a>
+
+      <a href="https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-tiktok"></i>
+        <span>TikTok</span>
+      </a>
+
+      <a href="https://www.facebook.com/share/19woivSQTB/" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook"></i>
+        <span>Facebook</span>
+      </a>
+
+      <a href="https://chat.whatsapp.com/IEXLKlOQcN4BQ0PFOx4qzh" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-discord"></i>
+        <span>Nazothx Community</span>
+      </a>
+
+      <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span>Group Mabar NazoTHX</span>
+      </a>
+
+      <a href="https://wa.me/6285764175824?text=Endorse%20NazoTHX" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-store"></i>
+        <span>Endorse And Bussines</span>
+      </a>
+
+      <a href="https://github.com/nazothx21/" class="link-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
     </div>
+  </div>
 
-    <div id="musicControl" title="Toggle Music">
-        <i class="fas fa-music"></i>
-    </div>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const modeToggle = document.getElementById('modeToggle');
+    const body = document.body;
+    const icon = modeToggle.querySelector('i');
 
-    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="infoModalLabel">Informasi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <b>NazoTHX</b> adalah konten kreator MLBB yang sangat keren dan over power! Dengan gameplay yang epic, tips bermanfaat, serta konten hiburan yang seru, NazoTHX selalu menginspirasi dan menghibur para penggemar Mobile Legends. Jangan lupa follow semua sosial media NazoTHX untuk update terbaru dan mabar bareng!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    // Load saved mode from localStorage
+    if(localStorage.getItem('nazoMode') === 'light') {
+      body.classList.add('light-mode');
+      icon.className = 'fa-solid fa-sun';
+    }
 
+    modeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      if(body.classList.contains('light-mode')) {
+        icon.className = 'fa-solid fa-sun';
+        localStorage.setItem('nazoMode', 'light');
+      } else {
+        icon.className = 'fa-solid fa-moon';
+        localStorage.setItem('nazoMode', 'dark');
+      }
+    });
+
+    // Optional: Add click effect on profile image
+    const profileImg = document.querySelector('.profile-img');
+    profileImg.addEventListener('mouseenter', () => {
+      profileImg.style.transform = 'scale(1.1) rotate(5deg)';
+      profileImg.style.transition = 'transform 0.3s ease';
+    });
+    profileImg.addEventListener('mouseleave', () => {
+      profileImg.style.transform = 'scale(1) rotate(0deg)';
+    });
+  </script>
 </body>
 </html>
