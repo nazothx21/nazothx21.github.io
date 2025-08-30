@@ -331,6 +331,130 @@
     </div>
   </div>
 
+  <!-- Music Player -->
+  <div class="music-player-container">
+    <div class="song-info">
+      <h2>DJ LELAKI CADANGAN</h2>
+      <p>NazoTHX</p>
+    </div>
+    <div class="controls">
+      <button id="playPauseBtn" class="play-btn">
+        <i class="fas fa-play"></i>
+      </button>
+    </div>
+    <audio id="audioPlayer" src="DJ_LELAKI_CADANGAN.mp3"></audio>
+  </div>
+  <style>
+    .music-player-container {
+      position: relative;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 1rem;
+      padding: 1.5rem 1.5rem 1.5rem 100px; /* Add padding-left to make space for the image */
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 10px var(--color-secondary-dark), 0 0 20px var(--color-primary-dark);
+      backdrop-filter: blur(10px);
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: fadeInUp 1s ease forwards;
+      overflow: hidden; /* Keep the pseudo-element inside */
+    }
+
+    .music-player-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px; /* Width of the image area */
+        height: 100%;
+        background-image: url('dj.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: blur(3px);
+        z-index: -1;
+        opacity: 0.7;
+    }
+
+    body.light-mode .music-player-container {
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 0 10px var(--color-secondary-light), 0 0 20px var(--color-primary-light);
+      color: var(--color-text-light);
+    }
+
+    .song-info {
+      flex-grow: 1;
+      z-index: 1;
+    }
+
+    .song-info h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--color-text-dark);
+    }
+    
+    body.light-mode .song-info h2 {
+        color: var(--color-text-light);
+    }
+
+    .song-info p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: #ccc;
+    }
+    
+    body.light-mode .song-info p {
+        color: #555;
+    }
+
+    .controls {
+        z-index: 1;
+    }
+
+    .play-btn {
+      background: var(--color-secondary-dark);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px var(--color-secondary-dark);
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body.light-mode .play-btn {
+      background: var(--color-secondary-light);
+      box-shadow: 0 0 10px var(--color-secondary-light);
+    }
+
+    .play-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px var(--color-secondary-dark);
+    }
+    
+    body.light-mode .play-btn:hover {
+        box-shadow: 0 0 15px var(--color-secondary-light);
+    }
+    
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -363,6 +487,21 @@
     });
     profileImg.addEventListener('mouseleave', () => {
       profileImg.style.transform = 'scale(1) rotate(0deg)';
+    });
+
+    // Music Player
+    const audioPlayer = document.getElementById('audioPlayer');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const playPauseIcon = playPauseBtn.querySelector('i');
+
+    playPauseBtn.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseIcon.className = 'fas fa-pause';
+      } else {
+        audioPlayer.pause();
+        playPauseIcon.className = 'fas fa-play';
+      }
     });
   </script>
 </body>
