@@ -336,7 +336,7 @@ body.is-blurred #gallery-wrapper {
 }
 
 #whatsapp-message {
-    flex-grow: 1; /* Allow input to take available space */
+     /* Allow input to take available space */
     padding: 10px;
     border: 1px solid #555;
     border-radius: 8px 0 0 8px; /* Rounded corners on the left */
