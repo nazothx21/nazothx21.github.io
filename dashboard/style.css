@@ -129,13 +129,16 @@ body {
 
 /* --- Main Content Styling --- */
 .content-wrapper {
-    padding: 32px 24px;
+    box-sizing: border-box; /* Include padding in height calculation */
+    height: 100%; /* Take full height of parent */
+    overflow-y: auto; /* Enable vertical scroll */
+    padding: 100px 24px 32px; /* Adjust padding, top is for header */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Membuat konten di tengah secara horizontal */
-    padding-top: 100px; /* Add padding to push content below fixed header */
-    position: relative; /* Keep for stacking context if needed, but not for blur */
-    z-index: 1; /* Ensure content is above video */
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
 }
 
 .main-heading {
@@ -328,7 +331,8 @@ body.is-blurred #gallery-wrapper {
 
 .whatsapp-input-container {
     display: flex;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
 }
 
 #whatsapp-message {
