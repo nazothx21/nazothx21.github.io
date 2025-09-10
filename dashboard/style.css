@@ -1,4 +1,4 @@
-/* --- Reset & Global Styles --- */
+/* --- Reset & Global Styles https.res.cloudinary.com/dkt9v96ic/video/upload/profilevideo_zhsilh.mp4 --- */
 * {
     margin: 0;
     padding: 0;
@@ -312,4 +312,55 @@ body.is-blurred #gallery-wrapper {
 
 #scroll-right {
   right: -60px;
+}
+
+/* --- WhatsApp Card Enhancements --- */
+.whatsapp-card {
+    flex-direction: column;
+    align-items: stretch; /* Make children take full width */
+}
+
+.whatsapp-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px; /* Add some space below the info section */
+}
+
+.whatsapp-input-container {
+    display: flex;
+    width: 100%;
+}
+
+#whatsapp-message {
+    flex-grow: 1; /* Allow input to take available space */
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 8px 0 0 8px; /* Rounded corners on the left */
+    background-color: #333;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    border-right: none; /* Remove border between input and button */
+}
+
+#whatsapp-message:focus {
+    outline: none;
+    border-color: #777;
+}
+
+#send-whatsapp-message {
+    padding: 10px 16px;
+    border: 1px solid #25D366;
+    border-radius: 0 8px 8px 0; /* Rounded corners on the right */
+    background-color: #25D366; /* WhatsApp green */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#send-whatsapp-message:hover {
+    background-color: #1DAE54; /* Darker green on hover */
 }

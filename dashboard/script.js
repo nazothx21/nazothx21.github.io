@@ -35,4 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Unmute video on first interaction
+    const video = document.getElementById('background-video');
+    if (video) {
+        const unmuteVideo = () => {
+            video.muted = false;
+            document.removeEventListener('click', unmuteVideo);
+        };
+        document.addEventListener('click', unmuteVideo);
+    }
+
+    // WhatsApp message sender
+    const sendButton = document.getElementById('send-whatsapp-message');
+    if (sendButton) {
+        sendButton.addEventListener('click', () => {
+            const messageInput = document.getElementById('whatsapp-message');
+            if (messageInput) {
+                const message = encodeURIComponent(messageInput.value);
+                const phoneNumber = '6285764175824';
+                const url = `https://wa.me/${phoneNumber}?text=${message}`;
+                window.open(url, '_blank');
+            }
+        });
+    }
 });
