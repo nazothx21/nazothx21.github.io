@@ -353,7 +353,7 @@ body.is-blurred #gallery-wrapper {
 }
 
 #send-whatsapp-message {
-    padding: 10px 16px;
+    padding: 10px 10px;
     border: 1px solid #25D366;
     border-radius: 0 8px 8px 0; /* Rounded corners on the right */
     background-color: #25D366; /* WhatsApp green */
