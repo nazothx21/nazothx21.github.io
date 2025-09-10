@@ -26,8 +26,8 @@ body {
     transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     z-index: -1;
     object-fit: cover;
 }
@@ -203,7 +203,7 @@ body {
     line-height: 1.7; /* Jarak antar baris agar mudah dibaca */
     color: #ffffff; /* Warna teks putih */
     font-size: 0.9rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Bayangan teks agar lebih terbaca */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Bayangan teks agar lebih terbaca */
 }
 
 /* --- Effects for when Nav is Open --- */
@@ -232,4 +232,84 @@ body {
     z-index: 2;
     animation: fire-flicker 1s infinite alternate;
     pointer-events: none;
+}
+
+/* --- Gallery Styling --- */
+#gallery-wrapper {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 1200px;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+}
+
+body.is-blurred #gallery-wrapper {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+#gallery-title {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#gallery-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  gap: 20px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.fotoProyek {
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.fotoProyek:hover {
+    transform: scale(1.05);
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#scroll-left {
+  left: -60px;
+}
+
+#scroll-right {
+  right: -60px;
 }
