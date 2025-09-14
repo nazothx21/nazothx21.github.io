@@ -1,508 +1,149 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NazoTHX - MLBB Content Creator Portfolio</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- FontAwesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <style>
-    /* Root colors for dark and light mode */
-    :root {
-      --color-primary-dark: #1a237e; /* biru dongker */
-      --color-secondary-dark: #6a1b9a; /* ungu */
-      --color-bg-dark: #121212;
-      --color-text-dark: #e0e0e0;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Tyo X Nazo</title>
+    <link rel="icon" href="nazothx.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-      --color-primary-light: #3f51b5;
-      --color-secondary-light: #9c27b0;
-      --color-bg-light: #f5f5f5;
-      --color-text-light: #222;
-    }
-
-    /* Dark mode by default */
-    body {
-      background: linear-gradient(135deg, var(--color-primary-dark), var(--color-secondary-dark));
-      color: var(--color-text-dark);
-      min-height: 100vh;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      transition: background 0.5s ease, color 0.5s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-    }
-
-    body.light-mode {
-      background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
-      color: var(--color-text-light);
-    }
-
-    /* Container */
-    .portfolio-container {
-      background: rgba(0,0,0,0.5);
-      border-radius: 1rem;
-      padding: 2rem;
-      max-width: 400px;
-      width: 100%;
-      box-shadow:
-        0 0 10px var(--color-secondary-dark),
-        0 0 20px var(--color-primary-dark);
-      transition: background 0.5s ease, box-shadow 0.5s ease;
-      backdrop-filter: blur(10px);
-    }
-
-    body.light-mode .portfolio-container {
-      background: rgba(255,255,255,0.85);
-      box-shadow:
-        0 0 10px var(--color-secondary-light),
-        0 0 20px var(--color-primary-light);
-      color: var(--color-text-light);
-    }
-
-    /* Profile */
-    .profile {
-      text-align: center;
-      margin-bottom: 2rem;
-      animation: fadeInDown 1s ease forwards;
-    }
-
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid var(--color-secondary-dark);
-      box-shadow: 0 0 15px var(--color-secondary-dark);
-      object-fit: cover;
-      transition: border-color 0.5s ease, box-shadow 0.5s ease;
-      cursor: pointer;
-    }
-
-    body.light-mode .profile-img {
-      border-color: var(--color-secondary-light);
-      box-shadow: 0 0 15px var(--color-secondary-light);
-    }
-
-    .profile h1 {
-      margin-top: 1rem;
-      font-weight: 900;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px var(--color-primary-dark);
-      transition: text-shadow 0.5s ease;
-    }
-
-    body.light-mode .profile h1 {
-      text-shadow: 0 0 8px var(--color-primary-light);
-    }
-
-    .profile p {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #ccc;
-      transition: color 0.5s ease;
-    }
-
-    body.light-mode .profile p {
-      color: #555;
-    }
-
-    /* Links */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .link-btn {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 1.25rem;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: var(--color-text-dark);
-      background: rgba(255 255 255 / 0.1);
-      box-shadow: 0 0 8px var(--color-primary-dark);
-      transition:
-        background 0.3s ease,
-        box-shadow 0.3s ease,
-        color 0.3s ease,
-        transform 0.2s ease;
-      user-select: none;
-      cursor: pointer;
-      border: 2px solid transparent;
-    }
-
-    body.light-mode .link-btn {
-      color: var(--color-text-light);
-      background: rgba(0 0 0 / 0.05);
-      box-shadow: 0 0 8px var(--color-primary-light);
-    }
-
-    .link-btn:hover,
-    .link-btn:focus {
-      background: var(--color-primary-dark);
-      color: white;
-      box-shadow: 0 0 15px var(--color-secondary-dark);
-      transform: scale(1.05);
-      border-color: var(--color-secondary-dark);
-      outline: none;
-    }
-
-    body.light-mode .link-btn:hover,
-    body.light-mode .link-btn:focus {
-      background: var(--color-primary-light);
-      box-shadow: 0 0 15px var(--color-secondary-light);
-      border-color: var(--color-secondary-light);
-    }
-
-    /* Icons */
-    .link-btn i {
-      font-size: 1.5rem;
-      min-width: 30px;
-      text-align: center;
-      transition: color 0.3s ease;
-    }
-
-    /* Pulse animation for donate buttons */
-    .donate-button {
-      position: relative;
-      overflow: visible;
-    }
-    .donate-button.pulse::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 120%;
-      height: 120%;
-      background: rgba(255, 255, 255, 0.3);
-      border-radius: 50px;
-      transform: translate(-50%, -50%) scale(1);
-      animation: pulse 2.5s infinite;
-      z-index: -1;
-      filter: blur(8px);
-    }
-
-    /* Toggle button */
-    #modeToggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--color-secondary-dark);
-      border: none;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 0 10px var(--color-secondary-dark);
-      transition: background 0.5s ease, box-shadow 0.5s ease;
-      z-index: 1050;
-    }
-
-    body.light-mode #modeToggle {
-      background: var(--color-secondary-light);
-      box-shadow: 0 0 10px var(--color-secondary-light);
-      color: #222;
-    }
-
-    #modeToggle:focus {
-      outline: none;
-      box-shadow: 0 0 15px 3px var(--color-primary-dark);
-    }
-
-    /* Animations */
-    @keyframes pulse {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.7;
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.15);
-        opacity: 0;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.7;
-      }
-    }
-
-    @keyframes fadeInDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 576px) {
-      .portfolio-container {
-        max-width: 100%;
-        padding: 1.5rem 1rem;
-      }
-      .profile h1 {
-        font-size: 2rem;
-      }
-      .link-btn {
-        font-size: 1rem;
-        padding: 0.6rem 1rem;
-      }
-      #modeToggle {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
-    }
-  </style>
 </head>
 <body>
-  <button id="modeToggle" aria-label="Toggle light/dark mode" title="Toggle Light/Dark Mode">
-    <i class="fa-solid fa-moon"></i>
-  </button>
+    <header class="main-header">
+        <div class="header-title"><i>NAzoTHX_21</i></div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1">TikTok</a></li>
+                <li><a href="https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==">Instagram</a></li>
+                <li><a href="https://youtube.com/@nazo_thx?si=QpCAbDNNPc_wpB46">YouTube</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Buka Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
-  <div class="portfolio-container shadow-lg">
-    <div class="profile">
-      <img src="nazothx.png" alt="NazoTHX Logo" class="profile-img" />
-      <h1>NazoTHX</h1>
-      <p>No.1 MLBB Content Creator</p>
+    <div class="page-content">
+                <video autoplay muted loop id="background-video">
+            <source src="/Background/peter.mp4" type="video/mp4">
+            minimal broswer anda mendukung play video dekk
+        </video>
+
+        <main class="content-wrapper">
+            <h1 class="main-heading">MLBB Content Creator ^_^
+                <p></p>
+            </h1>
+            
+
+            <div class="portfolio-links">
+                
+                <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="portfolio-card">
+                    <img src="/Logo/nazothxGroup.jpg" alt="Logo NAZOTHX" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title">GROUP MABAR</span>
+                        <span class="card-subtitle">Group Mabar MLBB by NazoTHX</span>
+                    </div>
+                </a>
+
+                <a href="https://sociabuzz.com/nazothx/tribe" class="portfolio-card">
+                    <img src="https://play-lh.googleusercontent.com/OYaEM1pE7YfjqogMH-2G_6h4yNCVB306SCgctXCsMwzPUTAn_69VA_tKb2QbpiDzv5w=w240-h480-rw" alt="Logo NAZOTHX" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title">DONASI</span>
+                        <span class="card-subtitle">Donasi NazoTHX Saweria</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" class="portfolio-card">
+                    <img src="/logo/instagram.webp" alt="Logo NAZOTHX" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title">INSTAGRAM</span>
+                        <span class="card-subtitle">Follow instagram NazoTHX juga yaa...</span>
+                    </div>
+                </a>
+                <a href="https://youtube.com/@nazo_thx?si=QpCAbDNNPc_wpB46" class="portfolio-card">
+                    <img src="/Logo/yt.jpg" alt="Logo NAZOTHX" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title">YOUTUBE</span>
+                        <span class="card-subtitle">Subscribe Youtube NAzoTHX</span>
+                    </div>
+                </a>
+                <a href="https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1" class="portfolio-card">
+                    <img src="/logo/tiktok.png" alt="Logo NAZOTHX" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title">TIKTOK</span>
+                        <span class="card-subtitle">Follow tiktok NazoTHX jugaa yaaa</span>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/share/19woivSQTB/" class="portfolio-card">
+                    <img src="/Logo/facebook.png" alt="Logo NAZOTHX" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title">MY FACEBOOK</span>
+                        <span class="card-subtitle">Jan lupa follow Facebook mimin ganteng yaah hihihi</span>
+                    </div>
+                </a>
+                <a href="https://chat.whatsapp.com/IEXLKlOQcN4BQ0PFOx4qzh" class="portfolio-card">
+                    <img src="/Logo/com.jpg" alt="Logo NAZOTHX" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title">NazoTHX Community</span>
+                        <span class="card-subtitle">Keluarga Besar NazoTHX</span>
+                    </div>
+                </a>
+
+
+                <a href="bokeff.html" class="portfolio-card">
+                    <img src="bkf.jpeg" alt="Logo TyoAlfando" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title"><b><i> <del>VIP INDO 21</del> </i></b></span>
+                        <span class="card-subtitle">Sebatas Mengagumi<br>Soal Memiliki <i> <del>Aku Sadar Diri</del></i></span>
+                    </div>
+                </a>
+
+                <a href="https://wa.me/6285764175824?text=Endorse%20NazoTHX" class="portfolio-card">
+                    <img src="nazothx.png" alt="Logo TyoAlfando" class="profile-pic">
+                    <div class="card-text">
+                        <span class="card-title">Endorse/Bussines?</span>
+                        <span class="card-subtitle"><i class="fas fa-whatsapp"></i> Chat WhatsApp Here!</span>
+                    </div>
+                </a>
+
+                
+
+            </div>
+
+            <p class="closing-text">
+                Halo guysss... jangan lupa follow semua media sosial NazoTHX yaa...
+                <br><br>
+                Admin sayang kalian semua.. By @NazoTHX
+            </p>
+            </main>
+    </div>
+    <div id="gallery-wrapper">
+        <h1 id="gallery-title">Random img</h1>
+        <div id="gallery-container">
+            <img src="foto/1.png" alt="" class="fotoProyek">
+            <img src="foto/2.png" alt="" class="fotoProyek">
+            <img src="foto/3.png" alt="" class="fotoProyek">
+            <img src="foto/4.png" alt="" class="fotoProyek">
+            <img src="foto/5.png" alt="" class="fotoProyek">
+            <img src="foto/6.png" alt="" class="fotoProyek">
+        </div>
+        <button id="scroll-left" class="gallery-nav">&lt;</button>
+        <button id="scroll-right" class="gallery-nav">&gt;</button>
+        <h2 id="gallery-title">Makasih Udah Mampirr ^_-</h2>
+        <p style="opacity: 0.7; text-align: center;">PowerdBy: AlfandoXeon FullStackDeveloper</p>
+        <a href="https://gachaku.com/id" class="portfolio-card">
+            <img src="https://admin.gachaku.com/storage/banner/gachaku_tempat_topup_murah_dan_legal%20(1).jpg" alt="Logo TyoAlfando" class="profile-pic">
+            <div class="card-text">
+                <span class="card-title"><b><i>TOP UP INSTANT</i></b></span>
+                <span class="card-subtitle">Tempat top up All game tercepat<br><b>gachaku.com</b></span>
+            </div>
+         </a>
     </div>
 
-    <div class="links">
-      <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-btn donate-button pulse" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-        <span>Group NazoTHX Kedua</span>
-      </a>
-
-      <a href="https://sociabuzz.com/nazothx/tribe" class="link-btn donate-button pulse" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-hand-holding-heart"></i>
-        <span>Buat Beli Kopi (Mabar VIP)</span>
-      </a>
-
-      <a href="https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-instagram"></i>
-        <span>Instagram</span>
-      </a>
-
-      <a href="https://youtube.com/@nazo_thx?si=QpCAbDNNPc_wpB46" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-youtube"></i>
-        <span>YouTube</span>
-      </a>
-
-      <a href="https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-tiktok"></i>
-        <span>TikTok</span>
-      </a>
-
-      <a href="https://www.facebook.com/share/19woivSQTB/" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-facebook"></i>
-        <span>Facebook</span>
-      </a>
-
-      <a href="https://chat.whatsapp.com/IEXLKlOQcN4BQ0PFOx4qzh" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-discord"></i>
-        <span>Nazothx Community</span>
-      </a>
-
-      <a href="https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
-        <span>Group Mabar NazoTHX</span>
-      </a>
-
-      <a href="https://wa.me/6285764175824?text=Endorse%20NazoTHX" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-store"></i>
-        <span>Endorse And Bussines</span>
-      </a>
-
-      <a href="https://github.com/nazothx21/" class="link-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-github"></i>
-        <span>GitHub</span>
-      </a>
-    </div>
-  </div>
-
-  <!-- Music Player -->
-  <div class="music-player-container">
-    <div class="song-info">
-      <h2>DJ LELAKI CADANGAN</h2>
-      <p>NazoTHX</p>
-    </div>
-    <div class="controls">
-      <button id="playPauseBtn" class="play-btn">
-        <i class="fas fa-play"></i>
-      </button>
-    </div>
-    <audio id="audioPlayer" src="DJ_LELAKI_CADANGAN.mp3"></audio>
-  </div>
-  <style>
-    .music-player-container {
-      position: relative;
-      background: rgba(0, 0, 0, 0.25);
-      border-radius: 1rem;
-      padding: 1.5rem 1.5rem 1.5rem 100px; /* Add padding-left to make space for the image */
-      max-width: 400px;
-      width: 100%;
-      box-shadow: 0 0 10px var(--color-secondary-dark), 0 0 20px var(--color-primary-dark);
-      backdrop-filter: blur(10px);
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      animation: fadeInUp 1s ease forwards;
-      overflow: hidden; /* Keep the pseudo-element inside */
-    }
-
-    .music-player-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 120px; /* Width of the image area */
-        height: 100%;
-        background-image: url('dj.jpg');
-        background-size: cover;
-        background-position: center;
-        filter: blur(3px);
-        z-index: -1;
-        opacity: 0.7;
-    }
-
-    body.light-mode .music-player-container {
-      background: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 0 10px var(--color-secondary-light), 0 0 20px var(--color-primary-light);
-      color: var(--color-text-light);
-    }
-
-    .song-info {
-      flex-grow: 1;
-      z-index: 1;
-    }
-
-    .song-info h2 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin: 0;
-      color: var(--color-text-dark);
-    }
-    
-    body.light-mode .song-info h2 {
-        color: var(--color-text-light);
-    }
-
-    .song-info p {
-      font-size: 0.9rem;
-      margin: 0;
-      color: #ccc;
-    }
-    
-    body.light-mode .song-info p {
-        color: #555;
-    }
-
-    .controls {
-        z-index: 1;
-    }
-
-    .play-btn {
-      background: var(--color-secondary-dark);
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 0 10px var(--color-secondary-dark);
-      transition: all 0.3s ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    body.light-mode .play-btn {
-      background: var(--color-secondary-light);
-      box-shadow: 0 0 10px var(--color-secondary-light);
-    }
-
-    .play-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px var(--color-secondary-dark);
-    }
-    
-    body.light-mode .play-btn:hover {
-        box-shadow: 0 0 15px var(--color-secondary-light);
-    }
-    
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const modeToggle = document.getElementById('modeToggle');
-    const body = document.body;
-    const icon = modeToggle.querySelector('i');
-
-    // Load saved mode from localStorage
-    if(localStorage.getItem('nazoMode') === 'light') {
-      body.classList.add('light-mode');
-      icon.className = 'fa-solid fa-sun';
-    }
-
-    modeToggle.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      if(body.classList.contains('light-mode')) {
-        icon.className = 'fa-solid fa-sun';
-        localStorage.setItem('nazoMode', 'light');
-      } else {
-        icon.className = 'fa-solid fa-moon';
-        localStorage.setItem('nazoMode', 'dark');
-      }
-    });
-
-    // Optional: Add click effect on profile image
-    const profileImg = document.querySelector('.profile-img');
-    profileImg.addEventListener('mouseenter', () => {
-      profileImg.style.transform = 'scale(1.1) rotate(5deg)';
-      profileImg.style.transition = 'transform 0.3s ease';
-    });
-    profileImg.addEventListener('mouseleave', () => {
-      profileImg.style.transform = 'scale(1) rotate(0deg)';
-    });
-
-    // Music Player
-    const audioPlayer = document.getElementById('audioPlayer');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const playPauseIcon = playPauseBtn.querySelector('i');
-
-    playPauseBtn.addEventListener('click', () => {
-      if (audioPlayer.paused) {
-        audioPlayer.play();
-        playPauseIcon.className = 'fas fa-pause';
-      } else {
-        audioPlayer.pause();
-        playPauseIcon.className = 'fas fa-play';
-      }
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>

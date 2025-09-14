@@ -1,400 +1,372 @@
-/* Menggunakan variabel global untuk tema */
-:root {
-    --bg-color: #f0f2f5;
-    --card-bg: #ffffff;
-    --text-color: #1c1e21;
-    --primary-color: #1877f2;
-    --secondary-text: #65676b;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --hover-bg: #e4e6eb;
+/* --- Reset & Global Styles https.res.cloudinary.com/dkt9v96ic/video/upload/profilevideo_zhsilh.mp4 --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Poppins', sans-serif; /* Font modern yang mudah dibaca */
+    color: #ffffff; /* Warna teks utama putih agar kontras dengan video */
+    background-color: #000;
 }
 
-/* Tema Gelap */
-body.dark {
-    --bg-color: #18191a;
-    --card-bg: #242526;
-    --text-color: #e4e6eb;
-    --secondary-text: #b0b3b8;
-    --primary-color: #2d88ff;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --hover-bg: #3a3b3c;
-}
-
-/* Menyesuaikan komponen Bootstrap saat mode gelap */
-body.dark .modal-content,
-body.dark .offcanvas {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-}
-body.dark .modal-header,
-body.dark .modal-footer,
-body.dark .offcanvas-header {
-    border-color: #3e4042;
-}
-body.dark .btn-close {
-    filter: invert(1) grayscale(100%) brightness(200%);
-}
-
-.header {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.info-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: var(--secondary-text);
-    cursor: pointer;
-}
-
-.container {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 2px 12px var(--shadow-color);
-    padding: 24px;
-    max-width: 380px;
-    width: 100%;
-    text-align: center;
-    transition: box-shadow 0.3s, transform 0.2s;
-    z-index: 1; /* Tambahkan ini */
-    position: relative; /* Tambahkan ini */
-}
-
-.container:hover {
-    box-shadow: 0 4px 32px 0 rgba(24,119,242,0.25), 0 1.5px 8px 0 var(--primary-color);
-    transform: translateY(-2px) scale(1.015);
-}
-
-.profile {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.profile.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.profile-img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 2px solid var(--primary-color);
-    object-fit: cover;
-    margin-bottom: 12px;
-}
-
-.profile h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0;
-}
-
-.profile p {
-    font-size: 15px;
-    color: var(--secondary-text);
-    margin: 4px 0 24px 0;
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* === INI BAGIAN YANG DIPERBAIKI === */
-/* Mengganti .link-button menjadi .link-btn */
-.link-btn {
-    background-color: var(--hover-bg);
-    color: var(--text-color);
-    padding: 12px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-.link-btn:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: scale(1.03);
-}
-
-.link-btn i {
-    font-size: 20px;
-}
-/* === AKHIR DARI BAGIAN YANG DIPERBAIKI === */
-
-
-.donate-button {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(24, 119, 242, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(24, 119, 242, 0); }
-}
-
-body.dark .pulse {
-    animation: pulse 2s infinite;
-    box-shadow: 0 0 0 0 rgba(45, 136, 255, 0.7);
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-#musicControl {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    background-color: var(--card-bg);
-    color: var(--secondary-text);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 8px var(--shadow-color);
-    z-index: 1000;
-}
-
-.btn-menu {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: var(--secondary-text);
-    cursor: pointer;
-    z-index: 1051;
-}
-
-.sidebar-profile {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.sidebar-profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.sidebar-greeting {
-    color: var(--secondary-text);
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.sidebar-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 12px 0;
-    gap: 15px;
-    border-radius: 6px;
-}
-
-.sidebar-links a:hover {
-    background-color: var(--hover-bg);
-}
-
-#darkModeToggleSidebarLink {
-    display: flex;
-    justify-content: space-between;
-}
-
-.switch {
+.page-content {
     position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 28px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Hide anything that spills out */
+    transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
+#background-video {
     position: absolute;
-    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+/* --- Header Styling --- */
+.main-header {
+    position: fixed; /* Make header stay on top */
+    width: 100%;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
+    z-index: 10; /* Ensure header is above other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    background-color: rgba(51, 51, 51, 0.7); /* Warna header dengan sedikit transparansi */
+    color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sedikit bayangan di bawah header */
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-input:checked + .slider {
-    background-color: var(--primary-color);
-}
-
-input:checked + .slider:before {
-    transform: translateX(22px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-.blurred {
-  filter: blur(5px); /* Atur radius blur sesuai keinginan */
-  transition: filter 0.3s ease; /* Tambahkan transisi untuk animasi blur yang halus */
-}
-
-.footer {
-    width: 100%;
-    text-align: center;
-    padding: 16px 0 8px 0;
-    color: var(--secondary-text);
-    font-size: 15px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+.menu-toggle {
     background: transparent;
-    z-index: 100;
-    pointer-events: none;
+    border: none;
+    cursor: pointer;
+    z-index: 11; /* Make sure button is on top of nav */
 }
 
-/* Sidebar lebih ramping dan rounded */
-#mySidebar.offcanvas {
-    width: 270px;
-    max-width: 90vw;
-    border-top-right-radius: 22px;
-    border-bottom-right-radius: 22px;
-    overflow: hidden;
-    box-shadow: 2px 0 24px rgba(24,119,242,0.10);
-    transition: width 0.3s, border-radius 0.3s;
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Responsive: sidebar lebih kecil di mobile */
-@media (max-width: 500px) {
-    #mySidebar.offcanvas {
-        width: 85vw;
-        min-width: 0;
-        border-top-right-radius: 18px;
-        border-bottom-right-radius: 18px;
-    }
+.menu-toggle.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
-/* Gradient Background Aesthetic */
-.animated-bg {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    pointer-events: none;
-    background: linear-gradient(-45deg, #1877f2, #00c3ff, #e100ff, #242526);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease-in-out infinite;
-    transition: background 0.5s;
+.menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
 }
 
-@keyframes gradientMove {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+.menu-toggle.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Dark mode: warna lebih gelap dan deep */
-body.dark .animated-bg {
-    background: linear-gradient(-45deg, #2d88ff, #0a0a23, #1e003a, #18191a);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease-in-out infinite;
-    transition: background 0.5s;
+
+/* --- Nav Menu Styling --- */
+.main-nav {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    width: 100%;
+    background-color: rgba(44, 44, 44, 0.95);
+    padding: 16px 0;
 }
 
-/* Widget Jam Aesthetic */
-.sidebar-clock-widget {
-    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(0,0,0,0.05));
-    backdrop-filter: blur(8px);
-    border-radius: 16px;
-    padding: 15px;
-    margin: 15px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.main-nav.is-active {
+    display: block; /* Show when active */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     text-align: center;
 }
 
-.clock-container {
+.main-nav ul li {
+    margin-bottom: 16px;
+}
+
+.main-nav ul li:last-child {
+    margin-bottom: 0;
+}
+
+.main-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #a7a7a7;
+}
+
+
+/* --- Main Content Styling --- */
+.content-wrapper {
+    box-sizing: border-box; /* Include padding in height calculation */
+    height: 100%; /* Take full height of parent */
+    overflow-y: auto; /* Enable vertical scroll */
+    padding: 100px 24px 32px; /* Adjust padding, top is for header */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    position: relative;
+    z-index: 1;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
 }
 
-.clock-display {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.8em;
+.main-heading {
+    width: 100%;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: #ffffff; /* Warna heading putih */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks agar lebih terbaca */
+}
+
+/* --- Portfolio Link Cards Styling --- */
+.portfolio-links {
+    width: 100%;
+    max-width: 500px; /* Batas lebar maksimum agar tidak terlalu lebar di layar besar */
+}
+
+.portfolio-card {
+    display: flex;
+    align-items: center;
+    background-color: rgba(44, 44, 44, 0.8); /* Warna kartu dengan transparansi */
+    color: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Animasi halus */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Efek mengangkat saat kursor di atasnya */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover; /* Memastikan gambar tidak gepeng */
+    margin-right: 16px;
+    border: 2px solid #ffffff;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.4rem;
     font-weight: 600;
-    color: var(--primary-color);
-    text-shadow: 0 0 10px rgba(24,119,242,0.3);
-    letter-spacing: 2px;
-    transition: color 0.3s;
 }
 
-.date-display {
-    font-size: 0.9em;
-    color: var(--secondary-text);
-    opacity: 0.8;
+.card-subtitle {
+    font-size: 1rem;
+    color: #dddddd; /* Warna abu-abu terang untuk subjudul */
 }
 
-/* Animasi smooth untuk perubahan waktu */
-@keyframes timeUpdate {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+/* --- Closing Text Styling --- */
+.closing-text {
+    margin-top: 32px;
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.7; /* Jarak antar baris agar mudah dibaca */
+    color: #ffffff; /* Warna teks putih */
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Bayangan teks agar lebih terbaca */
 }
 
-.time-updated {
-    animation: timeUpdate 0.3s ease-out;
+/* --- Effects for when Nav is Open --- */
+
+@keyframes fire-flicker {
+    0% { background-color: rgba(255, 100, 0, 0.1); }
+    25% { background-color: rgba(255, 165, 0, 0.15); }
+    50% { background-color: rgba(255, 69, 0, 0.1); }
+    75% { background-color: rgba(255, 140, 0, 0.2); }
+    100% { background-color: rgba(255, 99, 71, 0.15); }
 }
 
-/* kenapa semua ini terasa begitu menyedihkan?? aku mau bunuh diri saja */
+.page-content.is-blurred {
+    filter: blur(8px);
+    transform: scale(1.05); /* Scale up slightly to hide edges from blur */
+}
+
+.page-content.is-blurred::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 100, 0, 0.1);
+    z-index: 2;
+    animation: fire-flicker 1s infinite alternate;
+    pointer-events: none;
+}
+
+/* --- Gallery Styling --- */
+#gallery-wrapper {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 1200px;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+}
+
+body.is-blurred #gallery-wrapper {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+#gallery-title {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#gallery-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  gap: 20px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.fotoProyek {
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.fotoProyek:hover {
+    transform: scale(1.05);
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#scroll-left {
+  left: -60px;
+}
+
+#scroll-right {
+  right: -60px;
+}
+
+/* --- WhatsApp Card Enhancements --- */
+.whatsapp-card {
+    flex-direction: column;
+    align-items: stretch; /* Make children take full width */
+}
+
+.whatsapp-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px; /* Add some space below the info section */
+}
+
+.whatsapp-input-container {
+    display: flex;
+    width: 100%;
+    margin: 0 0;
+    
+}
+
+#whatsapp-message {
+     /* Allow input to take available space */
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 8px 0 0 8px; /* Rounded corners on the left */
+    background-color: #333;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    border-right: none; /* Remove border between input and button */
+}
+
+#whatsapp-message:focus {
+    outline: none;
+    border-color: #777;
+}
+
+#send-whatsapp-message {
+    padding: 10px 19px;
+    border: 1px solid #25D366;
+    border-radius: 0 8px 8px 0; /* Rounded corners on the right */
+    background-color: #25D366; /* WhatsApp green */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#send-whatsapp-message:hover {
+    background-color: #1DAE54; /* Darker green on hover */
+}
