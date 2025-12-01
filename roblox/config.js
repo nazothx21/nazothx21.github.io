@@ -3,8 +3,8 @@
 export const config = {
     // Konfigurasi Header & Sosmed Utama
     profile: {
-        name: "NAzoTHX_21",
-        role: "MLBB Content Creator ^_^",
+        name: "NAzoTHX Roblox",
+        role: "Roblox Content Creator ^_^",
         socialHeader: [
             { name: "TikTok", url: "https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1" },
             { name: "Instagram", url: "https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" },
@@ -23,10 +23,10 @@ export const config = {
     // Mas Tyo bisa tambah/hapus array ini sesuka hati
     cards: [
         {
-            title: "GROUP MABAR",
-            subtitle: "Group Mabar MLBB by NazoTHX",
-            url: "https://chat.whatsapp.com/LEfmQXQybd9LW3rD2EZYqJ",
-            image: "/Logo/nazothxGroup.jpg"
+            title: "KOMUNITAS ROBLOX NAZOTHX",
+            subtitle: "Join Marga NazoTHX",
+            url: "https://chat.whatsapp.com/BrFZHxf4Xry6qiTiHNIWiY",
+            image: "https://files.catbox.moe/q5umxt.png"
         },
         {
             title: "DONASI",
@@ -48,8 +48,8 @@ export const config = {
         },
         {
             title: "TIKTOK",
-            subtitle: "Follow tiktok NazoTHX jugaa yaaa",
-            url: "https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1",
+            subtitle: "Follow tiktok Nazo Roblox",
+            url: "https://www.tiktok.com/@nazothxroblox?is_from_webapp=1&sender_device=pc",
             image: "/Logo/tiktok.png"
         },
         {
@@ -85,18 +85,18 @@ export const config = {
         title: "Makasih Udah Mampirr ^_-",
         subtitle: "PowerdBy: AlfandoXeon FullStackDeveloper",
         images: [
-            "foto/1.png",
-            "foto/2.png",
-            "foto/3.png",
-            "foto/4.png",
-            "foto/5.png",
-            "foto/6.png"
+           // "foto/1.png",
+            //"foto/2.png",
+            //"foto/3.png",
+            //"foto/4.png",
+            //"foto/5.png",
+            //"foto/6.png"
         ],
         extraCard: {
             title: "<b><i>TOP UP INSTANT</i></b>",
-            subtitle: "Tempat top up All game tercepat<br><b>gachaku.com</b>",
+            subtitle: "Tempat top up Robux Tercepat<br><b>gachaku.com</b>",
             url: "https://gachaku.com/id",
-            image: "https://admin.gachaku.com/storage/banner/gachaku_tempat_topup_murah_dan_legal%20(1).jpg"
+            image: "https://admin.gachaku.com/storage/banner/4266c6ca-ca52-4f42-9974-701cea21b698.jpeg"
         }
     },
     
@@ -104,4 +104,5 @@ export const config = {
     footer: {
         text: "Halo guysss... jangan lupa follow semua media sosial NazoTHX yaa...<br><br>Admin sayang kalian semua.. By @NazoTHX"
     }
+
 };
