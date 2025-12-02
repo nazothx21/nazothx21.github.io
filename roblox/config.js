@@ -75,7 +75,7 @@ export const config = {
         {
             title: "Endorse/Bussines?",
             subtitle: "<i class='fas fa-whatsapp'></i> Chat WhatsApp Here!",
-            url: "https://wa.me/6285764175824?text=Endorse%20NazoTHX",
+            url: "https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==",
             image: "nazothx.png"
         }
     ],
@@ -106,3 +106,4 @@ export const config = {
     }
 
 };
+
