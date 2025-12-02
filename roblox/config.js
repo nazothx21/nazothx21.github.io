@@ -35,6 +35,12 @@ export const config = {
             image: "https://play-lh.googleusercontent.com/OYaEM1pE7YfjqogMH-2G_6h4yNCVB306SCgctXCsMwzPUTAn_69VA_tKb2QbpiDzv5w=w240-h480-rw"
         },
         {
+            title: "Roblox Content Creator",
+            subtitle: "Akun tiktok NazoTHX Roblox",
+            url: "https://nazothx.github.io/roblox",
+            image: "https://cms-media.roblox.com/resize=width:1280,fit:max/ORMyMISWTDas1y0KNm0j"
+        },
+        {
             title: "INSTAGRAM",
             subtitle: "Follow instagram NazoTHX juga yaa...",
             url: "https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==",
@@ -106,4 +112,5 @@ export const config = {
     }
 
 };
+
 
