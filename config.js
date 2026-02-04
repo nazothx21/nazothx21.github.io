@@ -49,7 +49,7 @@ export const config = {
         {
             title: "TIKTOK",
             subtitle: "Follow tiktok NazoTHX jugaa yaaa",
-            url: "https://www.tiktok.com/@nazo_mlbb?_r=1&_t=ZS-92nKTnjQJyK",
+            url: "https://www.tiktok.com/@nazothx_21?_r=1&_t=ZS-93dXHKhFLU4",
             image: "https://img.freepik.com/premium-vector/tik-tok-logo_578229-290.jpg?semt=ais_hybrid&w=740&q=80"
         },
         {
@@ -104,4 +104,5 @@ export const config = {
     footer: {
         text: "Halo guysss... jangan lupa follow semua media sosial NazoTHX yaa...<br><br>Admin sayang kalian semua.. By @NazoTHX"
     }
+
 };
