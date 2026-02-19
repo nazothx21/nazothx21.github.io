@@ -24,8 +24,8 @@ export const config = {
     cards: [
         {
             title: "GROUP MABAR",
-            subtitle: "Group Mabar MLBB by NazoTHX",
-            url: "https://chat.whatsapp.com/BrFZHxf4Xry6qiTiHNIWiY",
+            subtitle: "Group Mabar MLBB by NazoTHX Special Ramadhan",
+            url: "https://chat.whatsapp.com/Ld2eKLsSOpD84jRyXOGG5B?mode=gi_t",
             image: "https://files.catbox.moe/1h0kki.jpeg"
         },
         {
@@ -106,3 +106,4 @@ export const config = {
     }
 
 };
+
