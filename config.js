@@ -3,8 +3,8 @@
 export const config = {
     // Konfigurasi Header & Sosmed Utama
     profile: {
-        name: "Nazo MLBB",
-        role: "MLBB Content Creator ^_^",
+        name: "Nazo",
+        role: "Konten Kreator MLBB",
         socialHeader: [
             { name: "TikTok", url: "https://www.tiktok.com/@nazothx_21?_r=1&_t=ZS-93dXHKhFLU4" },
             { name: "Instagram", url: "https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" },
@@ -112,6 +112,7 @@ export const config = {
     }
 
 };
+
 
 
 
