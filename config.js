@@ -58,26 +58,26 @@ export const config = {
             url: "https://www.tiktok.com/@nazothx_21?_r=1&_t=ZS-93dXHKhFLU4",
             image: "https://img.freepik.com/premium-vector/tik-tok-logo_578229-290.jpg?semt=ais_hybrid&w=740&q=80"
         },
-        {
-            title: "MY FACEBOOK",
-            subtitle: "Jan lupa follow Facebook mimin ganteng yaah hihihi",
-            url: "https://www.facebook.com/share/19woivSQTB/",
-            image: "https://logowik.com/content/uploads/images/106_facebook.jpg"
-        },
-        {
-            title: "NazoTHX Community",
-            subtitle: "Keluarga Besar NazoTHX",
-            url: "https://chat.whatsapp.com/BrFZHxf4Xry6qiTiHNIWiY",
-            image: "/Logo/com.jpg"
-        },
-        {
-            title: "VIP INDO 21",
-            subtitle: "Sebatas Mengagumi<br>Soal Memiliki <i><del>Aku Sadar Diri</del></i>",
-            url: "bokeff.html",
-            image: "bkf.jpeg",
-            isSpecial: true, // Penanda kalau mau styling khusus (misal bold/italic title)
-            specialTitle: "<b><i> <del>VIP INDO 21</del> </i></b>" 
-        },
+        // {
+        //     title: "MY FACEBOOK",
+        //     subtitle: "Jan lupa follow Facebook mimin ganteng yaah hihihi",
+        //     url: "https://www.facebook.com/share/19woivSQTB/",
+        //     image: "https://logowik.com/content/uploads/images/106_facebook.jpg"
+        // },
+        // {
+        //     title: "NazoTHX Community",
+        //     subtitle: "Keluarga Besar NazoTHX",
+        //     url: "https://chat.whatsapp.com/BrFZHxf4Xry6qiTiHNIWiY",
+        //     image: "/Logo/com.jpg"
+        // },
+        // {
+        //     title: "VIP INDO 21",
+        //     subtitle: "Sebatas Mengagumi<br>Soal Memiliki <i><del>Aku Sadar Diri</del></i>",
+        //     url: "bokeff.html",
+        //     image: "bkf.jpeg",
+        //     isSpecial: true, // Penanda kalau mau styling khusus (misal bold/italic title)
+        //     specialTitle: "<b><i> <del>VIP INDO 21</del> </i></b>" 
+        // },
         {
             title: "Endorse/Bussines?",
             subtitle: "<i class='fas fa-whatsapp'></i> Chat WhatsApp Here!",
@@ -112,6 +112,7 @@ export const config = {
     }
 
 };
+
 
 
 
