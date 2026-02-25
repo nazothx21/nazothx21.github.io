@@ -23,8 +23,8 @@ export const config = {
     // Mas Tyo bisa tambah/hapus array ini sesuka hati
     cards: [
         {
-            title: "LINK DISCORD FANATIC AREA ^_^",
-            subtitle: "Join Discord Fanatic Area!!! ",
+            title: "LINK DISCORD FANATIK AREA ^_^",
+            subtitle: "Join Discord Fanatik Area!!! ",
             url: "https://discord.gg/fanatikarea",
             image: "https://static.vecteezy.com/system/resources/previews/006/892/622/non_2x/discord-logo-icons-editorial-collection-free-vector.jpg"
         },
@@ -112,6 +112,7 @@ export const config = {
     }
 
 };
+
 
 
 
