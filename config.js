@@ -29,8 +29,8 @@ export const config = {
             image: "https://static.vecteezy.com/system/resources/previews/006/892/622/non_2x/discord-logo-icons-editorial-collection-free-vector.jpg"
         },
         {
-            title: "GROUP MABAR",
-            subtitle: "Group Mabar MLBB by NazoTHX Special Ramadhan",
+            title: "GROUP WA MABAR",
+            subtitle: "Group WA Mabar MLBB by NazoTHX Special Ramadhan",
             url: "https://chat.whatsapp.com/Ld2eKLsSOpD84jRyXOGG5B?mode=gi_t",
             image: "https://i.pinimg.com/474x/da/8e/e7/da8ee735a4e1a99c906cec8063ef81f7.jpg"
         },
@@ -112,6 +112,7 @@ export const config = {
     }
 
 };
+
 
 
 
