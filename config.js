@@ -23,6 +23,12 @@ export const config = {
     // Mas Tyo bisa tambah/hapus array ini sesuka hati
     cards: [
         {
+            title: "LINK DISCORD FANATIC AREA ^_^",
+            subtitle: "Join Discord Fanatic Area!!! ",
+            url: "https://discord.gg/fanatikarea",
+            image: "https://static.vecteezy.com/system/resources/previews/006/892/622/non_2x/discord-logo-icons-editorial-collection-free-vector.jpg"
+        },
+        {
             title: "GROUP MABAR",
             subtitle: "Group Mabar MLBB by NazoTHX Special Ramadhan",
             url: "https://chat.whatsapp.com/Ld2eKLsSOpD84jRyXOGG5B?mode=gi_t",
@@ -106,4 +112,5 @@ export const config = {
     }
 
 };
+
 
