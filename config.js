@@ -32,7 +32,7 @@ export const config = {
             title: "GROUP MABAR",
             subtitle: "Group Mabar MLBB by NazoTHX Special Ramadhan",
             url: "https://chat.whatsapp.com/Ld2eKLsSOpD84jRyXOGG5B?mode=gi_t",
-            image: "https://files.catbox.moe/1h0kki.jpeg"
+            image: "https://i.pinimg.com/474x/da/8e/e7/da8ee735a4e1a99c906cec8063ef81f7.jpg"
         },
         {
             title: "DONASI",
@@ -112,6 +112,7 @@ export const config = {
     }
 
 };
+
 
 
 
