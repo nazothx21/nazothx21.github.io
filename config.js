@@ -6,7 +6,7 @@ export const config = {
         name: "Nazo MLBB",
         role: "MLBB Content Creator ^_^",
         socialHeader: [
-            { name: "TikTok", url: "https://www.tiktok.com/@nazothx_21?_t=ZS-8xGsfreThk0&_r=1" },
+            { name: "TikTok", url: "https://www.tiktok.com/@nazothx_21?_r=1&_t=ZS-93dXHKhFLU4" },
             { name: "Instagram", url: "https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==" },
             { name: "YouTube", url: "https://youtube.com/@nazo_thx?si=QpCAbDNNPc_wpB46" }
         ]
@@ -112,6 +112,7 @@ export const config = {
     }
 
 };
+
 
 
 
