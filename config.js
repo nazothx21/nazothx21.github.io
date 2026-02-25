@@ -15,7 +15,7 @@ export const config = {
     // Konfigurasi Background
     background: {
         type: "video",
-        src: "/Background/peter.mp4", // Pastikan path ini benar ya Mas Tyo
+        src: "/Background/kotak2.mp4", // Pastikan path ini benar ya Mas Tyo
         fallbackText: "minimal browser anda mendukung play video dekk"
     },
 
@@ -112,5 +112,6 @@ export const config = {
     }
 
 };
+
 
 
