@@ -23,6 +23,12 @@ export const config = {
     // Mas Tyo bisa tambah/hapus array ini sesuka hati
     cards: [
         {
+            title: "MEDIASHARE & DONASI SAWERIA",
+            subtitle: "Donasi disini buat memunculkan mediashare saatu live ^_^",
+            url: "https://saweria.co/nazothx21",
+            image: "https://play-lh.googleusercontent.com/OYaEM1pE7YfjqogMH-2G_6h4yNCVB306SCgctXCsMwzPUTAn_69VA_tKb2QbpiDzv5w=w240-h480-rw"
+        },
+        {
             title: "LINK DISCORD FANATIK AREA ^_^",
             subtitle: "Join Discord Fanatik Area!!! ",
             url: "https://discord.gg/fanatikarea",
@@ -33,12 +39,6 @@ export const config = {
             subtitle: "Group WA Mabar MLBB by NazoTHX Special Ramadhan",
             url: "https://chat.whatsapp.com/Ld2eKLsSOpD84jRyXOGG5B?mode=gi_t",
             image: "https://i.pinimg.com/474x/da/8e/e7/da8ee735a4e1a99c906cec8063ef81f7.jpg"
-        },
-        {
-            title: "DONASI",
-            subtitle: "Donasi NazoTHX Saweria",
-            url: "https://sociabuzz.com/nazothx/tribe",
-            image: "https://play-lh.googleusercontent.com/OYaEM1pE7YfjqogMH-2G_6h4yNCVB306SCgctXCsMwzPUTAn_69VA_tKb2QbpiDzv5w=w240-h480-rw"
         },
         {
             title: "INSTAGRAM",
@@ -112,6 +112,7 @@ export const config = {
     }
 
 };
+
 
 
 
