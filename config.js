@@ -1,5 +1,8 @@
 // config.js
 
+//config js ini diperlukan sebagai media penyimpanan link, gambar, dan teks yang akan ditampilkan di halaman utama. Jadi kalau mau update link sosmed, tambah kartu baru, atau ganti background tinggal edit di file ini aja yaa... Gampang kan? :D
+// 
+
 export const config = {
     // Konfigurasi Header & Sosmed Utama
     profile: {
@@ -44,7 +47,7 @@ export const config = {
             title: "INSTAGRAM",
             subtitle: "Follow instagram NazoTHX juga yaa...",
             url: "https://www.instagram.com/nazothx_21?igsh=MWt6bTg1ZWdkcjQ3dA==",
-            image: "/Logo/instagram.webp"
+            image: "https://img.freepik.com/premium-psd/instagram-application-logo_23-2151544088.jpg?semt=ais_incoming&w=740&q=80"
         },
         {
             title: "YOUTUBE",
@@ -80,9 +83,9 @@ export const config = {
         // },
         {
             title: "Endorse/Bussines?",
-            subtitle: "<i class='fas fa-whatsapp'></i> Chat WhatsApp Here!",
+            subtitle: "Chat WhatsApp Here!",
             url: "https://wa.me/6285764175824?text=Endorse%20NazoTHX",
-            image: "nazothx.png"
+            image: "https://files.catbox.moe/syvoyr.png"
         }
     ],
 
@@ -91,12 +94,17 @@ export const config = {
         title: "Makasih Udah Mampirr ^_-",
         subtitle: "PowerdBy: AlfandoXeon FullStackDeveloper",
         images: [
-            "foto/1.png",
-            "foto/2.png",
-            "foto/3.png",
-            "foto/4.png",
-            "foto/5.png",
-            "foto/6.png"
+            // "foto/1.png",
+            // "foto/2.png",
+            // "foto/3.png",
+            // "foto/4.png",
+            // "foto/5.png",
+            // "foto/6.png"
+
+            "https://files.catbox.moe/hiefz7.png",
+            "https://files.catbox.moe/ltsbvg.png",
+            "https://files.catbox.moe/jbkvqv.jpg",
+            "https://files.catbox.moe/y4gv7x.jpg",
         ],
         extraCard: {
             title: "<b><i>TOP UP INSTANT</i></b>",
@@ -112,7 +120,6 @@ export const config = {
     }
 
 };
-
 
 
 
