@@ -26,6 +26,12 @@ export const config = {
     // Mas Tyo bisa tambah/hapus array ini sesuka hati
     cards: [
         {
+            title: "F O K A   💎",
+            subtitle: "Penuhi Semua Kebutuhan Game Kalian di FOKA!",
+            url: "https://linktr.ee/fokagameid",
+            image: "https://ugc.production.linktr.ee/b9929d5b-a53c-429a-8c5d-1d10f59ff44b_1001423270--1-.jpeg?io=true&size=avatar-v3_0"
+        },
+        {
             title: "MEDIASHARE & DONASI SAWERIA",
             subtitle: "Donasi disini buat memunculkan mediashare saatu live ^_^",
             url: "https://saweria.co/nazothx21",
@@ -84,7 +90,7 @@ export const config = {
         {
             title: "Endorse/Bussines?",
             subtitle: "Chat WhatsApp Here!",
-            url: "https://wa.me/6285764175824?text=Endorse%20NazoTHX",
+            url: "https://wa.me/6285764175824?text=*ENDORSE%20NAZO-THX*%0A%0ANama:%20%0APerusahaan%20/%20Store:%20%0ABentuk%20/%20Tujuan%20Kerja%20Sama:%20%0A%0ADengan%20ini%20saya%20sebagai%20pengirim%20pesan%20ini%20menyatakan%20dengan%20sepenuh%20hati,%20bahwa%20saya%20memang%20berniat,%20dan%20bertujuan%20untuk%20melakukan%20*Kontrak/Kerjasama*%20at%20least%20Sekedar%20Bertanya%20tentang%20Endorse%20Dengan%20Yth.%20Nazo,%20dan%20tidak%20bermain%20main,%20alias%20mengirim%20pesan%20ini%20dengan%20iseng%20dan%20tanpa%20tujuan%20tertentu...%0A%0AJika%20saya%20mengirim%20pesan%20ini%20tanpa%20tujuan%20tertentu%20atau%20sekedar%20iseng,%20maka%20saya%20siap%20menerima%20konsekuensi%20bahwa%20chat%20saya%20tidak%20akan%20di%20balas%20lagi,%20dan%20kemungkinan%20paling%20buruk,%20nomor%20saya%20akan%20di%20blokir%20Oleh%20Nazo%0A%0ATerimakasih...",
             image: "https://files.catbox.moe/syvoyr.png"
         }
     ],
