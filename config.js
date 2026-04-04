@@ -31,6 +31,17 @@ export const config = {
             url: "https://linktr.ee/fokagameid",
             image: "https://ugc.production.linktr.ee/b9929d5b-a53c-429a-8c5d-1d10f59ff44b_1001423270--1-.jpeg?io=true&size=avatar-v3_0"
         },
+
+
+{
+title: "DIAMOND MLBB / UANG GRATISSS???",
+subtitle: "Download pinjoy disini yaa 😊",
+url: "https://web.pinjoy.org/id-ID/invite/land?user_id=800507823",
+image: "https://cdn.unipin.com/images/merchant_denominations/1734510517-icon-5.png"
+},
+
+
+
         {
             title: "MEDIASHARE & DONASI SAWERIA",
             subtitle: "Donasi disini buat memunculkan mediashare saatu live ^_^",
