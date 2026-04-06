@@ -29,16 +29,16 @@ export const config = {
             title: "F O K A   💎",
             subtitle: "Penuhi Semua Kebutuhan Game Kalian di FOKA!",
             url: "https://linktr.ee/fokagameid",
-            image: "https://ugc.production.linktr.ee/b9929d5b-a53c-429a-8c5d-1d10f59ff44b_1001423270--1-.jpeg?io=true&size=avatar-v3_0"
+            image: "https://files.catbox.moe/ehauw7.jpeg"
         },
 
 
-{
-title: "DIAMOND MLBB / UANG GRATISSS???",
-subtitle: "Download pinjoy disini yaa 😊",
-url: "https://web.pinjoy.org/id-ID/invite/land?user_id=800507823",
-image: "https://cdn.unipin.com/images/merchant_denominations/1734510517-icon-5.png"
-},
+        {
+            title: "DIAMOND MLBB / UANG GRATISSS???",
+            subtitle: "Download pinjoy disini yaa 😊",
+            url: "https://web.pinjoy.org/id-ID/invite/land?user_id=800507823",
+            image: "https://cdn.unipin.com/images/merchant_denominations/1734510517-icon-5.png"
+        },
 
 
 
