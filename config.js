@@ -24,24 +24,7 @@ export const config = {
 
     // Konfigurasi Kartu Link (Button Cards)
     // Mas Tyo bisa tambah/hapus array ini sesuka hati
-    cards: [
-        {
-            title: "F O K A   💎",
-            subtitle: "Penuhi Semua Kebutuhan Game Kalian di FOKA!",
-            url: "https://linktr.ee/fokagameid",
-            image: "https://files.catbox.moe/ehauw7.jpeg"
-        },
-
-
-        {
-            title: "DIAMOND MLBB / UANG GRATISSS???",
-            subtitle: "Download pinjoy disini yaa 😊",
-            url: "https://web.pinjoy.org/id-ID/invite/land?user_id=800507823",
-            image: "https://cdn.unipin.com/images/merchant_denominations/1734510517-icon-5.png"
-        },
-
-
-
+    cards: [
         {
             title: "MEDIASHARE & DONASI SAWERIA",
             subtitle: "Donasi disini buat memunculkan mediashare saatu live ^_^",
