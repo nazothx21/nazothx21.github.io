@@ -3,108 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Tyo X Nazo</title>
-    <link rel="icon" href="nazothx.png">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+    <title>About Tyo Alfando Yang Lagi Gamon Dan Cari Kerja</title>
+    <!-- Favicon / Logo Browser -->
+    <link rel="icon" href="asset/olineTyoo.jpeg" type="image/jpeg">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
 </head>
-<body>
-    <header class="main-header">
-        <div class="header-title"><del>Tyo</del> Sayangmu</div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="https://nazothx21.github.io">Editing Portfolio</a></li>
-                <li><a href="https://nazothx21.github.io/myportofolio">Coding Portfolio</a></li>
-                <li><a href="https://wa.me/6285764175824">WhatsApp</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Buka Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+<body class="dark-mode">
+
+    <div id="background-video-container">
+        <!-- Video akan dipindahkan ke sini secara visual oleh CSS -->
+    </div>
+
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+        <p></p>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">AlfandoXeon <span id="current-date"></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#my-projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#social-media">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="search-form">
+                    <input class="form-control me-2" type="search" id="search-input" placeholder="Chat With AlfandoXeon AI...">
+                    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <button class="btn btn-outline-info ms-2 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#calculatorModal">
+                    <i class="fas fa-calculator"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero d-flex justify-content-center align-items-center text-center">
+        <div class="hero-content">
+            <div class="profile-video-container">
+                <div class="profile-video-wrapper">
+                    <video id="profileVideo" src="https://res.cloudinary.com/dkt9v96ic/video/upload/profilevideo_zhsilh.mp4" alt="Video Profil Mas Tyo" class="profile-pic" autoplay loop muted playsinline></video>
+                    <img id="profileImage" src="asset/profile.jpg" alt="Foto Profil Mas Tyo" class="profile-pic" style="display: none;">
+                </div>
+                <button id="volume-toggle" class="volume-button"><i class="fas fa-volume-mute"></i></button>
+            </div>
+            <h2 id="greeting" class="mb-3"></h2>
+            <h1 class="display-4 fw-bold">Grateo Alfando Atmojo</h1>
+            <p class="lead">Full-stack Video Editor & Mahasiswa Teknik Informatika</p>
+
+        </div>
     </header>
 
-    <div class="page-content">
-                <video autoplay muted loop id="background-video">
-            <source src="pubgVid.mp4" type="video/mp4">
-            minimal broswer anda mendukung play video dekk
-        </video>
-
-        <main class="content-wrapper">
-            <h1 class="main-heading">Halo Dekk...
-                <p></p>
-            </h1>
-            
-
-            <div class="portfolio-links">
-                
-                <a href="https://nazothx21.github.io" class="portfolio-card">
-                    <img src="nazothx.png" alt="Logo NAZOTHX" class="profile-pic">
-                    <div class="card-text">
-                        <span class="card-title">NAZOTHX</span>
-                        <span class="card-subtitle">Editing Portofolio <br>MLBB Content Creator</span>
-                    </div>
-                </a>
-
-                <a href="https://nazothx21.github.io/myportofolio" class="portfolio-card">
-                    <img src="profile.jpg" alt="Logo TyoAlfando" class="profile-pic">
-                    <div class="card-text">
-                        <span class="card-title">TyoAlfando</span>
-                        <span class="card-subtitle">Fullstack Portofolio</span>
-                    </div>
-                </a>
-                <a href="bokeff.html" class="portfolio-card">
-                    <img src="bkf.jpeg" alt="Logo TyoAlfando" class="profile-pic">
-                    <div class="card-text">
-                        <span class="card-title"><b><i> <del>VIP INDO 21</del> </i></b></span>
-                        <span class="card-subtitle">Sebatas Mengagumi<br>Soal Memiliki <i> <del>Aku Sadar Diri</del></i></span>
-                    </div>
-                </a>
-
-                <div class="portfolio-card whatsapp-card">
-                    <div class="whatsapp-info">
-                        <img src="https://i.pinimg.com/736x/ca/15/93/ca15936dc0721c9471c5fec65ae25a6c.jpg" alt="Logo WhatsApp" class="profile-pic">
-                        <div class="card-text">
-                            <span class="card-title">WhatsApp</span>
-                            <span class="card-subtitle">chat apa gitu kek...</span>
+    <main class="container my-5">
+        <section id="about" class="mb-5">
+            <h2 class="text-center mb-4"><i class="fas fa-user"></i> Sedikit Info About Me</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Profil Pribadi</h3>
+                            <ul class="list-unstyled">
+                                <li><strong>Nama Lengkap:</strong> Grateo Alfando Atmojo</li>
+                                <li><strong>Panggilan:</strong> Grateo - Mas Tyo - Teo - Alfando</li>
+                                <li><strong>Pendidikan:</strong> S1 Teknik Informatika, UKSW</li>
+                                <li><strong>Latar Belakang:</strong> Nolep</li>
+                                <li><strong>Ulang Tahun:</strong> 07 Mei</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="whatsapp-input-container">
-                        <input type="text" id="whatsapp-message" placeholder="SV Bck">
-                        <button id="send-whatsapp-message">Kirim</button>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Latar Belakang Percintaan</h3>
+                            <ul class="list-unstyled">
+                                <li><strong>Percintaan:</strong> Kandas</li>
+                                <li><strong>Alasan:</strong> Masih Kurang Dalam Segala Hal</li>
+                                <li><strong>Korban:</strong> Mbak perawat</li>
+                                <li><strong><br>Kronologi:</strong></li>
+                                <li>   <i>"Seorang perawat telah mengambil seluruh rasa cintaku, lalu membuangnya seolah sampah yang tak berharga. Kini, yang tersisa hanyalah Tyo yang tersakiti, seorang kakak yang kehilangan kekuatannya, seorang sedang diuji oleh kenangan akan seseorang yang telah membuangnya dengan sia-sia."</i> </li>
+                                <li><i><br>"Perawat yang katanya menyembuhkan luka, tetapi justru memberi luka yang begitu dalam~ <br>Aduhhh, jangan ya dek yaaa "</i></li>
+                                <h3 class="card-title"">instagram: @grteo_alfndd21</h3>
+                                <h2><br><br>Btw, disini saya membuat sebuah aplikasi <b>Kalkulator Cinta</b></h2>
+                                <p>Supaya tidak salah pasangan, ada baiknya kalian mencoba <b>Tes Kecocokan</b> dengan pasangan kalian sebelum melanjutkan <i>hubungan yaa...</i></p>
+                                <p>Biar gak kandas kayak mimin deh hehe...</p>
+                                <div class="text-center mt-3"><br>
+                                    <a href="http://nazothx21.github.io/love-calculator" target="_blank" class="btn btn-primary"><h3><b>Love Calculator</b><br><i>By AlfandoXeon2025</i></h3></a>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-                
-
+            </div>
+        </section>
+        <section id="my-jj-videos" class="mb-5">
+            <h2 class="text-center mb-4"><i class="fas fa-girl"></i> Kekasihku Terindah (Dulu) :) </h2>
+            <div class="scroll-container-wrapper">
+                <div class="scroll-container">
+                    <div class="scroll-item">
+                        <div class="video-container">
+                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464213/4e60vj_qsidzj.mp4" loop playsinline controls class="w-100" title="JJ Video 1"></video>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p>pencet tombol dibawah ini buat balikan...</p>
+                            <a href="https://wa.me/6285764175824?text=sayanggg%20aku%20kangennnn...%20balikan%20yaaa" target="_blank" class="btn btn-primary"><h2>pliss sayanggg, pencet ini yaaa</h2></a>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="video-container">
+                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464335/awk8r6_xi8vas.mp4" loop playsinline controls class="w-100" title="JJ Video 2"></video>
+                        </div>
+                        <div class="text-center mt-3">
+                            <p>aku kangen...</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="fotolovi-wlee">
+                            <img src="asset/lovi.jpg" alt="">
+                        </div>
+                        <div class="text-center mt-3">
+                            <p>hmm</p>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="fotolovi">
+                            <img src="https://res.cloudinary.com/dkt9v96ic/image/upload/v1754470639/WIN_20250511_15_12_22_Pro_lrhsbj.jpg" alt="">
+                        </div>
+                        <div class="fotolovi">
+                            <img src="https://res.cloudinary.com/dkt9v96ic/image/upload/v1754470724/IMG_20250511_215822_793_yspprc.jpg" alt="">
+                        </div>
+                        <div class="fotolovi">
+                            <img src="https://res.cloudinary.com/dkt9v96ic/image/upload/v1754470770/tyoo_x_lovi_1_i6xjdo.jpg" alt="">
+                        </div>
+                        <div class="text-center mt-3">
+                            <p>foto kita masih lengkap di galeri..<br>aku ga tega menghapus nya..</p>
+                             <a href="https://wa.me/6285764175824?text=sayanggg%20aku%20kangennnn...%20balikan%20yaaa" target="_blank" class="btn btn-primary"><h2><i class="fas fa-images"></i> Lihat Galeri Kita</h2></a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <p class="closing-text">
-                Kedua link tersebut adalah portofolio milik saya, baik untuk skill editing dan programing (IT) saya.
-                <br><br>
-                Saya berharap saya bisa segera mendapatkan pekerjaan yang layak dan menikah, lalu hidup bahagia.
-            </p>
-            </main>
-    </div>
-    <div id="gallery-wrapper">
-        <h1 id="gallery-title">My Gallery</h1>
-        <div id="gallery-container">
-            <img src="foto/1.png" alt="" class="fotoProyek">
-            <img src="foto/2.png" alt="" class="fotoProyek">
-            <img src="foto/3.png" alt="" class="fotoProyek">
-            <img src="foto/4.png" alt="" class="fotoProyek">
-            <img src="foto/5.png" alt="" class="fotoProyek">
-            <img src="foto/6.png" alt="" class="fotoProyek">
+        </section>
+        <h2 class="text-center mb-4"><i class="fas fa-girl"></i>Bukti Nyata Bahwa Saya Memiliki Keahlian</h2>
+        <div class="scroll-container-wrapper">
+            
+            <div class="scroll-container">
+                <div class="scroll-item">
+                    <section id="my-video" class="container">
+                        <h2 class="text-center mb-4"><i class="fas fa-video"></i> My Video</h2>
+                        <div class="video-container">
+                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464509/uwth3h_xssrbn.mp4" loop playsinline controls class="w-100" title="My Video"></video>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="https://nazothx21.github.io" target="_blank" class="btn btn-primary">My Editor Portofolio</a>
+                        </div>
+                    </section>
+
+                </div>
+
+                <div class="scroll-item">
+                    <section id="my-video" class="container">
+                        <h2 class="text-center mb-4"><i class="fas fa-wifi"></i> MLBB</h2>
+                        <div class="video-container">
+                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464537/zehsdq_q9xkja.mp4" loop playsinline controls class="w-100" title="My Video"></video>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="https://nazothx21.github.io" target="_blank" class="btn btn-primary">Mabar Sinii</a>
+                        </div>
+                    </section>
+
+                </div>
+                <div class="scroll-item">
+                    <section id="my-program" class="container">
+                        <h2 class="text-center mb-4"><i class="fas fa-code"></i> My Program</h2>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Hai Dunia</h3>
+                                        <pre class="bg-dark text-light p-3 rounded"><code>#include &lt;stdio.h&gt;
+
+int main () {
+    printf("Hello, World!");
+    return AkuKangenSayanggg;
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Selamat Datang To World</h3>
+                                        <pre class="bg-dark text-light p-3 rounded"><code>print("Welcome, World!")</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="scroll-item">
+                    <section id="my-projects" class="container">
+                        <h2 class="text-center mb-4"><i class="fas fa-project-diagram"></i> My Projects</h2>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Jam Digital</h3>
+                                        <p class="card-text">A simple digital clock created with HTML, CSS, and JavaScript.</p>
+                                        <a href="https://alfando345.github.io/jamdigital" target="_blank" class="btn btn-primary">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Kalkulator</h3>
+                                        <p class="card-text">A calculator with basic arithmetic functions.</p>
+                                        <a href="https://alfando345.github.io/kalktulator/" target="_blank" class="btn btn-primary">View Project</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="scroll-item">
+                    <section id="my-video" class="container">
+                        <h2 class="text-center mb-4"><i class="fas fa-video"></i> AlfandoOxxyn Bot</h2>
+                        <div class="video-container">
+                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464572/w3006s_whvknw.mp4" loop playsinline controls class="w-100" title="My Video"></video>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="https://nazothx21.github.io" target="_blank" class="btn btn-primary">Chat With My Bot Whatsapp</a>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
         </div>
-        <button id="scroll-left" class="gallery-nav">&lt;</button>
-        <button id="scroll-right" class="gallery-nav">&gt;</button>
-        <h2 id="gallery-title">Thanks For Visiting My WEB</h2>
+
+        <section id="my-jj-videos" class="mb-5">
+            <h2 class="text-center mb-4"><i class="fas fa-film"></i> JJ Dulu</h2>
+            <div class="scroll-container-wrapper">
+                <div class="scroll-container">
+                    <div class="scroll-item">
+                        <div class="video-container">
+                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754464600/tj9pa4_oy6tj9.mp4" loop playsinline controls class="w-100" title="JJ Video 1"></video>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="video-container">
+                            <video src="https://res.cloudinary.com/dkt9v96ic/video/upload/v1754463171/profilevideo_zhsilh.mp4" loop playsinline controls class="w-100" title="JJ Video 2"></video>
+                        </div>
+                    </div>
+                    <!-- Untuk menambah video baru, cukup salin dan tempel blok .scroll-item di atas -->
+                </div>
+            </div>
+
+        </section>
+
+        <section id="my-jj-videos" class="mb-5">
+            <h2 class="text-center mb-4">  Beberapa Website Buatan Saya</h2>
+            <div class="scroll-container-wrapper">
+                <div class="scroll-container">
+                    <div class="scroll-item">
+                        <div class="video-container-web">
+                            <iframe class="iframe-interaktif" src="https://nazothx21.github.io/alfandoxeonchatai"></iframe>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="https://nazothx21.github.io/alfandoxeonchatai" target="_blank" class="btn btn-primary"><b> AlfandoXeonChatAI </b></a>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="video-container-web">
+                            <iframe class="iframe-interaktif" src="https://alfando345.github.io/jamdigital/"></iframe>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="https://alfando345.github.io/jamdigital" target="_blank" class="btn btn-primary"><b> Jam Digital JDAX</b></a>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="video-container-web">
+                            <iframe class="iframe-interaktif" src="https://alfando345.github.io/kalktulator/"></iframe>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="https://alfando345.github.io/kalktulator/" target="_blank" class="btn btn-primary"><b> Kalkulator </b></a>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="video-container-web">
+                            <iframe class="iframe-interaktif" src="https://nazothx21.github.io/love-calculator"></iframe>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="https://nazothx21.github.io/love-calculator" target="_blank" class="btn btn-primary"><b> love-calculator </b></a>
+                        </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="video-container-web">
+                            
+                            <iframe class="video-container-web" src="https://github.com/Alfando345"></iframe>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="https://github.com/Alfando345" target="_blank" class="btn btn-primary"><b> Open My Github </b></a>
+                        </div>
+                    </div>
+
+                    <!-- Untuk menambah video baru, cukup salin dan tempel blok .scroll-item di atas -->
+                </div>
+            </div>
+
+        </section>
+
+        <section id="skills" class="mb-5">
+            <h2 class="text-center mb-4"><i class="fas fa-cogs"></i> Keahlian Profesional</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Editor Video Full-Stack</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-microphone-alt"></i> <strong>Dubbing:</strong> Kemampuan mengisi suara dan narasi profesional.</li>
+                                <li><i class="fas fa-file-alt"></i> <strong>Scripting:</strong> Keahlian menulis naskah dan alur cerita yang menarik.</li>
+                                <li><i class="fas fa-video"></i> <strong>Editing:</strong> Penguasaan teknik penyuntingan video untuk hasil yang memukau.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Keahlian Tambahan</h3>
+                            <p class="card-text">Di era digital ini, perpaduan antara seni dan teknologi menjadi sangat penting. Sebagai seorang editor video yang juga mahasiswa Teknik Informatika, saya memiliki perspektif ganda: mata seorang kreator dan pemahaman seorang teknisi. Keahlian ini membuat saya mampu menggarap proyek video, terutama yang berkaitan dengan teknologi dan inovasi, dengan kualitas visual yang memukau serta akurasi yang terjamin. Ini adalah nilai tambah unik yang saya tawarkan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="character" class="mb-5">
+            <h2 class="text-center mb-4"><i class="fas fa-heart"></i> Karakter & Hobi</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Etos Kerja & Karakter</h3>
+                            <ul class="list-unstyled">
+                                <li><strong>Fokus:</strong> Kemampuan untuk berkonsentrasi penuh dalam setiap pekerjaan.</li>
+                                <li><strong>Motivasi Diri:</strong> Selalu antusias belajar hal baru, bahkan di luar bidang utama.</li>
+                                <li><strong>Karakter Kuat:</strong> Konsisten, pekerja keras, dan berambisi untuk terus menjadi lebih baik.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Hobi & Kreativitas</h3>
+                            <p class="card-text">Musik adalah cara saya mengekspresikan diri dan menemukan inspirasi. Dengan menguasai piano, gitar, dan bass, saya membangun fondasi artistik yang kuat. Genre pop punk dan ska bukan hanya sekadar hobi, melainkan sumber energi dan kreativitas yang membentuk cara pandang saya dalam menyusun narasi visual dan memadukan audio dengan gambar. Kepekaan musikal ini menjadi nilai tambah yang unik dalam setiap proyek editing video yang saya tangani.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="social-media" class="text-center">
+            <h2><i class="fas fa-share-alt"></i> Find Me On</h2>
+            <div class="mt-3">
+                <a href="https://www.instagram.com/grteo_alfndd21" target="_blank" class="btn btn-primary btn-lg social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Follow IG Saya</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2025 AlfandoXeon. Mantannya Lovi <br> Dari <i>"Hai Sayang"   <i class="fas fa-heart"></i></i><b>  Menjadi -></b> <i>Dada Sayang 👋</i></i>.</p>
+        <h1>Korban Mbak Mbak Perawat</h1>
+    </footer>
+
+    <!-- Calculator Modal -->
+    <div class="modal fade" id="calculatorModal" tabindex="-1" aria-labelledby="calculatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="calculatorModalLabel">Kalkulator By AlfandoXeon</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="calculator" class="mx-auto">
+                        <input type="text" id="display" class="form-control text-end mb-2" disabled>
+                        <div class="row g-2">
+                            <div class="col-3"><button class="btn btn-secondary w-100">7</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100">8</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100">9</button></div>
+                            <div class="col-3"><button class="btn btn-warning w-100">/</button></div>
+
+                            <div class="col-3"><button class="btn btn-secondary w-100">4</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100">5</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100">6</button></div>
+                            <div class="col-3"><button class="btn btn-warning w-100">*</button></div>
+
+                            <div class="col-3"><button class="btn btn-secondary w-100">1</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100">2</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100">3</button></div>
+                            <div class="col-3"><button class="btn btn-warning w-100">-</button></div>
+
+                            <div class="col-3"><button class="btn btn-secondary w-100">0</button></div>
+                            <div class="col-3"><button class="btn btn-secondary w-100">.</button></div>
+                            <div class="col-3"><button id="clear" class="btn btn-danger w-100">C</button></div>
+                            <div class="col-3"><button class="btn btn-warning w-100">+</button></div>
+
+                            <div class="col-12"><button id="equals" class="btn btn-success w-100">=</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
 </html>
